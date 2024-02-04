@@ -8,3 +8,8 @@ int main(void)
 
     printf("%i\n", x + y);
 }
+
+int add(void)
+{
+    
+}
