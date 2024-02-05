@@ -3,7 +3,7 @@
 
 int main (void)
 {
-    const int n = get_int("Size: ");
+    int n = get_int("Size: ");
     while (n < 1)
     {
         n = get_int("Size: ");
