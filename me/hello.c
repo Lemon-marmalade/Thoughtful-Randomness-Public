@@ -3,8 +3,8 @@
 
 int main(void)
 
-{
-string name = get_string("What art thou name? ");
 
-    printf("hello, %s\n" , name);
-}
+    string name = get_string("What art thou name? ");
+
+    printf("Hello, %s\n" , name);
+
