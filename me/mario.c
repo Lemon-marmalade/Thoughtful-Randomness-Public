@@ -10,17 +10,17 @@ int main (void)
         n = get_int("Height: ");
     }
     while (n < 1 || n > 8);
-// r for rows, s for row #, b for blocks/hashes
+// r for rows, l for row #, b for blocks/hashes
     for (int r = 1; r <= n; r++)
+
     {
-        for (int s = (n - 1) ; s < 0; s--)
-        {
-            printf(" ");
-        }
-        for (int h = 0; h < n; h++)
-        {
-            printf("#");
-        }
-        printf("\n");
+    for(int s = 1; s <= (n-r); s++)
+     {
+         printf(" ")
+     }
+     for(int b = 1; b<= r; b++)
+    {
+         printf("#");
+     }
+     printf("\n");
     }
-}
