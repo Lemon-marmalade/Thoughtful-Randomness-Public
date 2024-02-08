@@ -22,7 +22,11 @@ int main(void)
         for (int b = 1; b <= r; b++)
         {
             printf("#");
+            printf(" ");
+            printf("#");
         }
+
+
         printf("\n");
     }
 }
