@@ -1,16 +1,17 @@
 #include <stdio.h>
 #include <cs50.h>
 
-int main (void);
-
+int main (void)
+{
     int n;
-// rejects answers less than 1 or greater than 8
+// rejects answers less than 1
     do
     {
         n = get_int("Height: ");
     }
-    while (n < 1 || n > 8);
-// r for rows, l for row #, b for blocks/hashes
+    while (n < 1);
+
+// r for rows, l for row #, b for # of blocks/hashes for row
     for (int r = 1; r <= n; r++)
 
     {
@@ -18,9 +19,10 @@ int main (void);
      {
          printf(" ");
      }
-     for(int b = 1; b<= r; b++)
+     for(int b = 1; b <= r; b++)
     {
          printf("#");
      }
      printf("\n");
     }
+}
