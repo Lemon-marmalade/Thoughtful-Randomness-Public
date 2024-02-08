@@ -11,7 +11,7 @@ int main (void)
     }
     while (n < 1 || n > 8);
 // r for rows, s for row #, b for blocks/hashes
-    for (int r = 0; r < n; r++)
+    for (int r = 1; r <= n; r++)
     {
         for (int s = (n - 1) ; s < 0; s--)
         {
