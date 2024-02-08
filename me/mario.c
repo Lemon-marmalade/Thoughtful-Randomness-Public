@@ -5,8 +5,7 @@ int main (void);
 
     int n;
 // rejects answers less than 1 or greater than 8
-    do
-    {
+    do {
         n = get_int("Height: ");
     }
     while (n < 1 || n > 8);
