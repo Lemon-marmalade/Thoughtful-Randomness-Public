@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <cs50.h>
 
-int main (void)
-{
+int main (void);
+
     int n;
 // rejects answers less than 1 or greater than 8
     do
@@ -16,7 +16,7 @@ int main (void)
     {
     for(int s = 1; s <= (n-r); s++)
      {
-         printf(" ")
+         printf(" ");
      }
      for(int b = 1; b<= r; b++)
     {
