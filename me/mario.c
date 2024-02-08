@@ -13,7 +13,7 @@ int main (void)
 // r for rows, s for spaces, b for blocks/hashes
     for (int r = 0; r < n; r++)
     {
-        for (int s == (n - 1) ; s = 0; j--)
+        for (int s == (n - 1) ; s == 0; j--)
         {
             printf(" ");
         }
