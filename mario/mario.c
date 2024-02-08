@@ -9,7 +9,7 @@ int main(void)
     {
         n = get_int("Height: ");
     }
-    while (n < 1);
+    while (n < 1 || n > 8);
 
     // r for rows, l for row #, b for # of blocks/hashes for row
     for (int r = 1; r <= n; r++)
