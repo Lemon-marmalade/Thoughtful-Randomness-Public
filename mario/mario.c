@@ -19,14 +19,15 @@ int main(void)
         {
             printf(" ");
         }
-            for (int a = 0; a < 2; a++)
-            {
-             for (int b = 1; b <= r; b++)
-             {
-                  printf("#");
-              }
-             printf("  ");
-            }
+         for (int b = 1; b <= r; b++)
+        {
+            printf("#");
+        }
+        printf("  ");
+        for (int b = 1; b <= r; b++)
+        {
+            printf("#");
+        }
         printf("\n");
     }
 }
