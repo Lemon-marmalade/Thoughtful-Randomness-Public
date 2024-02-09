@@ -17,13 +17,13 @@ int main(void)
     {
         for (int s = 1; s <= (n - r); s++)
         {
-            printf("  ");
+            printf(" ");
         }
         for (int b = 1; b <= r; b++)
         {
             printf("#");
         }
-        printf(" ");
+        printf("  ");
         for (int b = 1; b <= r; b++)
         {
             printf("#");
