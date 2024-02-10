@@ -5,5 +5,8 @@ void main(void)
 
 {
     int x;
-
-    x = get_int("Change owed: ");
+    do
+    {
+         x = get_int("Change owed: ");
+    }
+    while (n < 1 )
