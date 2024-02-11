@@ -1,7 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 
-void main(void)
+int main(void)
 
 {
     int x;
@@ -10,3 +10,9 @@ void main(void)
          x = get_int("Change owed: ");
     }
     while (n < 1 )
+     // write conditions
+     if (n / 25 = int)
+     {
+          printf("Minimum amount of coins: %i \n", n / 25)
+     }
+}
