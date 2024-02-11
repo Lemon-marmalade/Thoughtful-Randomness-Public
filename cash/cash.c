@@ -13,12 +13,15 @@ int main(void)
      // write conditions
      if (x > 25)
      {
-          int a = (x % 25);
-          if (a > 10)
+          int a = (x / 25);
+          int b = (x % 25);
+
+          if (b > 10)
           {
-               int b = (a % 10)
+               int c = (b / 10)
+               int d = (b % 10)
           }
-          else if (a > 5)
+          else if (b > 5 && b < 10)
           {
                int c = (a % 5)
           }
