@@ -29,7 +29,7 @@ int main(void)
      int pennies = calculate_pennies(cents);
      cents = cents- pennies;
     // print sum
-     printf("Minimum amount of coins able to be used: %i \n", quarters + dimes + nickels + pennies);
+     printf("%i \n", quarters + dimes + nickels + pennies);
 }
 
 
