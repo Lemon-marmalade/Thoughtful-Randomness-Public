@@ -11,7 +11,7 @@ int main(void)
     }
     while (x < 1 );
      // write conditions
-     if (x / 25 = int)
+     if (x > 25)
      {
           printf("Minimum amount of coins: %i \n", x / 25);
      }
