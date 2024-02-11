@@ -32,15 +32,15 @@ int main(void)
     printf("%i \n", quarters + dimes + nickels + pennies);
 }
 
-int calculate_quarters(int cents);
-    // calculate how many quarters needed
+int calculate_quarters(int cents)
+ {   // calculate how many quarters needed
     int quarters = 0;
     for(; cents >= 25; quarters++)
     {
         cents = cents - 25;
     }
  return quarters;
-
+ }
 int calculate_dimes(int cents)
 {
     // calculate how many dimes needed
