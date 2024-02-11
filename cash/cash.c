@@ -4,6 +4,7 @@
 int calculate_quarters(int cents);
 int calculate_dimes(int cents);
 int calculate_nickels(int cents);
+int calculate_pennies(int cents);
 
 int main(void)
 
@@ -24,13 +25,11 @@ int main(void)
     // calculate how many nickels needed for previous difference and subtract
      int nickels = calculate_nickels(cents);
      cents = cents- (nickels * 5);
-    // calculate how many pennies needed
-    // subtract value of pennies from remaining cents
-
-    // add the number of quarters, dimes, nickels, and pennies
-    // print the sum
-
-     printf("%i \n", quarters + dimes);
+    // calculate how many pennies needed and subtract
+     int pennies = calculate_pennies(cents);
+     cents = cents- pennies;
+    // print sum
+     printf("%i \n", quarters + dimes + nickels + pennies);
 }
 
 
@@ -72,4 +71,17 @@ int calculate_nickels(int cents)
      cents = cents - 5;
     }
     return nickels;
+     }
+
+int calculate_pennies(int cents)
+     {
+    // calculate how many nickels needed
+    int pennies = 0;
+
+    while (cents >= 1)
+    {
+     pennies++;
+     cents = cents - 1;
+    }
+    return pennies;
      }
