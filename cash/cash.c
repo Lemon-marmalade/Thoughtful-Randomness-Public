@@ -44,24 +44,20 @@ int calculate_quarters(int cents)
 int calculate_dimes(int cents)
 {
     // calculate how many dimes needed
-    int dimes = 0;
-
-    while (cents >= 10)
+   int dimes = 0;
+    for(; cents >= 10; dimes++)
     {
-        dimes++;
         cents = cents - 10;
     }
-    return dimes;
+ return dimes;
 }
 
 int calculate_nickels(int cents)
 {
     // calculate how many nickels needed
     int nickels = 0;
-
-    while (cents >= 5)
+    for(; cents >= 5; nickels++)
     {
-        nickels++;
         cents = cents - 5;
     }
     return nickels;
@@ -71,10 +67,8 @@ int calculate_pennies(int cents)
 {
     // calculate how many nickels needed
     int pennies = 0;
-
-    while (cents >= 1)
+     for(; cents >= 1; pennies++)
     {
-        pennies++;
         cents = cents - 1;
     }
     return pennies;
