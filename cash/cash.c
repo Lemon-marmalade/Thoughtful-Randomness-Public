@@ -11,7 +11,17 @@ int main(void)
      }
      while (cents < 1);
 }
+     int quarters(int cents)
+     {
     // calculate how many quarters needed
+    int quarters = 0;
+
+    while (cents >= 25)
+    {
+     quarters++;
+     cents = cents - 25
+    }
+     }
     // sutract value of quarters from total change owed
 
     // calculate how many dimes needed for previous difference
