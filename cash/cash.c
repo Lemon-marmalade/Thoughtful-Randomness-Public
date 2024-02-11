@@ -33,17 +33,10 @@ int main(void)
 }
 
 int calculate_quarters(int cents)
-{
-    // calculate how many quarters needed
-    int quarters = 0;
 
-    while (cents >= 25)
-    {
-        quarters++;
-        cents = cents - 25;
-    }
-    return quarters;
-}
+    // calculate how many quarters needed
+    for(int quarters = 0; cents >= 25; quarters++)
+
 
 int calculate_dimes(int cents)
 {
