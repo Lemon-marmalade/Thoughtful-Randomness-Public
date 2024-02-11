@@ -23,8 +23,10 @@ int main(void)
           }
           else if (b > 5 && b < 10)
           {
-               int c = (a % 5)
+               int e = (b / 5)
+               int f = (b % 5)
           }
+          else if (b )
 
           printf("Minimum amount of coins: %i \n", x / 25);
      }
