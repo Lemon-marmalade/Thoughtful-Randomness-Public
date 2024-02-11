@@ -3,6 +3,7 @@
 
 int calculate_quarters(int cents);
 int calculate_dimes(int cents);
+int calculate_nickels(int cents);
 
 int main(void)
 
@@ -14,17 +15,15 @@ int main(void)
     cents = get_int("Change owed: ");
      }
      while (cents < 0);
-     // calculate how many quarters needed
+     // calculate how many quarters and subtracts from cents
      int quarters = calculate_quarters(cents);
-     // subtract value of quarters from cents
      cents = cents- (quarters * 25);
-     // calculate how many dimes needed for previous difference
+     // calculate how many dimes needed for previous difference and subtract
      int dimes = calculate_dimes(cents);
-    // subtract value of dimes from remaining cents
      cents = cents- (dimes * 10);
-    // calculate how many nickels needed for previous difference
-    // subtract value of nickels from remaining cents
-
+    // calculate how many nickels needed for previous difference and subtract
+     int nickels = calculate_nickels(cents);
+     cents = cents- (nickels * 5);
     // calculate how many pennies needed
     // subtract value of pennies from remaining cents
 
@@ -35,7 +34,7 @@ int main(void)
 }
 
 
-     int calculate_quarters(int cents)
+int calculate_quarters(int cents)
      {
     // calculate how many quarters needed
     int quarters = 0;
@@ -49,7 +48,7 @@ int main(void)
      }
 
 
-     int calculate_dimes(int cents)
+int calculate_dimes(int cents)
      {
     // calculate how many dimes needed
     int dimes = 0;
@@ -60,4 +59,17 @@ int main(void)
      cents = cents - 10;
     }
     return dimes;
+     }
+
+int calculate_nickels(int cents)
+     {
+    // calculate how many nickels needed
+    int nickels = 0;
+
+    while (cents >= 5)
+    {
+     nickels++;
+     cents = cents - 5;
+    }
+    return nickels;
      }
