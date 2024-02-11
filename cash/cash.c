@@ -5,3 +5,4 @@ int main(void)
 
 {
     int input = get_int("Change owed: ")
+    
