@@ -9,10 +9,10 @@ int main(void)
     {
          x = get_int("Change owed: ");
     }
-    while (n < 1 )
+    while (x < 1 )
      // write conditions
-     if (n / 25 = int)
+     if (x / 25 = int)
      {
-          printf("Minimum amount of coins: %i \n", n / 25)
+          printf("Minimum amount of coins: %i \n", x / 25);
      }
 }
