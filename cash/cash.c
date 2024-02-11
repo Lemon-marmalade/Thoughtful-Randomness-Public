@@ -17,6 +17,8 @@ int main(void)
      int quarters = calculate_quarters(cents);
      // subtract value of quarters from cents
      cents = cents- (quarters * 25);
+
+     printf("%i \n", quarters);
 }
     // calculate how many dimes needed for previous difference
     // subtract value of dimes from remaining cents
@@ -44,5 +46,3 @@ int main(void)
     return quarters;
      }
 
-
-printf("%i\n", int quarters);
