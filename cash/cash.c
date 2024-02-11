@@ -11,7 +11,7 @@ int main(void)
      }
      while (cents < 1);
 }
-     int quarters(int cents)
+     int calculate_quarters(int cents)
      {
     // calculate how many quarters needed
     int quarters = 0;
@@ -19,8 +19,9 @@ int main(void)
     while (cents >= 25)
     {
      quarters++;
-     cents = cents - 25
+     cents = cents - 25;
     }
+    return quarters;
      }
     // sutract value of quarters from total change owed
 
