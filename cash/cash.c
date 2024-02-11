@@ -9,7 +9,7 @@ int main(void)
     {
          x = get_int("Change owed: ");
     }
-    while (x < 1 )
+    while (x < 1 );
      // write conditions
      if (x / 25 = int)
      {
