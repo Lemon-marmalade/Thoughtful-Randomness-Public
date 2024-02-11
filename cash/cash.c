@@ -10,7 +10,11 @@ int main(void)
      {
     int cents = get_int("Change owed: ");
      }
-     while (cents < 1);
+     while (cents < 0);
+     // calculate how many quarters needed
+     int quarters = calculate_quarters(cents);
+     // subtract value of quarters from cents
+     cents = cents- (quarters * 25);
 }
      int calculate_quarters(int cents)
      {
@@ -24,7 +28,6 @@ int main(void)
     }
     return quarters;
      }
-    // sutract value of quarters from total change owed
 
     // calculate how many dimes needed for previous difference
     // subtract value of dimes from remaining cents
