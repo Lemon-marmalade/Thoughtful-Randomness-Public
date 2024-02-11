@@ -33,7 +33,6 @@ int main(void)
 }
 
 int calculate_quarters(int cents)
-
     // calculate how many quarters needed
     for(int quarters = 0; cents >= 25; quarters++)
     {
