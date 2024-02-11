@@ -13,6 +13,16 @@ int main(void)
      // write conditions
      if (x > 25)
      {
+          int a = (x % 25);
+          if (a > 10)
+          {
+               int b = (a % 10)
+          }
+          else if (a > 5)
+          {
+               int c = (a % 5)
+          }
+
           printf("Minimum amount of coins: %i \n", x / 25);
      }
 }
