@@ -4,11 +4,12 @@
 int main(void)
 
 {
-    int card_number;
+    int number;
     // prompt user for string of numbers
     do
     {
-        card_number = get_long("Number: ");
+        number = get_long("Number: ");
     }
     while(card_number < 0);
 }
+
