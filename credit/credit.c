@@ -45,7 +45,8 @@ int calculate_digit(long number)
         {
         int digit = int digit + number % 10
         number = number / 10
-
+        }
+        {
         int digit = int digit + ((number % 10)*2)
         number = number / 10
         }
