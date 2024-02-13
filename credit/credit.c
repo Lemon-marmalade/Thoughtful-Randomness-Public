@@ -16,9 +16,11 @@ int main(void)
 // get and record values of every other value starting from last
     // use modulo to get remainder (aka last digit)
     // add last digit to sum
+    // divide by 10
 
 // get and record values of every other value starting from second last
     //use modulo to get remainder (second last digit from first number)
     // add last digit times 2 to the sum
+    // divide by 10
 
-// repeat 
+// repeat
