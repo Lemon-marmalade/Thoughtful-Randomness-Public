@@ -23,4 +23,5 @@ int main(void)
     // add last digit times 2 to the sum
     // divide by 10
 
-// repeat
+// repeat until all numbers have been included
+    // when number < 1
