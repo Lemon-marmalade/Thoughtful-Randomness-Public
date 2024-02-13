@@ -1,6 +1,8 @@
 #include <cs50.h>
 #include <stdio.h>
 
+int calculate_digit(long number);
+
 int main(void)
 
 {
@@ -10,7 +12,17 @@ int main(void)
     {
         number = get_long("Number: ");
     }
-    while(card_number < 0);
+    while(number < 0);
+    int digit = calculate_digit(number);
+
+    if(digit == 20)
+    {
+        printf("valid");
+    }
+    else
+    {
+        printf("invalid");
+    }
 }
 
 // get and record values of every other value starting from last
@@ -27,7 +39,7 @@ int main(void)
     // when number < 1
 int calculate_digit(long number)
 {
-    int digit = 0
+    int digit = 0;
     for(; number < 0;)
     {
     int digit = int digit + number % 10
