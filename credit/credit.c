@@ -13,3 +13,7 @@ int main(void)
     while(card_number < 0);
 }
 
+// get values of every other value starting from second to last
+    // divide number by 10, add last digit to sum, divide last number by 100, repeat
+// get values of every other value starting from last
+    // divide number by 10, add last digit to sum, divide last number by 100, repeat
