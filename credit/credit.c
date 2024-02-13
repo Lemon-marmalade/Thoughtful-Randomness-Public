@@ -40,12 +40,14 @@ int main(void)
 int calculate_digit(long number)
 {
     int digit = 0;
-    for(; number < 0;)
     {
-    int digit = int digit + number % 10
-    number = number / 10
+        for(; number < 0;)
+        {
+        int digit = int digit + number % 10
+        number = number / 10
 
-    int digit = int digit + ((number % 10)*2)
-    number = number / 10
+        int digit = int digit + ((number % 10)*2)
+        number = number / 10
+        }
     }
 }
