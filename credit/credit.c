@@ -1,5 +1,5 @@
 #include <cs50.h>
-#include <stddio.h>
+#include <stdio.h>
 
 int main(void)
 
@@ -10,5 +10,5 @@ int main(void)
     {
         card_number = get_long("Number: ");
     }
-    while(card_number < )
+    while(card_number < 0);
 }
