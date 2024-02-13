@@ -25,4 +25,7 @@ int main(void)
 
 // repeat until all numbers have been included
     // when number < 1
-int calculate_digit(number)
+int calculate_digit(long number)
+{
+    int digits = 
+}
