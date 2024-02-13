@@ -13,10 +13,12 @@ int main(void)
     while(card_number < 0);
 }
 
-// get values of every other value starting from last
+// get and record values of every other value starting from last
     // use modulo to get remainder (aka last digit)
     // add last digit to sum
-    // divide number by 100 to get rid of last 2 digits
 
-// get values of every other value starting from second last
-    // 
+// get and record values of every other value starting from second last
+    //use modulo to get remainder (second last digit from first number)
+    // add last digit times 2 to the sum
+
+// repeat 
