@@ -3,5 +3,12 @@
 
 int main(void)
 
-// prompt user for string of numbers
-int 
+{
+    int card_number;
+    // prompt user for string of numbers
+    do
+    {
+        card_number = get_long("Number: ");
+    }
+    while(card_number < )
+}
