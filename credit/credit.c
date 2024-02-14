@@ -6,7 +6,7 @@ int calculate_digit(long number);
 int main(void)
 
 {
-    int number;
+    long number;
     // prompt user for string of numbers
     do
     {
