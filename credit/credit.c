@@ -15,9 +15,12 @@ int main(void)
     while(number < 0);
     int digit = calculate_digit(number);
 
-    if(digit == 20)
+    if(digit % 10 == 0)
     {
-        printf("VALID \n");
+        if((number > 340000000000000 && number < 350000000000000)||(number > 370000000000000 && number < 380000000000000))
+        {
+            printf("AMEX \n");
+        }
     }
     else
     {
