@@ -14,6 +14,7 @@ int main(void)
         number = get_long("Number: ");
     }
     while(number < 0);
+    
     int digit = calculate_digit(number);
     int second_digit = calculate_second_digit(number);
 
