@@ -71,6 +71,7 @@ int calculate_second_digit(long number)
 {
     int second_digit = 0;
     {
+        for(; number > 0;)
         {
         second_digit = second_digit + ((number % 10)*2);
         number = number / 10;
