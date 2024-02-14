@@ -17,11 +17,11 @@ int main(void)
 
     if(digit == 20)
     {
-        printf("valid");
+        printf("valid \n");
     }
     else
     {
-        printf("invalid");
+        printf("INVALID \n");
     }
 }
 
@@ -45,11 +45,12 @@ int calculate_digit(long number)
         {
         digit = digit + number % 10;
         number = number / 10;
+        }
         return digit;
-
+        {
         digit = digit + ((number % 10)*2);
         number = number / 10;
-        return digit;
         }
+        return digit;
     }
 }
