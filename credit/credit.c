@@ -25,7 +25,7 @@ int main(void)
         {
             printf("MASTERCARD \n");
         }
-        else if((number > 340000000000000 && number < 350000000000000)||(number > 370000000000000 && number < 380000000000000))
+        else if((number > 4000000000000 && number < 5000000000000)||(number > 4000000000000000 && number < 380000000000000))
         {
             printf("AMEX \n");
         }
