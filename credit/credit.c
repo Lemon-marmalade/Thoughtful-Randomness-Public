@@ -71,9 +71,9 @@ int calculate_second_digit(long number)
     int second_digit = 0;
     {
         {
-        digit = digit + ((number % 10)*2);
+        second_digit = second_digit + ((number % 10)*2);
         number = number / 10;
         }
-        return digit;
+        return second_digit;
     }
 }
