@@ -17,7 +17,7 @@ int main(void)
 
     if(digit == 20)
     {
-        printf("valid \n");
+        printf("VALID \n");
     }
     else
     {
