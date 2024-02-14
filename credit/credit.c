@@ -14,21 +14,21 @@ int main(void)
         number = get_long("Number: ");
     }
     while(number < 0);
-    int number_og = number;
+
     int digit = calculate_digit(number);
     int second_digit = calculate_second_digit(number);
 
     if((digit+second_digit) % 10 == 0)
     {
-        if((number_og > 340000000000000 && number < 350000000000000)||(number > 370000000000000 && number < 380000000000000))
+        if((number > 340000000000000 && number < 350000000000000)||(number > 370000000000000 && number < 380000000000000))
         {
             printf("AMEX\n");
         }
-        else if(number_og > 5100000000000000 && number < 5600000000000000)
+        else if(number > 5100000000000000 && number < 5600000000000000)
         {
             printf("MASTERCARD\n");
         }
-        else if((number_og > 4000000000000 && number < 5000000000000)||(number > 4000000000000000 && number < 5000000000000000))
+        else if((number > 4000000000000 && number < 5000000000000)||(number > 4000000000000000 && number < 5000000000000000))
         {
             printf("VISA\n");
         }
