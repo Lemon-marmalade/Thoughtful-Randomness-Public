@@ -2,7 +2,6 @@
 #include <stdio.h>
 
 int calculate_digit(long number);
-int calculate_second_digit(long number);
 
 int main(void)
 
@@ -16,9 +15,8 @@ int main(void)
     while(number < 0);
 
     int digit = calculate_digit(number);
-    int second_digit = calculate_second_digit(number);
 
-    if((digit+second_digit) % 10 == 0)
+    if(digit % 10 == 0)
     {
         if((number > 340000000000000 && number < 350000000000000)||(number > 370000000000000 && number < 380000000000000))
         {
@@ -64,7 +62,7 @@ int calculate_digit(long number)
         digit = digit + number % 10;
         number = number / 10;
 
-        second_digit = second_digit + (((number % 10)*2)%10 + ((number % 10)*2)/10);
+        digit = digit + (((number % 10)*2)%10 + ((number % 10)*2)/10);
         number = number / 10;
         }
         return digit;
