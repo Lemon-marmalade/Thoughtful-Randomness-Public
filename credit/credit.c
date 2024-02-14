@@ -73,7 +73,8 @@ int calculate_second_digit(long number)
     {
         for(; number > 0;)
         {
-        second_digit = second_digit + ((number % 10)*2);
+        
+        second_digit = second_digit + (((number % 10)*2)%10 + ((number % 10)*2)/10);
         number = number / 10;
         }
         return second_digit;
