@@ -43,12 +43,11 @@ int calculate_digit(long number)
     {
         for(; number < 0;)
         {
-        int digit = int digit + number % 10
-        number = number / 10
-        }
-        {
-        int digit = int digit + ((number % 10)*2)
-        number = number / 10
+        digit = digit + number % 10 ;
+        number = number / 10 ;
+
+        digit = digit + ((number % 10)*2) ;
+        number = number / 10 ;
         }
     }
 }
