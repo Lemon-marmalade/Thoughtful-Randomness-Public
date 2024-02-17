@@ -13,7 +13,7 @@ int main(void)
     string second_word = get_string( "Player 2: ");
 
     string word = first_word;
-    int score1 = calculate_score(string word);
+    int score1 = calculate_score(word);
 }
 // prompt usuers for input
 // assign numbers to each letter
