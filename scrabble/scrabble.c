@@ -25,9 +25,9 @@ int calculate_score(string word)
 {
     int score = 0;
 
-    for(i = 0; i < strlen word; i++)
+    for(int i = 0; i < strlen(word); i++)
     {
         score = score + (toupper(word[i])-65);
     }
-
+    return score;
 }
