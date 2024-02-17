@@ -12,11 +12,28 @@ int main(void)
     string first_word = get_string( "Player 1: ");
     string second_word = get_string( "Player 2: ");
 
-    string word = first_word;
+    word = first_word;
     int score1 = calculate_score(word);
+
+    word = second_word;
+    int score2 = calculate_score(word);
+
+    if(score 1 > score 2)
+    {
+        printf("Player 1 wins!\n");
+    }
+
+    else if(score 1 < score 2)
+    {
+        printf("Player s wins!\n");
+    }
+    else
+    {
+        printf("Tie!\n");
+    }
 }
 // prompt usuers for input
-// assign numbers to each letter
+// assign numbers to each letter by converting ascii of capital to array of points
 // compute score of each word
 // print winner based on which score is higher
 
