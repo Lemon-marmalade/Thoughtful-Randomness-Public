@@ -11,8 +11,9 @@ int main(void)
 {
     string first_word = get_string( "Player 1: ");
     string second_word = get_string( "Player 2: ");
-    word = first_word
-    calculate_score(string word);
+
+    string word = first_word;
+    int score1 = calculate_score(string word);
 }
 // prompt usuers for input
 // assign numbers to each letter
@@ -26,7 +27,7 @@ int calculate_score(string word)
 
     for(i = 0; i < strlen word; i++)
     {
-        score = score + [word[i]-65]
+        score = score + (toupper(word[i])-65);
     }
 
 }
