@@ -13,7 +13,7 @@ int main(void)
     string second_word = get_string( "Player 2: ");
 
     int score1 = calculate_score(first_word);
-    int score2 = calculate_score(first_word);
+    int score2 = calculate_score(second_word);
 
     if(score1 > score2)
     {
@@ -22,7 +22,7 @@ int main(void)
 
     else if(score1 < score2)
     {
-        printf("Player s wins!\n");
+        printf("Player 2 wins!\n");
     }
     else
     {
