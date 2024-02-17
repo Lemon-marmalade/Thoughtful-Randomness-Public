@@ -23,7 +23,7 @@ int calculate_score(string word)
 
     for(i = 0; i < strlen word; i++)
     {
-        score = score + points
+        score = score + [word[i]-65]
     }
 
 }
