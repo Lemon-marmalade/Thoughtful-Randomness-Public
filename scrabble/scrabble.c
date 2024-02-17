@@ -16,9 +16,14 @@ int main(void)
 // compute score of each word
 // print winner based on which score is higher
 
-int score = 0;
 
 int calculate_score(string word)
 {
+    int score = 0;
+
     for(i = 0; i < strlen word; i++)
+    {
+        score = score + points
+    }
+
 }
