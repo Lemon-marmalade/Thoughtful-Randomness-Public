@@ -12,18 +12,16 @@ int main(void)
     string first_word = get_string( "Player 1: ");
     string second_word = get_string( "Player 2: ");
 
-    word = first_word;
-    int score1 = calculate_score(word);
+    int score1 = calculate_score(first_word);
 
-    word = second_word;
-    int score2 = calculate_score(word);
+    int score2 = calculate_score(first_word);
 
-    if(score 1 > score 2)
+    if(score1 > score2)
     {
         printf("Player 1 wins!\n");
     }
 
-    else if(score 1 < score 2)
+    else if(score1 < score2)
     {
         printf("Player s wins!\n");
     }
