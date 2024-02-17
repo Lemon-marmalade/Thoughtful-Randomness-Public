@@ -9,16 +9,10 @@ int points[] = {1, 3, 3, 2, 1, 4, 2, 4, 1, 8, 5, 1, 3, 1, 1, 3, 10, 1, 1, 1, 1, 
 
 int main(void)
 {
-   do
-   {
     string first_word = get_string( "Player 1: ");
-   }
-    while(first_word != string)
-    
     string second_word = get_string( "Player 2: ");
 
     int score1 = calculate_score(first_word);
-
     int score2 = calculate_score(first_word);
 
     if(score1 > score2)
