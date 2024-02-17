@@ -15,3 +15,4 @@ int main(void)
 // assign numbers to each letter
 // compute score of each word
 // print winner based on which score is higher
+int calculate_score1(string word)
