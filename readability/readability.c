@@ -4,9 +4,16 @@
 #include <stdio.h>
 #include <string.h>
 
+int calculate_stringlength(string text);
+int calculate_letters(string text);
+int calculate_words(string text);
+int calculate_sentences(string text);
+
 int main(void)
 {
     string text = get_string("Text: ");
+    int letters = calculate_letters(text);
+    printf("%i, letters");
 }
 // prompt user for text
 // count # of letters, wors, and sentences in text
@@ -25,8 +32,12 @@ int calculate_letters(string text)
     int letters = 0;
     for(int i = 0; i < length; i++)
     {
-
+        if(isalpha(text[i]))
+        {
+            letters = letters + 1;
+        }
     }
+    return letters;
 }
 int calculate_words(string text)
 {
