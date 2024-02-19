@@ -8,3 +8,7 @@ int main(void)
 {
 
 }
+// prompt user for text
+// count # of letters, wors, and sentences in text
+// compute Coleman-Liau index
+// print grade level
