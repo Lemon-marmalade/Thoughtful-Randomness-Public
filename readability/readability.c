@@ -15,9 +15,9 @@ int main(void)
 int calculate_letters(string text)
 {
     int letters = 0;
-    for(int i = 0; i < text; i++)
+    for(int i = 0; i < strlen(text); i++)
     {
-        
+
     }
 }
 int calculate_words(string text)
