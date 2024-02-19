@@ -12,6 +12,7 @@ int calculate_sentences(string text);
 int main(void)
 {
     string text = get_string("Text: ");
+    int letters = calculate_letters(text);
     printf("%i", letters);
 }
 // prompt user for text
@@ -22,7 +23,7 @@ int calculate_stringlength(string text)
 {
     for ( int a = 0, b = strlen(text); a < b; a++)
     {
-        length = text[i];
+        int length = text[i];
     }
 }
 
