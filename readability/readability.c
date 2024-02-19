@@ -16,8 +16,20 @@ int main(void)
     int words = calculate_words(text);
     int sentences = calculate_sentences(text);
 
-    int index = 0.0588 * (letters * 100/words) - 0.296 * (sentences * 100/words) - 15.8;
-    printf("%i\n", index);
+    float index = 0.0588 * (letters * 100/words) - 0.296 * (sentences * 100/words) - 15.8;
+    if(index < 1)
+    {
+        printf("Before grade 1\n");
+    }
+    else if(index > 16)
+    {
+        printf ("Grade 16+\n");
+    }
+    else
+    {
+        int grade = round(index);
+        printf ("Grade %i\n", grade);
+    }
 }
 // prompt user for text
 // count # of letters, wors, and sentences in text
