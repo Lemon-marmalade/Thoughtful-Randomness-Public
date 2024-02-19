@@ -6,7 +6,7 @@
 
 int main(void)
 {
-
+    string text = get_string("Text: ");
 }
 // prompt user for text
 // count # of letters, wors, and sentences in text
