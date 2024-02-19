@@ -13,7 +13,7 @@ int main(void)
 {
     string text = get_string("Text: ");
     int letters = calculate_letters(text);
-    printf("%i, letters");
+    printf("%i", letters);
 }
 // prompt user for text
 // count # of letters, wors, and sentences in text
