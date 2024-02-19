@@ -14,13 +14,16 @@ int main(void)
 // print grade level
 int calculate_stringlength(string text)
 {
-    for ( int a = 0, b = strlen(s); a < b; a++)
+    for ( int a = 0, b = strlen(text); a < b; a++)
+    {
+        length = text[i];
+    }
 }
 
 int calculate_letters(string text)
 {
     int letters = 0;
-    for(int i = 0; i < strlen(text); i++)
+    for(int i = 0; i < length; i++)
     {
 
     }
