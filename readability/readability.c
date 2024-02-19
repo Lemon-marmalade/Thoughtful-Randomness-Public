@@ -11,12 +11,13 @@ int calculate_sentences(string text);
 int main(void)
 {
     string text = get_string("Text: ");
+
     int letters = calculate_letters(text);
-    printf("%i\n", letters);
     int words = calculate_words(text);
-    printf("%i\n", words);
     int sentences = calculate_sentences(text);
-    printf("%i\n", sentences);
+
+    int index = 0.0588 * (letters * 100/words) - 0.296 * (sentences * 10/words) - 15.8;
+    printf("%i\n", index);
 }
 // prompt user for text
 // count # of letters, wors, and sentences in text
