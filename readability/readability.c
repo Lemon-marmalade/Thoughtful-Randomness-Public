@@ -15,8 +15,8 @@ int main(void)
     printf("%i\n", letters);
     int words = calculate_words(text);
     printf("%i\n", words);
-    int words = calculate_words(text);
-    printf("%i\n", words);
+    int sentences = calculate_sentences(text);
+    printf("%i\n", sentences);
 }
 // prompt user for text
 // count # of letters, wors, and sentences in text
