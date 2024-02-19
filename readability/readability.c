@@ -5,12 +5,18 @@
 #include <string.h>
 
 int calculate_letters(string text);
+int calculate_words(string text);
+int calculate_sentences(string text);
 
 int main(void)
 {
     string text = get_string("Text: ");
     int letters = calculate_letters(text);
     printf("%i\n", letters);
+    int words = calculate_words(text);
+    printf("%i\n", words);
+    int words = calculate_words(text);
+    printf("%i\n", words);
 }
 // prompt user for text
 // count # of letters, wors, and sentences in text
@@ -29,4 +35,27 @@ int calculate_letters(string text)
     }
     return letters;
 }
-
+int calculate_words(string text)
+{
+    int words = 1;
+    for(int i = 0; i < strlen(text); i++)
+    {
+        if(isspace(text[i]))
+        {
+            words = words + 1;
+        }
+    }
+    return words;
+}
+int calculate_sentences(string text)
+{
+    int sentences = 0;
+    for(int i = 0; i < strlen(text); i++)
+    {
+        if(ispunct(text[i]))
+        {
+            sentences = sentences + 1;
+        }
+    }
+    return sentences;
+}
