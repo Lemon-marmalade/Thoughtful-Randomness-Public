@@ -16,7 +16,7 @@ int main(void)
     int words = calculate_words(text);
     int sentences = calculate_sentences(text);
 
-    float index = 0.0588 * (letters * 100/words) - 0.296 * (sentences * 100/words) - 15.8;
+    float index = 0.0588 * (letters * 100/(float)words) - 0.296 * (sentences * 100/(float)words) - 15.8;
     if(index < 1)
     {
         printf("Before Grade 1\n");
