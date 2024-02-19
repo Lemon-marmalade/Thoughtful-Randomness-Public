@@ -16,7 +16,7 @@ int main(void)
     int words = calculate_words(text);
     int sentences = calculate_sentences(text);
 
-    int index = 0.0588 * (letters * 100/words) - 0.296 * (sentences * 10/words) - 15.8;
+    int index = 0.0588 * (letters * 100/words) - 0.296 * (sentences * 100/words) - 15.8;
     printf("%i\n", index);
 }
 // prompt user for text
