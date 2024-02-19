@@ -14,7 +14,11 @@ int main(void)
 // print grade level
 int calculate_letters(string text)
 {
-    for(int letters = 0; )
+    int letters = 0;
+    for(int i = 0; i < text; i++)
+    {
+        
+    }
 }
 int calculate_words(string text)
 {
