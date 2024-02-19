@@ -40,7 +40,7 @@ int calculate_score(string word)
 
     for (int i = 0; i < strlen(word); i++)
     {
-        if ((toupper(word[i]) - 65) >= 0 && (toupper(word[i]) - 65) <= 26)
+        if (isalpha(word[i]))
         {
             score = score + points[toupper(word[i]) - 65];
         }
