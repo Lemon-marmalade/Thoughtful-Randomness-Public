@@ -12,3 +12,15 @@ int main(void)
 // count # of letters, wors, and sentences in text
 // compute Coleman-Liau index
 // print grade level
+int calculate_letters(string text)
+{
+
+}
+int calculate_words(string text)
+{
+
+}
+int calculate_sentences(string text)
+{
+
+}
