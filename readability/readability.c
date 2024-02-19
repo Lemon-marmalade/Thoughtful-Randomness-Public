@@ -4,10 +4,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int calculate_stringlength(string text);
 int calculate_letters(string text);
-int calculate_words(string text);
-int calculate_sentences(string text);
 
 int main(void)
 {
@@ -19,19 +16,11 @@ int main(void)
 // count # of letters, wors, and sentences in text
 // compute Coleman-Liau index
 // print grade level
-int calculate_stringlength(string text)
-{
-    for ( int a = 0, b = strlen(text); a < b; a++)
-    {
-        int length = text[i];
-    }
-}
 
 int calculate_letters(string text)
 {
-    int length = calculate_stringlength(text);
     int letters = 0;
-    for(int i = 0; i < length; i++)
+    for(int i = 0; i < strlen(text); i++)
     {
         if(isalpha(text[i]))
         {
@@ -40,11 +29,4 @@ int calculate_letters(string text)
     }
     return letters;
 }
-int calculate_words(string text)
-{
 
-}
-int calculate_sentences(string text)
-{
-
-}
