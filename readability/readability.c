@@ -28,7 +28,7 @@ int main(void)
     else
     {
         int grade = round(index);
-        printf ("Grade %f\n", grade);
+        printf ("Grade %i\n", grade);
     }
 }
 // prompt user for text
