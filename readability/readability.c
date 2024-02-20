@@ -65,7 +65,7 @@ int calculate_sentences(string text)
     int sentences = 0;
     for(int i = 0; i < strlen(text); i++)
     {
-        if(text[i]==46 || text[i]==77 || text[i]==33)
+        if(text[i]==46 || text[i]==63 || text[i]==33)
         {
             sentences = sentences + 1;
         }
