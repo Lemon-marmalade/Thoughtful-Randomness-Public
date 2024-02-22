@@ -18,11 +18,17 @@ int main(int argc, string argv[])
         printf("Usage: ./caesar key\n");
         return 1;
         }
-    }
-
-        // prompt for plaintext
+        else
+        {
+          // prompt for plaintext
+          string plaintext = get_string("plaintext:  ");
+          int key = atoi()
         // apply the key
         //output ciptertext
+        }
+    }
+
+
 
 }
 
