@@ -1,9 +1,9 @@
 #include <cs50.h>
 #include <stdio.h>
 
-int main(int argc, string argv[])
+int main(int argc, int argv[])
 {
-    if (argc != 2 || argc != int || argc < 0)
+    if (argc != 2 || argv < 0)
     {
         printf("Usage: ./caesar key\n");
         return 1;
