@@ -20,16 +20,15 @@ int main(int argc, string argv[])
         }
         else
         {
-          // prompt for plaintext
-          string plaintext = get_string("plaintext:  ");
-          int key = atoi(argv[1]);
-          
+        // prompt for plaintext
+        string plaintext = get_string("plaintext:  ");
+        int key = atoi(argv[1]);
         // apply the key
+        int cipher =
         //output ciptertext
         }
     }
-
-
-
 }
+
+int calculate_cipher(int plain)
 
