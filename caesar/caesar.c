@@ -13,7 +13,7 @@ int main(int argc, string argv[])
     }
     for(int i = 0; i < strlen (arv[1]); i++)
     {
-        
+        if (isdigit(argc[1][i]))
     }
 
         // prompt for plaintext
