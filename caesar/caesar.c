@@ -4,17 +4,18 @@
 int main(int argc, string argv[])
 {
     // check that there is one command argument that is a number
-    if (argc != 2 || argv < 0)
+    if (argc == 2)
     {
-        printf("Usage: ./caesar key\n");
-        return 1;
-    }
-    else
-    {
+        printf("%s\n", argv[1]);
         // prompt for plaintext
         // apply the key
         //output ciptertext
-        printf("%s\n", argv[1]);
+    }
+    else
+    {
+
+        printf("Usage: ./caesar key\n");
+        return 1;
     }
 }
 
