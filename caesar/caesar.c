@@ -22,7 +22,8 @@ int main(int argc, string argv[])
         {
           // prompt for plaintext
           string plaintext = get_string("plaintext:  ");
-          int key = atoi()
+          int key = atoi(argv[1]);
+          
         // apply the key
         //output ciptertext
         }
