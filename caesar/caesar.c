@@ -31,7 +31,7 @@ int main(int argc, string argv[])
     string cipher = calculate_cipher(key, plaintext);
     //output ciptertext
     printf("ciphertext: %s\n", cipher);
-    
+
     }
 }
 
@@ -43,7 +43,7 @@ string calculate_cipher(int key, string plain)
     {
         if (isalpha(plain[i]))
         {
-            int n = key / 26;
+            int n = (key + cipher[i]) / 26;
             cipher[i] = cipher[i] + (key - 26 * n);
         }
     }
