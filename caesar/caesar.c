@@ -4,7 +4,7 @@
 #include <ctype.h>
 #include <stdlib.h>
 
-string calculate_cipher(int key);
+string calculate_cipher(int key, string plain);
 
 int main(int argc, string argv[])
 {
@@ -27,20 +27,23 @@ int main(int argc, string argv[])
         string plaintext = get_string("plaintext:  ");
         int key = atoi(argv[1]);
         // apply the key
-        string cipher = calculate_cipher(key);
+        string cipher = calculate_cipher(key, plaintext);
         //output ciptertext
-        printf("ciphertext: %s", cipher);
+        printf("ciphertext: %s\n", cipher);
         }
     }
 }
 
-string calculate_cipher(int key)
+string calculate_cipher(int key, string plain)
 {
-    string cipher = argv[1];
+    string cipher = plain;
 
-    for(int i = 0; i < plain; i++)
+    for(int i = 0; i < strlen(plain); i++)
     {
-        argv[1][i] = argv[1][i] + key;
+        if (isalpha(plain[i]))
+        {
+        cipher[i] = cipher[i] + key;
+        }
     }
     return cipher;
 }
