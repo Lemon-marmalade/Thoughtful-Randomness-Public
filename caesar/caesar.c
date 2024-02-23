@@ -31,4 +31,7 @@ int main(int argc, string argv[])
 }
 
 int calculate_cipher(int plain)
+{
+    for(int i = 0; i < plain; i++)
+}
 
