@@ -24,14 +24,21 @@ int main(int argc, string argv[])
         string plaintext = get_string("plaintext:  ");
         int key = atoi(argv[1]);
         // apply the key
-        int cipher =
+        string cipher = calculate_cipher(key)
         //output ciptertext
+        printf("ciphertext: %s", cipher)
         }
     }
 }
 
-int calculate_cipher(int plain)
+string calculate_cipher(int key)
 {
+    string cipher = argv[1];
+
     for(int i = 0; i < plain; i++)
+    {
+        argv[1][i] = argv[1][i] + key;
+    }
+    return cipher;
 }
 
