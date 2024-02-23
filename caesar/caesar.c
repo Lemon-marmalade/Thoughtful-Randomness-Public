@@ -1,8 +1,8 @@
 #include <cs50.h>
-#include <stdio.h>
-#include <string.h>
 #include <ctype.h>
+#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 string calculate_cipher(int key, string plain);
 
@@ -14,12 +14,12 @@ int main(int argc, string argv[])
         printf("Usage: ./caesar key\n");
         return 1;
     }
-    for(int i = 0; i < strlen (argv[1]); i++)
+    for (int i = 0; i < strlen(argv[1]); i++)
     {
         if (!isdigit(argv[1][i]))
         {
-        printf("Usage: ./caesar key\n");
-        return 1;
+            printf("Usage: ./caesar key\n");
+            return 1;
         }
     }
     // prompt for plaintext
@@ -29,23 +29,21 @@ int main(int argc, string argv[])
 
     // apply the key
     string cipher = calculate_cipher(key, plaintext);
-    //output ciptertext
+    // output ciptertext
     printf("ciphertext: %s\n", cipher);
-
 }
 
 string calculate_cipher(int key, string plain)
 {
     string cipher = plain;
 
-    for(int i = 0; i < strlen(plain); i++)
+    for (int i = 0; i < strlen(plain); i++)
     {
         if (isalpha(plain[i]))
         {
-            int n = (key + toupper(plain[i])-64) / 26;
+            int n = (key + toupper(plain[i]) - 64) / 26;
             cipher[i] = cipher[i] + (key - 26 * n);
         }
     }
     return cipher;
 }
-
