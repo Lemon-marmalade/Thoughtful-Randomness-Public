@@ -25,7 +25,9 @@ int main(int argc, string argv[])
         {
         // prompt for plaintext
         string plaintext = get_string("plaintext:  ");
-        int key = atoi(argv[1]);
+        
+          int key = atoi(argv[1]);
+
         // apply the key
         string cipher = calculate_cipher(key, plaintext);
         //output ciptertext
