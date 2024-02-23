@@ -25,7 +25,7 @@ int main(int argc, string argv[])
         {
         // prompt for plaintext
         string plaintext = get_string("plaintext:  ");
-        
+
           int key = atoi(argv[1]);
 
         // apply the key
@@ -44,6 +44,7 @@ string calculate_cipher(int key, string plain)
     {
         if (isalpha(plain[i]))
         {
+            if (cipher[i] + key > 26)
         cipher[i] = cipher[i] + key;
         }
     }
