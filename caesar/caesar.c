@@ -21,7 +21,7 @@ int main(int argc, string argv[])
         printf("Usage: ./caesar key\n");
         return 1;
         }
-
+    }
     // prompt for plaintext
     string plaintext = get_string("plaintext:  ");
 
@@ -32,7 +32,6 @@ int main(int argc, string argv[])
     //output ciptertext
     printf("ciphertext: %s\n", cipher);
 
-    }
 }
 
 string calculate_cipher(int key, string plain)
