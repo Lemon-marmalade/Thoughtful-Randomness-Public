@@ -2,6 +2,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdlib.h>
+
+string calculate_cipher(int key);
 
 int main(int argc, string argv[])
 {
@@ -24,9 +27,9 @@ int main(int argc, string argv[])
         string plaintext = get_string("plaintext:  ");
         int key = atoi(argv[1]);
         // apply the key
-        string cipher = calculate_cipher(key)
+        string cipher = calculate_cipher(key);
         //output ciptertext
-        printf("ciphertext: %s", cipher)
+        printf("ciphertext: %s", cipher);
         }
     }
 }
