@@ -5,7 +5,7 @@
 #include <string.h>
 
 string calculate_cipher(int key, string plain);
-char alpha[]={A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z}
+char alpha[]={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
 int main(int argc, string argv[])
 {
     // check that there is one command argument that is a number
