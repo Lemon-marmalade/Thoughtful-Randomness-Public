@@ -7,7 +7,7 @@
 string calculate_cipher(string key, string plain);
 int main(int argc, string argv[])
 {
-    // check that there is one command argument that is a number
+    // check that there is one command argument that is a string of 26 distinct characters
     string key = argv[1];
 
     if (argc != 2)
@@ -18,7 +18,7 @@ int main(int argc, string argv[])
     else
     {
         int length = strlen(argv[1]);
-        if(length != 26)
+        if (length != 26)
         {
             printf("Key must contain 26 unique characters\n");
             return 1;
@@ -49,13 +49,11 @@ int main(int argc, string argv[])
 
     // prompt for plaintext
     string plaintext = get_string("plaintext:  ");
-
     // apply the key
     string cipher = calculate_cipher(argv[1], plaintext);
     // output ciptertext
     printf("ciphertext: %s\n", cipher);
 }
-
 
 string calculate_cipher(string key, string plain)
 {
