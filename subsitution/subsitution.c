@@ -17,22 +17,23 @@ int main(int argc, string argv[])
     }
     else
     {
-    int length = strlen(argv[1]);
-    if(length != 26)
-    {
-        printf("Key must contain 26 distinct characters\n");
-        return 1;
-    }
-    for (int a = 0; a < length; a++)
-    {
-        for (int b = 1; b < length; b++)
+        int length = strlen(argv[1]);
+        if(length != 26)
         {
-            for (int c = a + b; c < length; c++)
+            printf("Key must contain 26 distinct characters\n");
+            return 1;
+        }
+        for (int a = 0; a < length; a++)
+        {
+            for (int b = 1; b < length; b++)
             {
-                if (key[a] == key[c])
+                for (int c = a + b; c < length; c++)
                 {
-                    printf("Key must contain 26 distinct characters\n");
-                    return 1;
+                    if (key[a] == key[c])
+                    {
+                        printf("Key must contain 26 distinct characters\n");
+                        return 1;
+                    }
                 }
             }
         }
@@ -54,6 +55,7 @@ int main(int argc, string argv[])
     // output ciptertext
     printf("ciphertext: %s\n", cipher);
 }
+
 
 string calculate_cipher(string key, string plain)
 {
