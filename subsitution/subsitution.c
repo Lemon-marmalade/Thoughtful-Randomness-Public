@@ -27,6 +27,7 @@ int main(int argc, string argv[])
                     if (key[a] == key[c])
                     {
                          printf("Key must contain 26 distinct characters\n");
+                         return 1;
                     }
                 }
             }
