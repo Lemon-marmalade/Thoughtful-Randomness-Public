@@ -5,7 +5,6 @@
 #include <string.h>
 
 string calculate_cipher(string key, string plain);
-char alpha[]={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
 int main(int argc, string argv[])
 {
     // check that there is one command argument that is a number
@@ -17,7 +16,7 @@ int main(int argc, string argv[])
         printf("Usage: ./subsitution key\n");
         return 1;
     }
-    else if(strlen(argv[1]) != 26)
+    else if(length != 26)
     {
         for (int a = 0; a < length; a++)
         {
