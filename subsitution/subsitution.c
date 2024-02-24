@@ -37,13 +37,13 @@ int main(int argc, string argv[])
                 }
             }
         }
-    }
-    for (int i = 0; i < length; i++)
-    {
-        if (!isalpha(argv[1][i]))
+        for (int i = 0; i < length; i++)
         {
-            printf("Usage: ./subsitution key\n");
-            return 1;
+            if (!isalpha(argv[1][i]))
+            {
+                printf("Usage: ./subsitution key\n");
+                return 1;
+            }
         }
     }
 
