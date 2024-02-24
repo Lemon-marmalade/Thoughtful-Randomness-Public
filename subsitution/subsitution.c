@@ -45,7 +45,7 @@ string calculate_cipher(int key, string plain)
     {
         if (isalpha(plain[i]))
         {
-            
+            alpha[n]=key[n]
             cipher[i] = key[n];
         }
     }
