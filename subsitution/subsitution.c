@@ -14,7 +14,7 @@ int main(int argc, string argv[])
         printf("Usage: ./subsitution key\n");
         return 1;
     }
-    else if(strlen(argv[1]) != 26)
+    else if(strlen(argv[1]) != 26 ||)
     {
          printf("Key must contain 26 distinct characters\n");
     }
