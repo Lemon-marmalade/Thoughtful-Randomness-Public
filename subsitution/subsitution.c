@@ -43,8 +43,15 @@ string calculate_cipher(string key, string plain)
     {
         if (isalpha(plain[i]))
         {
-          int n = toupper(plain[i]) - 64;
-          cipher[i]=key[n];
+            int n = toupper(plain[i]) - 65;
+            if (isupper(plain[i]))
+            {
+                cipher[i] = key[n];
+            }
+            else
+            {
+                cipher[i] = tolower(key[n]);
+            }
         }
     }
     return cipher;
