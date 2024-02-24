@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-string calculate_cipher(int key, string plain);
+string calculate_cipher(string key, string plain);
 char alpha[]={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'};
 int main(int argc, string argv[])
 {
