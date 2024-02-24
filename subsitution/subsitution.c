@@ -20,7 +20,7 @@ int main(int argc, string argv[])
         int length = strlen(argv[1]);
         if(length != 26)
         {
-            printf("Key must contain 26 distinct characters\n");
+            printf("Key must contain 26 unique characters\n");
             return 1;
         }
         for (int a = 0; a < length; a++)
@@ -31,7 +31,7 @@ int main(int argc, string argv[])
                 {
                     if (key[a] == key[c])
                     {
-                        printf("Key must contain 26 distinct characters\n");
+                        printf("Key must contain 26 unique characters\n");
                         return 1;
                     }
                 }
