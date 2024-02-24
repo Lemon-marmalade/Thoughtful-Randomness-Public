@@ -9,6 +9,9 @@ char alpha[]={'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q
 int main(int argc, string argv[])
 {
     // check that there is one command argument that is a number
+    string key = argv[1];
+    int length = strlen(argv[1]);
+
     if (argc != 2)
     {
         printf("Usage: ./subsitution key\n");
@@ -16,14 +19,13 @@ int main(int argc, string argv[])
     }
     else if(strlen(argv[1]) != 26)
     {
-        int length = strlen(argv[1]);
         for (int a = 0; a < length; a++)
         {
             for (int b = 1; b < length; b++)
             {
                 for (int c = a + b; c < length; c++)
                 {
-                    if (key[a]=key[c])
+                    if (key[a] == key[c])
                     {
                          printf("Key must contain 26 distinct characters\n");
                     }
@@ -32,7 +34,7 @@ int main(int argc, string argv[])
         }
 
     }
-    for (int i = 0; i < strlen(argv[1]); i++)
+    for (int i = 0; i < length; i++)
     {
         if (!isalpha(argv[1][i]))
         {
