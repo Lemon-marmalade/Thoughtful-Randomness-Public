@@ -11,14 +11,18 @@ int main(int argc, string argv[])
     // check that there is one command argument that is a number
     if (argc != 2)
     {
-        printf("Usage: ./caesar key\n");
+        printf("Usage: ./subsitution key\n");
         return 1;
+    }
+    else if(strlen(argv) != 26)
+    {
+         printf("Key must contain 26 characters\n");
     }
     for (int i = 0; i < strlen(argv[1]); i++)
     {
         if (!isdigit(argv[1][i]))
         {
-            printf("Usage: ./caesar key\n");
+            printf("Usage: ./subsitution key\n");
             return 1;
         }
     }
