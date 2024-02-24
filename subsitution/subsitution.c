@@ -46,7 +46,7 @@ string calculate_cipher(string key, string plain)
             int n = toupper(plain[i]) - 65;
             if (isupper(plain[i]))
             {
-                cipher[i] = key[n];
+                cipher[i] = toupper(key[n]);
             }
             else
             {
