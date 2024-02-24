@@ -15,8 +15,10 @@ int main(int argc, string argv[])
         printf("Usage: ./subsitution key\n");
         return 1;
     }
+    else
+    {
     int length = strlen(argv[1]);
-    else if(length != 26)
+    if(length != 26)
     {
         printf("Key must contain 26 distinct characters\n");
         return 1;
@@ -43,6 +45,7 @@ int main(int argc, string argv[])
             return 1;
         }
     }
+
     // prompt for plaintext
     string plaintext = get_string("plaintext:  ");
 
