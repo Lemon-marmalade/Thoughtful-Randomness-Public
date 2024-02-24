@@ -29,10 +29,8 @@ int main(int argc, string argv[])
     // prompt for plaintext
     string plaintext = get_string("plaintext:  ");
 
-    int key = atoi(argv[1]);
-
     // apply the key
-    string cipher = calculate_cipher(key, plaintext);
+    string cipher = calculate_cipher(argv[1], plaintext);
     // output ciptertext
     printf("ciphertext: %s\n", cipher);
 }
@@ -45,8 +43,8 @@ string calculate_cipher(int key, string plain)
     {
         if (isalpha(plain[i]))
         {
-            alpha[n]=key[n]
-            cipher[i] = key[n];
+          alpha[n]=toupper(plain[i]);
+          cipher[i]=key[n];
         }
     }
     return cipher;
