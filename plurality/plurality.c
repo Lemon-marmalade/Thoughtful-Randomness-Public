@@ -74,6 +74,7 @@ bool vote(string name)
             return true;
         }
     }
+    //
      return false;
 }
 
@@ -81,7 +82,7 @@ bool vote(string name)
 void print_winner(void)
 {
     // TODO
-    candidates[MAX]
-    printf("%s\n", candidate[i].name)
+    printf("%s,%i\n", candidates[0].name, candidates[0].votes);
+    //
     return;
 }
