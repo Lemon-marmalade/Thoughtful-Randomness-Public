@@ -81,6 +81,7 @@ bool vote(string name)
 void print_winner(void)
 {
     // TODO
+    candidates[MAX]
     printf("%s\n", candidate[i].name)
     return;
 }
