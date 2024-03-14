@@ -68,7 +68,10 @@ bool vote(string name)
     // TODO
     for (int i = 0; i < candidate_count; i++)
     {
-        
+        if ( name = argv[i])
+        {
+            return true;
+        }
     }
     //
     return false;
