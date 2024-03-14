@@ -91,7 +91,7 @@ void print_winner(void)
         }
         return max;
     }
-    printf("%s,%i\n", candidates[0].name, candidates[0].votes);
+    printf("%i\n", candidates[0].name, candidates[0].votes);
     //
     return;
 }
