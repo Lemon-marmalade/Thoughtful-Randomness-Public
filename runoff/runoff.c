@@ -85,7 +85,12 @@ int main(int argc, string argv[])
     while (true)
     {
         // Calculate votes given remaining candidates
-        if()
+        for (int i = 0; i < candidate_count; i++)
+        {
+            if(bool(!eliminated))
+            {
+
+        }
         //
         tabulate();
 
