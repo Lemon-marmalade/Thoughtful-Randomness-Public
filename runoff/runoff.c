@@ -87,7 +87,7 @@ int main(int argc, string argv[])
         // Calculate votes given remaining candidates
         for (int i = 0; i < candidate_count; i++)
         {
-            if(!candidate[i].eliminated)
+            if(candidate[i].eliminated = false)
             {
                 
 
