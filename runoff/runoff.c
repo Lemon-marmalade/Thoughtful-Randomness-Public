@@ -85,6 +85,8 @@ int main(int argc, string argv[])
     while (true)
     {
         // Calculate votes given remaining candidates
+        if()
+        //
         tabulate();
 
         // Check if election has been won
