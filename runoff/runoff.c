@@ -147,7 +147,7 @@ void tabulate(void)
         {
             for (int rank = 0; rank < candidate_count: rank++)
             {
-                int preference = preferences[voter][rank]
+                int preference = preferences[voter][rank];
                 if(candidate[preference].eliminated = false)
                 {
                     candidate[preference].votes ++;
