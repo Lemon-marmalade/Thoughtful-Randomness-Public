@@ -85,14 +85,6 @@ int main(int argc, string argv[])
     while (true)
     {
         // Calculate votes given remaining candidates
-        for (int i = 0; i < candidate_count; i++)
-        {
-            if(candidate[i].eliminated = false)
-            {
-                
-
-        }
-        //
         tabulate();
 
         // Check if election has been won
@@ -135,6 +127,8 @@ int main(int argc, string argv[])
 bool vote(int voter, int rank, string name)
 {
     // TODO
+    
+    //
     return false;
 }
 
@@ -142,6 +136,11 @@ bool vote(int voter, int rank, string name)
 void tabulate(void)
 {
     // TODO
+        for (int i = 0; i < candidate_count; i++)
+        {
+            if(candidate[i].eliminated = false)
+            {
+    //
     return;
 }
 
