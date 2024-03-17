@@ -171,12 +171,6 @@ bool print_winner(void)
             max = candidates[i].votes;
         }
     }
-    for (int i = 0; i < candidate_count; i++)
-    {
-        if (max == candidates[i].votes)
-        {
-            printf("%s\n", candidates[i].name);
-        }
     //
     return false;
 }
