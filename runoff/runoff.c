@@ -205,7 +205,7 @@ bool is_tie(int min)
     // TODO
     for (int a = 1; a < candidate_count; a++)
     {
-        if (strcmp(candidates[0].votes, candidates[a].votes) == true)
+        if (candidates[0].votes==candidates[a].votes)
         {
             return true;
         }
