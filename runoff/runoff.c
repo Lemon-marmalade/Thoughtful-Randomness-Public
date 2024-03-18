@@ -206,6 +206,10 @@ bool is_tie(int min)
             {
                 return true;
             }
+            else
+            {
+                return false;
+            }
         }
     }
     //
