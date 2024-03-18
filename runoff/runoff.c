@@ -1,5 +1,6 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <string.h>
 
 // Max voters and candidates
 #define MAX_VOTERS 100
@@ -129,7 +130,7 @@ bool vote(int voter, int rank, string name)
     // TODO
      for (int i = 0; i < candidate_count; i++)
      {
-        ifstrcmp(name, candidates[i].name == 0)
+        if (strcmp(name, candidates[i].name) == 0)
         {
             preferences[voter][rank] = i;
             return true;
@@ -145,12 +146,12 @@ void tabulate(void)
     // TODO
         for (int voter = 0; voter < voter_count; voter++)
         {
-            for (int rank = 0; rank < candidate_count: rank++)
+            for (int rank = 0; rank < candidate_count; rank++)
             {
                 int preference = preferences[voter][rank];
-                if(candidate[preference].eliminated = false)
+                if (candidates[preference].eliminated == false)
                 {
-                    candidate[preference].votes++;
+                    candidates[preference].votes++;
                     break;
                 }
             }
@@ -163,12 +164,12 @@ void tabulate(void)
 bool print_winner(void)
 {
     // TODO
-        int half = votercount / 2;
+        int half = voter_count / 2;
         for (int i = 0; i < candidate_count; i++)
         {
             if (candidates[i].votes > half)
             {
-                printf("%s\n", candidate[i].name);
+                printf("%s\n", candidates[i].name);
             }
         }
     //
@@ -179,6 +180,21 @@ bool print_winner(void)
 int find_min(void)
 {
     // TODO
+    int min = candidates[0].votes;
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (candidates[i].votes < min)
+        {
+            min = candidates[i].votes;
+        }
+    }
+    for (int i = 0; i < candidate_count; i++)
+    {
+        if (min == candidates[i].votes)
+        {
+            candidates[i].eliminated = true;
+        }
+    //
     return 0;
 }
 
@@ -186,6 +202,14 @@ int find_min(void)
 bool is_tie(int min)
 {
     // TODO
+    for (int a = 1; a < candidate_count; a++)
+    {
+        if (strcmp(candidates[0].votes, candidates[a].votes) == true)
+        {
+            return true;
+        }
+    }
+    //
     return false;
 }
 
