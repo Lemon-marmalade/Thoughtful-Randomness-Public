@@ -194,6 +194,7 @@ int find_min(void)
         {
             candidates[i].eliminated = true;
         }
+    }
     //
     return 0;
 }
