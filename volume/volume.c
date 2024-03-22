@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
     fread(header,HEADER_SIZE,1,input);
     fwrite(header,HEADER_SIZE,1,output);
     // TODO: Read samples from input file and write updated data to output file
-    uint16_t sample;
+    int16_t sample;
     while (fread(&sample,sizeof(int16_t),1,input))
     {
         sample *= factor;
