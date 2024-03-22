@@ -41,9 +41,8 @@ int main(int argc, char *argv[])
     uint16_t sample;
     while (fread(&sample, sizeof(sample), 1, input))
     {
-        float float_sample = (float) sample;
-        float_sample *= factor;
-        fwrite(&float_sample, sizeof(sample), 1, output);
+        sample *= factor;
+        fwrite(sample, sizeof(sample), 1, output);
     }
     // Close files
     fclose(input);
