@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
     {
         float float_sample = (float) sample;
         float_sample *= factor;
-        fwrite(&float_sample, sizeof(float_sample), 1, output);
+        fwrite(&float_sample, sizeof(sample), 1, output);
     }
     // Close files
     fclose(input);
