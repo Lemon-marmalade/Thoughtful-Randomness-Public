@@ -32,7 +32,7 @@ void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
-// recursion loop for finding if there are any cycles
+// *added* recursion loop for finding if there are any cycles
 bool cycle(int winner,int loser);
 
 int main(int argc, string argv[])
@@ -226,7 +226,7 @@ void print_winner(void)
     //
     return;
 }
-// recursive function that finds cycle by checking if the loser of a locked pair eventually 'wins' against the winner of the pair being checked
+// *added* recursive function that finds cycle by checking if the loser of a locked pair eventually 'wins' against the winner of the pair being checked
 bool cycle(int winner, int loser)
 {
     if (loser == winner)
