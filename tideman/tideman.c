@@ -206,7 +206,6 @@ void lock_pairs(void)
 void print_winner(void)
 {
     // TODO
-    // if pairs[i][j] is locked, check if a pair of [a][i] is locked for any candidate number a
     for (int i = 0; i < candidate_count; i++)
         {
             bool won = true;
