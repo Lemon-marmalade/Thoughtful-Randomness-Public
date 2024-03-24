@@ -141,8 +141,10 @@ void add_pairs(void)
         {
             if (preferences[i][j] != 0)
             {
+                
                 pair_count++;
             }
+        }
     //
     return;
 }
