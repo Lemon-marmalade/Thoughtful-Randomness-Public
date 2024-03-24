@@ -200,14 +200,15 @@ void lock_pairs(void)
             {
                 if (locked[loser][a] == true)
                 {
+                    if (loser == winner)
+                    {
+                    cycle = true;
+                    break;
+                    }
                 loser = a;
                 }
             }
-            if (loser == winner)
-            {
-                cycle = true;
-                break;
-            }
+
         }
 
         if (!cycle)
