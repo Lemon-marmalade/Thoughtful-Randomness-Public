@@ -145,8 +145,8 @@ void add_pairs(void)
             }
             else if (margin < 0)
             {
-                pairs[pair_count].winner= i;
-                pairs[pair_count].loser = j;
+                pairs[pair_count].winner= j;
+                pairs[pair_count].loser = i;
                 pair_count++;
             }
         }
