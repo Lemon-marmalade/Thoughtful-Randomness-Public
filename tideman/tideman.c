@@ -210,6 +210,7 @@ void lock_pairs(void)
                 }
             }
         }
+        
         if (cycle == false)
         {
             locked[winner][loser] = true;
