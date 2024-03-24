@@ -232,12 +232,16 @@ void print_winner(void)
     for (int i = 0; i < candidate_count; i++)
         {
             bool won = true;
-            for (int j = 0; a < candidate_count; a++)
+            for (int j = 0; j < candidate_count; j++)
             {
                 if (locked[j][i]==true)
                 {
                     won = false;
                     break;
+                }
+                if (won == true)
+                {
+                    printf("%s\n", candidates[i]);
                 }
             }
         }
