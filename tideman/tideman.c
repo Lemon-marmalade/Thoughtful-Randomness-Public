@@ -216,12 +216,11 @@ void print_winner(void)
                 won = false;
                 break;
             }
-            if (won == true)
-            {
-                printf("%s\n", candidates[i]);
-            }
         }
-
+        if (won == true)
+        {
+            printf("%s\n", candidates[i]);
+        }
     }
     //
     return;
