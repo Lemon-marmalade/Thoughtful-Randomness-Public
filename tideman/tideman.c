@@ -199,11 +199,15 @@ void lock_pairs(void)
         {
             if (locked[loser][loser_loser] == true)
             {
-                loser = loser_loser;
-                if (loser == winner)
+                int tmp = loser_loser;
+                if (loser_loser == winner)
                 {
                 cycle = true;
                 break;
+                }
+                else
+                {
+                    loser = tmp;
                 }
             }
         }
