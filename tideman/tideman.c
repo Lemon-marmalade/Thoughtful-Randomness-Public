@@ -171,6 +171,7 @@ void sort_pairs(void)
                 pair tmp = pairs [i];
                 pairs[i] = pairs [j];
                 pairs[j] = tmp;
+                swapped++;
             }
         }
     }
