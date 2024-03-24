@@ -202,6 +202,7 @@ void lock_pairs(void)
                 if (loser_loser == winner)
                 {
                 cycle = true;
+                break;
                 }
                 else
                 {
