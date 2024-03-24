@@ -174,6 +174,7 @@ void sort_pairs(void)
                 swapped++;
             }
         }
+        if (swapped == 0)
     }
     //
     return;
