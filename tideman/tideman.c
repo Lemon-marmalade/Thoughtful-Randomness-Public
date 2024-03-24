@@ -196,22 +196,24 @@ void lock_pairs(void)
     {
         bool cycle(int winner, int loser)
         {
-            if (loser = winner)
+            if (loser == winner)
             {
                 cycle = true;
             }
-            
+            for (int a = 0; a < candidate_count; a++)
+            {
+                if (locked[loser][a] == true)
+                cycle(winner,a)
+            }
         }
 
-
-
-        if (!cycle)
+        if (!cycle(pairs[i].winner,pairs[i].loser))
         {
             locked[pairs[i].winner][pairs[i].loser] = true;
         }
         else
         {
-            locked[pairs[i].winner][pairs[i].loser] = true;
+            locked[pairs[i].winner][pairs[i].loser] = false;
         }
     }
     //
