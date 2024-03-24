@@ -207,6 +207,7 @@ void lock_pairs(void)
             if (loser == winner)
             {
                 cycle = true;
+                break;
             }
         }
 
@@ -227,7 +228,7 @@ void lock_pairs(void)
 void print_winner(void)
 {
     // TODO
-    
+
     //
     return;
 }
