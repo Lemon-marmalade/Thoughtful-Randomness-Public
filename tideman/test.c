@@ -8,14 +8,7 @@ int main(void)
     x = y;
     for (int i = 0; i < 3; i++)
         {
-            if (locked[loser][loser_loser] == true)
-            {
-                loser = loser_loser;
-                if (loser == winner)
-                {
-                cycle = true;
-                break;
-                }
+                x = i;
             }
         }
     printf("%i,%i",x,y);
