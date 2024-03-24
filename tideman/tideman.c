@@ -189,22 +189,22 @@ void sort_pairs(void)
 void lock_pairs(void)
 {
     // TODO
-    for (int i = 0; i < pair_count; i++)
+    for (int a = 0; a < pair_count; i++)
     {
-        int winner = pairs[i].winner;
-        int loser = pairs[i].loser;
+        int winner = pairs[a].winner;
+        int loser = pairs[a].loser;
         bool cycle = false;
 
-        for (int a = 0; a < candidate_count; a++)
+        for (int b = 0; b < candidate_count; b++)
         {
-            if (locked[loser][a] == true)
+            if (locked[loser][b] == true)
             {
                 if (loser == winner)
                 {
                 cycle = true;
                 break;
                 }
-            loser = a;
+            loser = b;
             }
         }
 
