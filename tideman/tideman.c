@@ -204,10 +204,12 @@ void lock_pairs(void)
                 cycle = true;
                 break;
                 }
-            loser = loser_loser;
+                else
+                {
+                    loser = loser_loser;
+                }
             }
         }
-
         if (cycle == false)
         {
             locked[winner][loser] = true;
