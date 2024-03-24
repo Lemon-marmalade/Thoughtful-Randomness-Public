@@ -152,6 +152,7 @@ void add_pairs(void)
                 pair_count++;
             }
         }
+    }
     //
     return;
 }
@@ -160,6 +161,7 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     // TODO
+    //
     return;
 }
 
