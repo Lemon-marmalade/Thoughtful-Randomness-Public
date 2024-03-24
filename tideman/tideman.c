@@ -234,7 +234,10 @@ void print_winner(void)
             for (int a = 0; a < candidate_count; a++)
             {
                 bool yes_pair;
-                
+                for (int b = 0; b < pair_count; b++)
+                {
+                    if (pairs[i] == pairs[b])
+                }
             }
         }
     //
