@@ -32,6 +32,8 @@ void add_pairs(void);
 void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
+// recursion loop for finding if there are any cycles
+bool cycle(int winner,int loser);
 
 int main(int argc, string argv[])
 {
@@ -191,9 +193,9 @@ void lock_pairs(void)
     // TODO
     for (int a = 0; a < pair_count; a++)
     {
-        if (!cycle(pairs[i].winner,pairs[i].loser))
+        if (!cycle(pairs[a].winner,pairs[a].loser))
         {
-            locked[winner][loser] = true;
+            locked[pairs[a].winner][pairs[a].loser] = true;
         }
     }
     //
@@ -210,7 +212,7 @@ void print_winner(void)
             bool won = true;
             for (int j = 0; j < candidate_count; j++)
             {
-                if (locked[j][i]==true)
+                if (locked[j][i])
                 {
                     won = false;
                     break;
@@ -224,17 +226,21 @@ void print_winner(void)
     //
     return;
 }
+// recursive function that finds cycle by checking if the loser of a locked pair eventually 'wins' against the winner of the pair being checked
 bool cycle(int winner, int loser)
 {
     if (loser == winner)
     {
         return true;
     }
-    for (int j = 0, j < candidate_count; j++)
+    for (int j = 0; j < candidate_count; j++)
     {
         if (locked[loser][j])
         {
-            cycle(winner,j);
+            if (cycle(winner,j))
+            {
+                return true;
+            }
         }
     }
 }
