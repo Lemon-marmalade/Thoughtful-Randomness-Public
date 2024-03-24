@@ -168,7 +168,9 @@ void sort_pairs(void)
         {
             if (pairs[i].winner < pairs[j].winner)
             {
-                
+                pair tmp = pairs [i];
+                pairs[i] = pairs [j];
+                pairs[j] = tmp;
             }
         }
     }
