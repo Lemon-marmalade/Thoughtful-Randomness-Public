@@ -199,7 +199,7 @@ void lock_pairs(void)
         {
             if (locked[loser][loser_loser] == true)
             {
-                if (loser == winner)
+                if (loser_loser == winner)
                 {
                 cycle = true;
                 break;
