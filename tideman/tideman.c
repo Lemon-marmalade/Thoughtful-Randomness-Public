@@ -164,10 +164,10 @@ void sort_pairs(void)
         int swapped = 0;
         for (int i = 0; i < pair_count - 1; i++)
         {
-
+            int strength = preferences[pairs[i].winner][pairs[i].loser] - preferences[pairs[j].winner][pairs[j].loser]
             for (int j = i + 1; j < pair_count; j++)
             {
-                if (pairs[i].winner < pairs[j].winner)
+                if (pairs[i].winner - pairs[i].loser < pairs[j].winner)
                 {
                     pair tmp = pairs [i];
                     pairs[i] = pairs [j];
