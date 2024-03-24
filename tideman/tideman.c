@@ -243,4 +243,5 @@ bool cycle(int winner, int loser)
             }
         }
     }
+    return false;
 }
