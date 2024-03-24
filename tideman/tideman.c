@@ -228,7 +228,13 @@ void lock_pairs(void)
 void print_winner(void)
 {
     // TODO
+    for (int i = 0; i < lockedpairs - 1; i++)
+        {
 
+            for (int j = i + 1; j < pair_count; j++)
+            {
+            }
+        }
     //
     return;
 }
