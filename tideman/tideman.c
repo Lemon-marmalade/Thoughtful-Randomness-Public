@@ -161,27 +161,29 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     // TODO
-    while()
-    int swapped = 0;
-    for (int i = 0; i < pair_count - 1; i++)
+    for(;;)
     {
-
-        for (int j = i + 1; j < pair_count; j++)
+        int swapped = 0;
+        for (int i = 0; i < pair_count - 1; i++)
         {
-            if (pairs[i].winner < pairs[j].winner)
+
+            for (int j = i + 1; j < pair_count; j++)
             {
-                pair tmp = pairs [i];
-                pairs[i] = pairs [j];
-                pairs[j] = tmp;
-                swapped++;
+                if (pairs[i].winner < pairs[j].winner)
+                {
+                    pair tmp = pairs [i];
+                    pairs[i] = pairs [j];
+                    pairs[j] = tmp;
+                    swapped++;
+                }
             }
-        }
 
-    }
-        if (swapped == 0)
-        {
-            break;
         }
+            if (swapped == 0)
+            {
+             break;
+            }
+    }
     //
     return;
 }
