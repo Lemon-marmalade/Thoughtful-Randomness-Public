@@ -207,21 +207,22 @@ void print_winner(void)
 {
     // TODO
     for (int i = 0; i < candidate_count; i++)
+    {
+        bool won = true;
+        for (int j = 0; j < candidate_count; j++)
         {
-            bool won = true;
-            for (int j = 0; j < candidate_count; j++)
+            if (locked[j][i])
             {
-                if (locked[j][i])
-                {
-                    won = false;
-                    break;
-                }
-                if (won == true)
-                {
-                    printf("%s\n", candidates[i]);
-                }
+                won = false;
+                break;
+            }
+            if (won == true)
+            {
+                printf("%s\n", candidates[i]);
             }
         }
+
+    }
     //
     return;
 }
