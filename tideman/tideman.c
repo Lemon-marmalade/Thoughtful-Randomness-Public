@@ -161,11 +161,11 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     // TODO
-    for (int i = 0; i < pair_count; i++)
+    for (int i = 0; i < pair_count - 1; i++)
     {
         for (int j = i + 1; j < pair_count; j++)
         {
-            if 
+            if (pairs[i].winner > pairs)
         }
     }
     //
