@@ -193,7 +193,7 @@ void lock_pairs(void)
     {
         int winner = pairs[i].winner;
         int loser = pairs[i].loser;
-        bool cycle;
+        bool cycle = false;
         for (;;)
         {
             for (int a = 0; a < candidate_count; a++)
