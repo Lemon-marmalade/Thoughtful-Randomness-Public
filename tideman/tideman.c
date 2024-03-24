@@ -195,16 +195,16 @@ void lock_pairs(void)
         int loser = pairs[a].loser;
         bool cycle = false;
 
-        for (int b = 0; b < candidate_count; b++)
+        for (int loser_loser = 0; loser_loser < candidate_count; loser_loser++)
         {
-            if (locked[loser][b] == true)
+            if (locked[loser][loser_loser] == true)
             {
-                if (b == winner)
+                if (loser == winner)
                 {
                 cycle = true;
                 break;
                 }
-            loser = b;
+            loser = loser_loser;
             }
         }
 
