@@ -203,7 +203,7 @@ void lock_pairs(void)
             for (int a = 0; a < candidate_count; a++)
             {
                 if (locked[loser][a] == true)
-                cycle(winner,a)
+                cycle(winner,a);
             }
         }
 
