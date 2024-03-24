@@ -33,7 +33,7 @@ void sort_pairs(void);
 void lock_pairs(void);
 void print_winner(void);
 // *added* recursion loop for finding if there are any cycles
-bool cycle(int winner,int loser);
+bool cycle(int winner, int loser);
 
 int main(int argc, string argv[])
 {
@@ -104,7 +104,7 @@ bool vote(int rank, string name, int ranks[])
     // TODO
     for (int i = 0; i < candidate_count; i++)
     {
-        if (strcmp(name,candidates[i]) == 0)
+        if (strcmp(name, candidates[i]) == 0)
         {
             ranks[rank] = i;
             return true;
@@ -118,7 +118,7 @@ bool vote(int rank, string name, int ranks[])
 void record_preferences(int ranks[])
 {
     // TODO
-    for (int i = 0; i < candidate_count-1; i++)
+    for (int i = 0; i < candidate_count - 1; i++)
     {
         for (int j = i + 1; j < candidate_count; j++)
         {
@@ -141,13 +141,13 @@ void add_pairs(void)
             margin = preferences[i][j] - preferences[j][i];
             if (margin > 0)
             {
-                pairs[pair_count].winner= i;
+                pairs[pair_count].winner = i;
                 pairs[pair_count].loser = j;
                 pair_count++;
             }
             else if (margin < 0)
             {
-                pairs[pair_count].winner= j;
+                pairs[pair_count].winner = j;
                 pairs[pair_count].loser = i;
                 pair_count++;
             }
@@ -161,27 +161,27 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     // TODO
-    for(;;)
+    for (;;)
     {
         int swapped = 0;
         for (int i = 0; i < pair_count - 1; i++)
         {
             for (int j = i + 1; j < pair_count; j++)
             {
-                if (preferences[pairs[i].winner][pairs[i].loser] < preferences[pairs[j].winner][pairs[j].loser])
+                if (preferences[pairs[i].winner][pairs[i].loser] <
+                    preferences[pairs[j].winner][pairs[j].loser])
                 {
-                    pair tmp = pairs [i];
-                    pairs[i] = pairs [j];
+                    pair tmp = pairs[i];
+                    pairs[i] = pairs[j];
                     pairs[j] = tmp;
                     swapped++;
                 }
             }
-
         }
-            if (swapped == 0)
-            {
-             break;
-            }
+        if (swapped == 0)
+        {
+            break;
+        }
     }
     //
     return;
@@ -193,7 +193,7 @@ void lock_pairs(void)
     // TODO
     for (int a = 0; a < pair_count; a++)
     {
-        if (!cycle(pairs[a].winner,pairs[a].loser))
+        if (!cycle(pairs[a].winner, pairs[a].loser))
         {
             locked[pairs[a].winner][pairs[a].loser] = true;
         }
@@ -225,7 +225,8 @@ void print_winner(void)
     //
     return;
 }
-// *added* recursive function that finds cycle by checking if the loser of a locked pair eventually 'wins' against the winner of the pair being checked
+// *added* recursive function that finds cycle by checking if the loser of a locked pair eventually
+// 'wins' against the winner of the pair being checked
 bool cycle(int winner, int loser)
 {
     if (loser == winner)
@@ -236,7 +237,7 @@ bool cycle(int winner, int loser)
     {
         if (locked[loser][j])
         {
-            if (cycle(winner,j))
+            if (cycle(winner, j))
             {
                 return true;
             }
