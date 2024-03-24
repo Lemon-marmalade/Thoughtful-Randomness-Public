@@ -199,7 +199,9 @@ void lock_pairs(void)
             for (int a = 0; a < candidate_count; a++)
             {
                 if (locked[loser][a] == true)
+                {
                 loser = a;
+                }
             }
             if (loser == winner)
             {
