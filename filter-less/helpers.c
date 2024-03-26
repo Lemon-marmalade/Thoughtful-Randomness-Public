@@ -89,12 +89,20 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int b = (j - 1); b <= (j + 1); b++)
                 {
-                    sumRed += copy[a][b].rgbtRed;
-                    sumGreen += copy[a][b].rgbtGreen;
-                    sumBlue += copy[a][b].rgbtBlue;
-                    counter++
+                    // only add the values from copy if there is a pixel
+                    if (a >= 0 && a <= (height-1) && b >=0 && b <= (width-1))
+                    {
+                        sumRed += copy[a][b].rgbtRed;
+                        sumGreen += copy[a][b].rgbtGreen;
+                        sumBlue += copy[a][b].rgbtBlue;
+                        // increment counter for instances pixels were actually added
+                        counter++
+                    }
                 }
             }
+            image[i][j].rgbtRed = round(sumRed/counter);
+            image[i][j].rgbtGreen = round(sumGreen/counter);
+            image[i][j].rgbtBlue = round(sumBlue/counter);
         }
     }
     return;
