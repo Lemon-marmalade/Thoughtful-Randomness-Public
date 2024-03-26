@@ -37,11 +37,49 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
+     // Create a copy of image
+    RGBTRIPLE copy[height][width];
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            copy[i][j] = image[i][j];
+        }
+    }
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            int counter = 0;
+            int sumRed, sumGreen, sumBlue;
+            sumRed = sumGreen = sumBlue = 0;
+            // for each pixel, sum up all the surrounding rgb values in 3 by 3 manner
+            for (int a = (i - 1); a <= (i + 1); a++)
+            {
+                for (int b = (j - 1); b <= (j + 1); b++)
+                {
+                    // only add the values from copy if there is a pixel
+                    if (a >= 0 && a <= (height - 1) && b >= 0 && b <= (width - 1))
+                    {
+                        sumRed += copy[a][b].rgbtRed;
+                        sumGreen += copy[a][b].rgbtGreen;
+                        sumBlue += copy[a][b].rgbtBlue;
+                        // increment counter for instances pixels were actually added
+                        counter++;
+                    }
+                }
+            }
+            image[i][j].rgbtRed = round((float) sumRed / (float) counter);
+            image[i][j].rgbtGreen = round((float) sumGreen / (float) counter);
+            image[i][j].rgbtBlue = round((float) sumBlue / (float) counter);
+        }
+    }
     return;
 }
 
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
+    
     return;
 }
