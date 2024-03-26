@@ -5,18 +5,6 @@
 int fit_limit(int sepia);
 
 // Convert image to grayscale
-void grayscale(int height, int width, RGBTRIPLE image[height][width]);
-
-// Convert image to sepia
-void sepia(int height, int width, RGBTRIPLE image[height][width]);
-
-// Reflect image horizontally
-void reflect(int height, int width, RGBTRIPLE image[height][width]);
-
-// Blur image
-void blur(int height, int width, RGBTRIPLE image[height][width]);
-
-
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
     //loop over each pixelt
@@ -30,7 +18,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 }
-
+// Convert image to sepia
 void sepia(int height, int width, RGBTRIPLE image[height][width])
 {
     // loop over each pixels
@@ -57,6 +45,12 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 }
+// Reflect image horizontally
+void reflect(int height, int width, RGBTRIPLE image[height][width])
+
+// Blur image
+void blur(int height, int width, RGBTRIPLE image[height][width])
+
 
 int fit_limit(int sepia)
 {
