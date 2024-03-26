@@ -43,9 +43,9 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             int originalGreen = image[i][j].rgbtGreen;
             int originalBlue = image[i][j].rgbtBlue;
 
-            int sepiaRed = round(.393 * originalRed + .769 * originalGreen + .189 * originalBlue)
-            int sepiaGreen = round(.349 * originalRed + .686 * originalGreen + .168 * originalBlue)
-            int sepiaBlue = round(.272 * originalRed + .534 * originalGreen + .131 * originalBlue)
+            int sepiaRed = round(.393 * originalRed + .769 * originalGreen + .189 * originalBlue);
+            int sepiaGreen = round(.349 * originalRed + .686 * originalGreen + .168 * originalBlue);
+            int sepiaBlue = round(.272 * originalRed + .534 * originalGreen + .131 * originalBlue);
 
             fit_limit(sepiaRed);
             fit_limit(sepiaGreen);
