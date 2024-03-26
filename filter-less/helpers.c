@@ -29,9 +29,9 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; j++)
         {
             // compute sepia values, and update those values
-            int originalRed = image[i][j].rgbtRed;
-            int originalGreen = image[i][j].rgbtGreen;
-            int originalBlue = image[i][j].rgbtBlue;
+            float originalRed = image[i][j].rgbtRed;
+            float originalGreen = image[i][j].rgbtGreen;
+            float originalBlue = image[i][j].rgbtBlue;
 
             int sepiaRed = round(.393 * originalRed + .769 * originalGreen + .189 * originalBlue);
             int sepiaGreen = round(.349 * originalRed + .686 * originalGreen + .168 * originalBlue);
@@ -101,9 +101,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
             }
-            image[i][j].rgbtRed = round(sumRed/counter);
-            image[i][j].rgbtGreen = round(sumGreen/counter);
-            image[i][j].rgbtBlue = round(sumBlue/counter);
+            image[i][j].rgbtRed = round((float)sumRed/(float)counter);
+            image[i][j].rgbtGreen = round((float)sumGreen/(float)counter);
+            image[i][j].rgbtBlue = round((float)sumBlue/(float)counter);
         }
     }
     return;
