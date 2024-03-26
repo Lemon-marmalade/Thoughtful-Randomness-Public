@@ -46,10 +46,10 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
     }
 }
 // Reflect image horizontally
-void reflect(int height, int width, RGBTRIPLE image[height][width])
+void reflect(int height, int width, RGBTRIPLE image[height][width]);
 
 // Blur image
-void blur(int height, int width, RGBTRIPLE image[height][width])
+void blur(int height, int width, RGBTRIPLE image[height][width]);
 
 
 int fit_limit(int sepia)
@@ -58,5 +58,5 @@ int fit_limit(int sepia)
     {
         sepia = 255;
     }
-    return;
+    return sepia;
 }
