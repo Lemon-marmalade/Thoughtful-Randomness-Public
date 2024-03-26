@@ -1,19 +1,17 @@
 #include "helpers.h"
 #include <math.h>
 
-// added to help sepia
-int fit_limit(int sepia);
-
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
-    //loop over each pixelt
+    // loop over each pixelt
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
         {
-            //take average of hexadecimal value, and update pixel values to that average
-            int average = round((image[i][j].rgbtRed + image[i][j].rgbtGreen + image[i][j].rgbtBlue)/3.0);
+            // take average of hexadecimal value, and update pixel values to that average
+            int average =
+                round((image[i][j].rgbtRed + image[i][j].rgbtGreen + image[i][j].rgbtBlue) / 3.0);
             image[i][j].rgbtRed = image[i][j].rgbtGreen = image[i][j].rgbtBlue = average;
         }
     }
@@ -37,9 +35,18 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             int sepiaGreen = round(.349 * originalRed + .686 * originalGreen + .168 * originalBlue);
             int sepiaBlue = round(.272 * originalRed + .534 * originalGreen + .131 * originalBlue);
 
-            fit_limit(sepiaRed);
-            fit_limit(sepiaGreen);
-            fit_limit(sepiaBlue);
+            if (sepiaRed > 255)
+            {
+                sepiaRed = 255;
+            }
+            if (sepiaGreen > 255)
+            {
+                sepiaGreen = 255;
+            }
+            if (sepiaBlue > 255)
+            {
+                sepiaBlue = 255;
+            }
 
             image[i][j].rgbtRed = sepiaRed;
             image[i][j].rgbtGreen = sepiaGreen;
@@ -55,7 +62,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     // loop over all pixels
     for (int i = 0; i < height; i++)
     {
-        for (int j = 0; j < (width/2); j++)
+        for (int j = 0; j < (width / 2); j++)
         {
             // swap pixels
             RGBTRIPLE tmp = image[i][j];
@@ -91,7 +98,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 for (int b = (j - 1); b <= (j + 1); b++)
                 {
                     // only add the values from copy if there is a pixel
-                    if (a >= 0 && a <= (height-1) && b >=0 && b <= (width-1))
+                    if (a >= 0 && a <= (height - 1) && b >= 0 && b <= (width - 1))
                     {
                         sumRed += copy[a][b].rgbtRed;
                         sumGreen += copy[a][b].rgbtGreen;
@@ -101,19 +108,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
             }
-            image[i][j].rgbtRed = round((float)sumRed/(float)counter);
-            image[i][j].rgbtGreen = round((float)sumGreen/(float)counter);
-            image[i][j].rgbtBlue = round((float)sumBlue/(float)counter);
+            image[i][j].rgbtRed = round((float) sumRed / (float) counter);
+            image[i][j].rgbtGreen = round((float) sumGreen / (float) counter);
+            image[i][j].rgbtBlue = round((float) sumBlue / (float) counter);
         }
     }
     return;
-}
-
-int fit_limit(int sepia)
-{
-    if (sepia > 255)
-    {
-        sepia = 255;
-    }
-    return sepia;
 }
