@@ -1,6 +1,8 @@
 #include "bmp.h"
 #include <math.h>
 
+int fit_limit(int sepia);
+
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width]);
 {
@@ -32,10 +34,13 @@ void sepia(int height, int width, RGBTRIPLE image[height][width]);
             int sepiaGreen = round(.349 * originalRed + .686 * originalGreen + .168 * originalBlue)
             int sepiaBlue = round(.272 * originalRed + .534 * originalGreen + .131 * originalBlue)
 
-            if (sepiaRed > 255)
-            {
-                image[i][j].rgbtRed = 255;
-            }
+            fit_limit(sepiaRed);
+            fit_limit(sepiaGreen);
+            fit_limit(sepiaBlue);
+
+            image[i][j].rgbtRed = sepiaRed;
+            image[i][j].rgbtGreen = sepiaGreen;
+            image[i][j].rgbtBlue = sepiaBlue;
         }
     }
 }
@@ -45,3 +50,12 @@ void reflect(int height, int width, RGBTRIPLE image[height][width]);
 
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width]);
+
+int fit_limit(int sepia)
+{
+    if (sepia > 255)
+    {
+        sepia = 255;
+    }
+    return;
+}
