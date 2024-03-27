@@ -111,6 +111,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 }
             }
             // multiply by Gx
+            copy[i-1][j-1]rgbt.Red
 
         }
     }
