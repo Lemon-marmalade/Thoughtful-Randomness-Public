@@ -97,10 +97,10 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            RGBTRIPLE grid[3][3] = {{copy[][],0,1},{-2,0,2},{-1,0,1}}
-            int counter = 0;
             int GxRed, GxGreen, GxBlue;
+            GxRed = GxGreen = GxBlue = 0;
             int GyRed, GyGreen, GyBlue;
+            GyRed = GyGreen = GyBlue = 0;
 
             // loop for 3x3 grid (modified to more easily link array of kernels)
             for (int a = 0; a < 3; a++)
@@ -110,22 +110,14 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     // if pixel exceeds boundaries, disregard pixels that are outside image
                     if ((i - 1 + a) > 0 && (i - 1 + a) <= (height - 1) && (j - 1 + a) >= 0 && (j - 1 + a) <= (width - 1))
                     {
-                        GxRed = copy[a][b].rgbtRed * Gx[a][b];
-                        GxGreen = copy[a][b].rgbtGreen * Gx[a][b];
-                        GxBlue = copy[a][b].rgbtBlue * Gx[a][b];
+                        GxRed = GxRed + image[a][b].rgbtRed * Gx[a][b];
+                        GxGreen = GxGreen + image[a][b].rgbtGreen * Gx[a][b];
+                        GxBlue = GxBlue + image[a][b].rgbtBlue * Gx[a][b];
 
-                        GyRed = copy[a][b].rgbtRed * Gy[a][b];
-                        GyGreen = copy[a][b].rgbtGreen * Gy[a][b];
-                        GyBlue = copy[a][b].rgbtBlue * Gy[a][b];
+                        GyRed = GyRed + image[a][b].rgbtRed * Gy[a][b];
+                        GyGreen = GyGreen + image[a][b].rgbtGreen * Gy[a][b];
+                        GyBlue = GyBlue + image[a][b].rgbtBlue * Gy[a][b];
                     }
-                    else
-                    {
-                        GxRed = GxGreen = GxBlue = 0;
-                        GyRed = GyGreen = GyBlue = 0;
-                    }
-                    image[i - 1 + a][j - 1 + a].rgbtRed = GxRed;
-                    image[i - 1 + a][j - 1 + a].rgbtGreen = GxGreen;
-                    image[i - 1 + a][j - 1 + a].rgbtRed = GxBlue;
                 }
             }
             // multiply by Gx
