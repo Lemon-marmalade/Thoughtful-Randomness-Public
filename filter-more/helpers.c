@@ -108,16 +108,18 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             {
                 for (int b = 0 - 1; b < 3; b++)
                 {
+                    int c = i - 1 + a;
+                    int d = j - 1 + a;
                     // if pixel exceeds boundaries, disregard pixels that are outside image
-                    if ((i - 1 + a) >= 0 && (i - 1 + a) <= (height - 1) && (j - 1 + a) >= 0 && (j - 1 + a) <= (width - 1))
+                    if (c >= 0 && c <= (height - 1) && d >= 0 && d <= (width - 1))
                     {
-                        GxRed = GxRed + copy[a][b].rgbtRed * Gx[a][b];
-                        GxGreen = GxGreen + copy[a][b].rgbtGreen * Gx[a][b];
-                        GxBlue = GxBlue + copy[a][b].rgbtBlue * Gx[a][b];
+                        GxRed = GxRed + copy[c][d].rgbtRed * Gx[c][d];
+                        GxGreen = GxGreen + copy[c][d].rgbtGreen * Gx[c][d];
+                        GxBlue = GxBlue + copy[c][d].rgbtBlue * Gx[c][d];
 
-                        GyRed = GyRed + copy[a][b].rgbtRed * Gy[a][b];
-                        GyGreen = GyGreen + copy[a][b].rgbtGreen * Gy[a][b];
-                        GyBlue = GyBlue + copy[a][b].rgbtBlue * Gy[a][b];
+                        GyRed = GyRed + copy[c][d].rgbtRed * Gy[c][d];
+                        GyGreen = GyGreen + copy[c][d].rgbtGreen * Gy[c][d];
+                        GyBlue = GyBlue + copy[c][d].rgbtBlue * Gy[c][d];
                     }
                 }
                 // calculate square root of Gx^2+Gy^2
