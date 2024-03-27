@@ -85,7 +85,18 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-
+            // loop for 3x3 grid
+            for (int a = (i - 1); a <= (i + 1); a++)
+            {
+                for (int b = (j - 1); b <= (j + 1); b++)
+                {
+                    // if pixel exceeds boundaries, values as zero
+                    if (a >= 0 && a <= (height - 1) && b >= 0 && b <= (width - 1))
+                    {
+                        
+                    }
+                }
+            }
         }
     }
     return;
