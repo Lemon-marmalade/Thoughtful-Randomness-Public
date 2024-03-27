@@ -118,6 +118,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         GyRed = GyRed + copy[a][b].rgbtRed * Gy[a][b];
                         GyGreen = GyGreen + copy[a][b].rgbtGreen * Gy[a][b];
                         GyBlue = GyBlue + copy[a][b].rgbtBlue * Gy[a][b];
+                    }
                 }
                 // calculate square root of Gx^2+Gy^2
                 int SobelRed = round(sqrt(pow(GxRed,2)+pow(GyRed,2)));
