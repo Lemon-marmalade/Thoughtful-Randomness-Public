@@ -102,10 +102,11 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     // if pixel exceeds boundaries, values as zero
                     if (a >= 0 && a <= (height - 1) && b >= 0 && b <= (width - 1))
                     {
-                        copy[a][b] = 0;
+                        copy[a][b].rbgtRed = copy[a][b].rbgtGreen = copy[a][b].rbgtBlue = 0;
                     }
                 }
             }
+            // multiply by kernels
         }
     }
     return;
