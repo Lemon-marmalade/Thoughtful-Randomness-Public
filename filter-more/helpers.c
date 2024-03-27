@@ -108,7 +108,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 for (int b = 0; b < 3; b++)
                 {
                     // if pixel exceeds boundaries, disregard pixels that are outside image
-                    if ((i - 1 + x) > 0 && (i - 1 + x) <= (height - 1) && b >= 0 && b <= (width - 1))
+                    if ((i - 1 + x) > 0 && (i - 1 + x) <= (height - 1) && (j - 1 + x) >= 0 && (j - 1 + x) <= (width - 1))
                     {
                         copy[a][b].rbgtRed = copy[a][b].rbgtGreen = copy[a][b].rbgtBlue = 0;
                     }
