@@ -98,8 +98,6 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; j++)
         {
             // copy for reference without manipulating final product
-
-
             int GxRed, GxGreen, GxBlue, GyRed, GyGreen, GyBlue;
             GxRed = GxGreen = GxBlue = GyRed = GyGreen = GyBlue = 0;
 
