@@ -126,9 +126,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             // array of sobel values of RGB
             int SobelRGB[3];
             // calculate square root of Gx^2+Gy^2
-            SobelRGB[0] = round(sqrt(pow((double)GxRed, 2) + pow((double)GyRed, 2)));
-            SobelRGB[1] = round(sqrt(pow((double)GxGreen, 2) + pow((double)GyGreen, 2)));
-            SobelRGB[2] = round(sqrt(pow((double)GxBlue, 2) + pow((double)GyBlue, 2)));
+            SobelRGB[0] = round(sqrt(pow((float)GxRed, 2) + pow((float)GyRed, 2)));
+            SobelRGB[1] = round(sqrt(pow((float)GxGreen, 2) + pow((float)GyGreen, 2)));
+            SobelRGB[2] = round(sqrt(pow((float)GxBlue, 2) + pow((float)GyBlue, 2)));
 
             // deal with values exceeding 255
             for (int k = 0; k < 3; k++)
