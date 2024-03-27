@@ -60,7 +60,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 for (int b = (j - 1); b <= (j + 1); b++)
                 {
                     // only add the values from copy if there is a pixel
-                    if (a >= 0 && a <= (height - 1) && b >= 0 && b <= (width - 1))
+                    if (a >= 0 && a < height && b >= 0 && b < width)
                     {
                         sumRed += copy[a][b].rgbtRed;
                         sumGreen += copy[a][b].rgbtGreen;
