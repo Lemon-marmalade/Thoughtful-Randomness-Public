@@ -99,25 +99,31 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         {
             RGBTRIPLE grid[3][3] = {{copy[][],0,1},{-2,0,2},{-1,0,1}}
             int counter = 0;
-            int sumRed, sumGreen, sumBlue;
-            sumRed = sumGreen = sumBlue = 0;
+            int GxRed, GxGreen, GxBlue;
+            int GyRed, GyGreen, GyBlue;
 
-            // loop for 3x3 grid
-            for (int a = i - 1; a <= i + 1; a++)
+            // loop for 3x3 grid (modified to more easily link array of kernels)
+            for (int a = 0; a < 3; a++)
             {
-                for (int b = j - 1; b < j + 1; b++)
+                for (int b = 0 - 1; b < 3; b++)
                 {
                     // if pixel exceeds boundaries, disregard pixels that are outside image
-                    if (a > 0 && a <= (height - 1) && b >= 0 && b <= (width - 1))
+                    if ((i - 1 + a) > 0 && (i - 1 + a) <= (height - 1) && (j - 1 + a) >= 0 && (j - 1 + a) <= (width - 1))
                     {
-                        for (int x = 0; x < 3; x++)
-                        {
-                            for (int y = 0; y < 3; y++)
-                            {
-                                int GxRed = copy[a][b].rgbtRed * Gx[x][y]
-                            }
-                        }
+                        GxRed = copy[a][b].rgbtRed * Gx[a][b];
+                        GxGreen = copy[a][b].rgbtGreen * Gx[a][b];
+                        GxBlue = copy[a][b].rgbtBlue * Gx[a][b];
+
+                        GyRed = copy[a][b].rgbtRed * Gy[a][b];
+                        GyGreen = copy[a][b].rgbtGreen * Gy[a][b];
+                        GyBlue = copy[a][b].rgbtBlue * Gy[a][b];
                     }
+                    else
+                    {
+                        GxRed = GxGreen = GxBlue = 0;
+                        GyRed = GyGreen = GyBlue = 0;
+                    }
+                    
                 }
             }
             // multiply by Gx
