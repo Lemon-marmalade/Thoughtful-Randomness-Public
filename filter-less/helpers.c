@@ -31,11 +31,11 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             float originalGreen = image[i][j].rgbtGreen;
             float originalBlue = image[i][j].rgbtBlue;
 
-            int sepiaRGB[3]; // array of sepia RBG 
+            int sepiaRGB[3]; // array of sepia RBG
 
-            int sepiaRGB[0] = round(.393 * originalRed + .769 * originalGreen + .189 * originalBlue);
-            int sepiaRGB[1] = round(.349 * originalRed + .686 * originalGreen + .168 * originalBlue);
-            int sepiaRGB[2] = round(.272 * originalRed + .534 * originalGreen + .131 * originalBlue);
+            sepiaRGB[0] = round(.393 * originalRed + .769 * originalGreen + .189 * originalBlue);
+            sepiaRGB[1] = round(.349 * originalRed + .686 * originalGreen + .168 * originalBlue);
+            sepiaRGB[2] = round(.272 * originalRed + .534 * originalGreen + .131 * originalBlue);
 
             for (int k = 0; k < 3; k++)
             {
@@ -95,7 +95,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 for (int b = (j - 1); b <= (j + 1); b++)
                 {
                     // only add the values from copy if there is a pixel
-                    if (a >= 0 && a < height && b >= 0 && b < width))
+                    if (a >= 0 && a < height && b >= 0 && b < width)
                     {
                         sumRed += copy[a][b].rgbtRed;
                         sumGreen += copy[a][b].rgbtGreen;

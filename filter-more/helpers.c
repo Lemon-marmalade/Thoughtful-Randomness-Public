@@ -4,13 +4,14 @@
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
-     // loop over each pixelt
+    // loop over each pixelt
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
         {
             // take average of hexadecimal value, and update pixel values to that average
-            int average = round((image[i][j].rgbtRed + image[i][j].rgbtGreen + image[i][j].rgbtBlue) / 3.0);
+            int average =
+                round((image[i][j].rgbtRed + image[i][j].rgbtGreen + image[i][j].rgbtBlue) / 3.0);
             image[i][j].rgbtRed = image[i][j].rgbtGreen = image[i][j].rgbtBlue = average;
         }
     }
@@ -37,7 +38,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-     // Create a copy of image
+    // Create a copy of image
     RGBTRIPLE copy[height][width];
     for (int i = 0; i < height; i++)
     {
@@ -89,11 +90,11 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 
-    int Gx[3][3] = {{-1,0,1},{-2,0,2},{-1,0,1}};
-    int Gy[3][3] = {{-1,-2,-1},{0,0,0},{1,2,1}};
+    int Gx[3][3] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}};
+    int Gy[3][3] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
 
     // loop over all pixels
-     for (int i = 0; i < height; i++)
+    for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
         {
@@ -136,7 +137,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     SobelRGB[k] = 255;
                 }
             }
-            //transer values
+            // transer values
             image[i][j].rgbtRed = SobelRGB[0];
             image[i][j].rgbtGreen = SobelRGB[1];
             image[i][j].rgbtBlue = SobelRGB[2];
