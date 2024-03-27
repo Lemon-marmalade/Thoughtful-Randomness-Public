@@ -32,21 +32,22 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             float originalBlue = image[i][j].rgbtBlue;
 
             int sepiaRGB[3]; // array of sepia RBG values where sepiaRGB[0]=red, [1]=green, [2]=blue
+            
             int sepiaRGB[0] = round(.393 * originalRed + .769 * originalGreen + .189 * originalBlue);
             int sepiaRGB[1] = round(.349 * originalRed + .686 * originalGreen + .168 * originalBlue);
             int sepiaRGB[2] = round(.272 * originalRed + .534 * originalGreen + .131 * originalBlue);
 
             for (int k = 0; k < 3; k++)
             {
-                if (SepiaRGB[k] > 255)
+                if (sepiaRGB[k] > 255)
                 {
-                    SepiaRGB[k] = 255;
+                    sepiaRGB[k] = 255;
                 }
             }
 
-            image[i][j].rgbtRed = sepiaRed;
-            image[i][j].rgbtGreen = sepiaGreen;
-            image[i][j].rgbtBlue = sepiaBlue;
+            image[i][j].rgbtRed = sepiaRGB[0];
+            image[i][j].rgbtGreen = sepiaRGB[1];
+            image[i][j].rgbtBlue = sepiaRGB[2];
         }
     }
     return;
