@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <math.h>
 
-int x = 2;
+double x = 0.14;
 int y = 3;
 
-int square;
-square = round(pow(x,y));
+int square = round(pow(x,y));
 printf("%i\n", square);
