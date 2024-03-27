@@ -130,6 +130,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
             // deal with values exceeding 255
             int SobelRBG[3];
+            
             SobelRBG[0] = round(sqrt(pow(SobelRed, 2) + pow(SobelRed, 2)));
             SobelRBG[1] = round(sqrt(pow(SobelGreen, 2) + pow(SobelGreen, 2)));
             SobelRBG[2] = round(sqrt(pow(SobelBlue, 2) + pow(SobelBlue, 2)));
