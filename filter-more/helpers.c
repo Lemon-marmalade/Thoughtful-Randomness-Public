@@ -123,7 +123,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         GxRed = GxGreen = GxBlue = 0;
                         GyRed = GyGreen = GyBlue = 0;
                     }
-                    
+                    image[i - 1 + a][j - 1 + a].rgbtRed = GxRed;
+                    image[i - 1 + a][j - 1 + a].rgbtGreen = GxGreen;
+                    image[i - 1 + a][j - 1 + a].rgbtRed = GxBlue;
                 }
             }
             // multiply by Gx
