@@ -100,7 +100,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             // copy for reference without manipulating final product
 
 
-            int GxRed, GxGreen, GxBlue,GyRed, GyGreen, GyBlue;
+            int GxRed, GxGreen, GxBlue, GyRed, GyGreen, GyBlue;
             GxRed = GxGreen = GxBlue = GyRed = GyGreen = GyBlue = 0;
 
             // loop for 3x3 grid (modified to more easily link array of kernels)
