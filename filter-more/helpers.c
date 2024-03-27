@@ -89,6 +89,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             copy[i][j] = image[i][j];
         }
     }
+    int Gx[3][3] = {{-1,0,1},{-2,0,2},{-1,0,1}}
+
     // loop over all pixels
      for (int i = 0; i < height; i++)
     {
