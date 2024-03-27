@@ -94,6 +94,10 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
+            int counter = 0;
+            int sumRed, sumGreen, sumBlue;
+            sumRed = sumGreen = sumBlue = 0;
+
             // loop for 3x3 grid
             for (int a = (i - 1); a <= (i + 1); a++)
             {
@@ -106,7 +110,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
             }
-            // multiply by kernels
+            // multiply by Gx
+
         }
     }
     return;
