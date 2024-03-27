@@ -123,7 +123,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
             }
-            // array of sobel values of RGB
+            // array of sobel values of RGB [0]=red, [1]= green, [2]=blue
             int SobelRGB[3];
             // calculate square root of Gx^2+Gy^2
             SobelRGB[0] = round(sqrt(pow((float)GxRed, 2) + pow((float)GyRed, 2)));
