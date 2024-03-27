@@ -109,7 +109,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                 for (int b = 0 - 1; b < 3; b++)
                 {
                     // if pixel exceeds boundaries, disregard pixels that are outside image
-                    if ((i - 1 + a) > 0 && (i - 1 + a) && (height - 1) && (j - 1 + a) >= 0 && (j - 1 + a) <= (width - 1))
+                    if ((i - 1 + a) >= 0 && (i - 1 + a) <= (height - 1) && (j - 1 + a) >= 0 && (j - 1 + a) <= (width - 1))
                     {
                         GxRed = GxRed + copy[a][b].rgbtRed * Gx[a][b];
                         GxGreen = GxGreen + copy[a][b].rgbtGreen * Gx[a][b];
@@ -118,11 +118,6 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                         GyRed = GyRed + copy[a][b].rgbtRed * Gy[a][b];
                         GyGreen = GyGreen + copy[a][b].rgbtGreen * Gy[a][b];
                         GyBlue = GyBlue + copy[a][b].rgbtBlue * Gy[a][b];
-                    }
-                    else
-                    {
-                        continue;
-                    }
                 }
                 // calculate square root of Gx^2+Gy^2
                 int SobelRed = round(sqrt(pow(GxRed,2)+pow(GyRed,2)));
