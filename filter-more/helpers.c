@@ -1,4 +1,5 @@
 #include "helpers.h"
+#include <math.h>
 
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
@@ -120,6 +121,23 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     }
                 }
                 // calculate square root of Gx^2+Gy^2
+                int SobelRed = round(sqrt(pow(GxRed,2)+pow(GyRed,2)));
+                int SobelGreen = round(sqrt(pow(GxGreen,2)+pow(GyGreen,2)));
+                int SobelBlue = round(sqrt(pow(GxBlue,2)+pow(GyBlue,2)));
+
+                // deal with values exceeding 255
+                if(SobelRed > 255)
+                {
+                    SobelRed = 255;
+                }
+                if(SobelGreen > 255)
+                {
+                    SobelGreen = 255;
+                }
+                if(SobelBlue > 255)
+                {
+                    SobelBlue = 255;
+                }
             }
         }
     }
