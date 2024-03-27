@@ -97,6 +97,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
+            RGBTRIPLE grid[3][3] = {{copy[][],0,1},{-2,0,2},{-1,0,1}}
             int counter = 0;
             int sumRed, sumGreen, sumBlue;
             sumRed = sumGreen = sumBlue = 0;
