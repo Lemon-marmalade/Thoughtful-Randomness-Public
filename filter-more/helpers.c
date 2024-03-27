@@ -80,6 +80,15 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
+    // copy for reference without manipulating final product
+    RGBTRIPLE copy[height][width];
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            copy[i][j] = image[i][j];
+        }
+    }
     // loop over all pixels
      for (int i = 0; i < height; i++)
     {
@@ -93,7 +102,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     // if pixel exceeds boundaries, values as zero
                     if (a >= 0 && a <= (height - 1) && b >= 0 && b <= (width - 1))
                     {
-                        
+                        copy[a][b] = 0;
                     }
                 }
             }
