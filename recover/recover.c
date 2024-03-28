@@ -27,11 +27,17 @@ int main(int argc, char *argv[])
     while (fread(buffer, 1, sizeof(buffer), card) == sizeof(buffer))
     {
         // Create JPEGS from data
+        bool jpg_detected = false;
         for (int i = 0; (i + 3) < sizeof(buffer); i++)
         {
             if (buffer[i] == 0xff && buffer[i + 1] == 0xd8 && buffer[i + 2] == 0xff && (buffer[i + 3] & 0xf0) == 0xe0)
             {
+                jpg_detected = true;
+            }
+            if (jpg_detected)
+            {
                 sprintf(filename,"%03i.jpg",image_count);
+                jpg_detected = false;
                 image_count++;
                 img = fopen(filename, "w");
                 fwrite(buffer, 1 ,sizeof(buffer), img);
