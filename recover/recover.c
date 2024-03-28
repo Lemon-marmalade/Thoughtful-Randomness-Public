@@ -21,5 +21,8 @@ int main(int argc, char *argv[])
     uint8_t buffer[512];
     // While there is still data left
     while (fread(buffer, 1, sizeof(buffer), card) == sizeof(buffer))
-    // Create JPEGS from data
+    {
+        // Create JPEGS from data
+    }
+
 }
