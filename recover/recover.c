@@ -34,18 +34,20 @@ int main(int argc, char *argv[])
             {
                 if (file_count == 0)
                 {
-                sprintf(filename,"%03i.jpg",image_count);
-                file_count++;
-                img = fopen(filename, "w");
-                fwrite(buffer, 1 ,sizeof(buffer), img);
-
+                    sprintf(filename,"%03i.jpg",file_count);
+                    file_count++;
+                    img = fopen(filename, "w");
+                    fwrite(buffer, 1 ,sizeof(buffer), img);
                 }
-            else
-            {
-                fclose[img];
-            }
+                else
+                {
+                    fclose[img];
+                    sprintf(filename,"%03i.jpg",image_count);
+                    file_count++;
+                    img = fopen(filename, "w");
+                    fwrite(buffer, 1 ,sizeof(buffer), img);
+                }
             }
         }
     }
-
 }
