@@ -20,6 +20,7 @@ int main(int argc, char *argv[])
     // Create buffer for a block of data, and counter for # of images found
     uint8_t buffer[512];
     int image_count =0;
+    char filename[8];
     // While there is still data left
     while (fread(buffer, 1, sizeof(buffer), card) == sizeof(buffer))
     {
