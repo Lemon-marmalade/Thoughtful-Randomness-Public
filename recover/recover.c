@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
     }
     // Create buffer for a block of data, and counter for # of images found
     uint8_t buffer[512];
-    int image_count =0;
+    int image_count = 0;
     // array of chars with 3 digits, one period, 'jpg' and nul character
     char filename[8];
     FILE *img;
@@ -32,9 +32,9 @@ int main(int argc, char *argv[])
             if (buffer[i] == 0xff && buffer[i + 1] == 0xd8 && buffer[i + 2] == 0xff && (buffer[i + 3] & 0xf0) == 0xe0)
             {
                 sprintf(filename,"%03i.jpg",image_count);
-
+                image_count++;
                 img = fopen(filename, "w");
-                fwrite(buffer, 1 ,sizeof(buffer), image);
+                fwrite(buffer, 1 ,sizeof(buffer), img);
             }
         }
     }
