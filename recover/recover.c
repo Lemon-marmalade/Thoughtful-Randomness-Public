@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
         // Create JPEGS from data
         for (int i = 0; i < sizeof(buffer; i++))
         {
-            if (buffer[i] == 255 && buffer[i + 1] == 216 && buffer[i + 2] == 255)
+            if (buffer[i] == 0xff && buffer[i + 1] == 0xd8 && buffer[i + 2] == 0xff)
             for (int a = 224; a < 238; a++)
             {
                 if (a == buffer[i + 4])
