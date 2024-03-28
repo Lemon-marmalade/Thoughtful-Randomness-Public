@@ -7,6 +7,6 @@ uint8_t buffer[512];
 int main(void)
 {
 
-    printf("%i", sizeof(buffer));
+    printf("%lu", sizeof(buffer));
 }
 

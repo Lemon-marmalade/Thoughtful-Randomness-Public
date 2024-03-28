@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 int main(int argc, char *argv[])
 {
@@ -19,6 +20,6 @@ int main(int argc, char *argv[])
     // Create buffer for a block of data
     uint8_t buffer[512];
     // While there is still data left
-    while (fread(buffer, 1, 512, card) == 512)
+    while (fread(buffer, 1, sizeof(buffer), card) == sizeof(buffer))
     // Create JPEGS from data
 }
