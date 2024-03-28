@@ -17,6 +17,7 @@ int main(int argc, char *argv[])
         return 1;
     }
     // Create buffer for a block of data
+    uint8_t buffer[512];
     // While there is still data left
     // Create JPEGS from data
 }
