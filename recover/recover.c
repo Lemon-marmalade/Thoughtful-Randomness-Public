@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
     uint8_t buffer[512];
     int image_count =0;
     // array of chars with 3 digits, one period, 'jpg' and nul character
-    char jpgname[8];
+    char filename[8];
     FILE *image = NULL;
     // While there is still data left
     while (fread(buffer, 1, sizeof(buffer), card) == sizeof(buffer))
@@ -31,9 +31,9 @@ int main(int argc, char *argv[])
         {
             if (buffer[i] == 0xff && buffer[i + 1] == 0xd8 && buffer[i + 2] == 0xff && (buffer[i + 3] & 0xf0) == 0xe0)
             {
-                sprintf(jpgname,"%03i.jpg",image_count);
+                sprintf(filename,"%03i.jpg",image_count);
 
-                image = fopen(jpgname, "w");
+                image = fopen(filename, "w");
                 fwrite(buffer, 1 ,sizeof(buffer), image);
             }
         }
