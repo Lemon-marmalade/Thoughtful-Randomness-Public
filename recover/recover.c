@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
                 fwrite(buffer, 1 ,sizeof(buffer), img);
             }
         }
-        else if (img == fopen(filename, "w"))
+        else if (img != NULL)
         {
             fwrite(buffer, 1 ,sizeof(buffer), img);
         }
