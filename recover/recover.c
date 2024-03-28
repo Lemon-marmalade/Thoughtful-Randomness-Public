@@ -32,18 +32,11 @@ int main(int argc, char *argv[])
         {
             if (buffer[i] == 0xff && buffer[i + 1] == 0xd8 && buffer[i + 2] == 0xff && (buffer[i + 3] & 0xf0) == 0xe0)
             {
-                jpg_detected = true;
-            }
-            if (jpg_detected)
-            {
-                jpg_detected = false;
-                while (jpg_detected = false)
-                {
-                    sprintf(filename,"%03i.jpg",image_count);
-                    image_count++;
-                    img = fopen(filename, "w");
-                    fwrite(buffer, 1 ,sizeof(buffer), img);
-                }
+                sprintf(filename,"%03i.jpg",image_count);
+                image_count++;
+                img = fopen(filename, "w");
+                fwrite(buffer, 1 ,sizeof(buffer), img);
+                fclose[img];
             }
         }
     }
