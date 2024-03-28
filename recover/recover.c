@@ -40,12 +40,11 @@ int main(int argc, char *argv[])
             fwrite(buffer, 1 ,sizeof(buffer), img);
             file_count++;
         }
+        else if (file_count != 0)
+        {
+            fwrite(buffer, 1 , sizeof(buffer), img);
+        }
     }
-    else if (file_count != 0)
-    {
-        fwrite(buffer, 1 , sizeof(buffer), img);
-    }
-
     fclose(img);
     fclose(card);
 }
