@@ -50,4 +50,6 @@ int main(int argc, char *argv[])
             fwrite(buffer, 1 ,sizeof(buffer), img);
         }
     }
+    fclose(img);
+    fclose(card);
 }
