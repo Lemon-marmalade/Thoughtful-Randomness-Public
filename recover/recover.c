@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
     while (fread(buffer, 1, sizeof(buffer), card) == sizeof(buffer))
     {
         // Create JPEGS from data
-        for (int i = 0; i < sizeof(buffer; i++))
+        for (int i = 0; (i + 3) < sizeof(buffer); i++)
         {
             if (buffer[i] == 0xff && buffer[i + 1] == 0xd8 && buffer[i + 2] == 0xff && (buffer[i + 3] & 0xf0) == 0xe0)
             {
