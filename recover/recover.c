@@ -36,11 +36,14 @@ int main(int argc, char *argv[])
             }
             if (jpg_detected)
             {
-                sprintf(filename,"%03i.jpg",image_count);
                 jpg_detected = false;
-                image_count++;
-                img = fopen(filename, "w");
-                fwrite(buffer, 1 ,sizeof(buffer), img);
+                while (jpg_detected = false)
+                {
+                    sprintf(filename,"%03i.jpg",image_count);
+                    image_count++;
+                    img = fopen(filename, "w");
+                    fwrite(buffer, 1 ,sizeof(buffer), img);
+                }
             }
         }
     }
