@@ -28,7 +28,10 @@ int main(int argc, char *argv[])
             if (buffer[i] == "0xff" && buffer[i + 1] == "0xd8" && buffer[i + 2] == "0xff")
             for (int a = 0; a < "0xee")
             {
-                
+                if (a == buffer[i + 4])
+                {
+                    
+                }
             }
         }
     }
