@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
         for (int i = 0; i < sizeof(buffer; i++))
         {
             if (buffer[i] == 255 && buffer[i + 1] == 216 && buffer[i + 2] == 255)
-            for (int a = 224; a < 238; a )
+            for (int a = 224; a < 238; a++)
             {
                 if (a == buffer[i + 4])
                 {
