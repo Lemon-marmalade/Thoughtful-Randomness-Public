@@ -29,21 +29,14 @@ int main(int argc, char *argv[])
         // Create JPEGS from data
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
         {
-            if (file_count == 0)
-            {
-                sprintf(filename,"%03i.jpg",file_count);
-                file_count++;
-                img = fopen(filename, "w");
-                fwrite(buffer, 1 ,sizeof(buffer), img);
-            }
-            else
+            if (file_count != 0)
             {
                 fclose(img);
-                sprintf(filename,"%03i.jpg",file_count);
-                file_count++;
-                img = fopen(filename, "w");
-                fwrite(buffer, 1 ,sizeof(buffer), img);
             }
+            sprintf(filename,"%03i.jpg",file_count);
+            img = fopen(filename, "w");
+            fwrite(buffer, 1 ,sizeof(buffer), img);
+            file_count++;
         }
         else if (img != NULL)
         {
