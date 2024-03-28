@@ -17,12 +17,14 @@ int main(int argc, char *argv[])
         printf("Could not open %s\n", argv[1]);
         return 1;
     }
+    
     // Create buffer for a block of data, and counter for # of images found
     uint8_t buffer[512];
     int file_count = 0;
     // array of chars with 3 digits, one period, 'jpg' and nul character
     char filename[8];
     FILE *img;
+
     // While there is still data left
     while (fread(buffer, 1, sizeof(buffer), card) == sizeof(buffer))
     {
@@ -38,11 +40,12 @@ int main(int argc, char *argv[])
             fwrite(buffer, 1 ,sizeof(buffer), img);
             file_count++;
         }
-        else if (img != NULL)
-        {
-            fwrite(buffer, 1 ,sizeof(buffer), img);
-        }
     }
+    else if (file_count != 0)
+    {
+        fwrite(buffer, 1 ,sizeof(buffer), img);
+    }
+
     fclose(img);
     fclose(card);
 }
