@@ -23,6 +23,7 @@ int main(int argc, char *argv[])
     while (fread(buffer, 1, sizeof(buffer), card) == sizeof(buffer))
     {
         // Create JPEGS from data
+        
     }
 
 }
