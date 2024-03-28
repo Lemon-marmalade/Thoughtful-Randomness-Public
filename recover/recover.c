@@ -25,13 +25,10 @@ int main(int argc, char *argv[])
         // Create JPEGS from data
         for (int i = 0; i < sizeof(buffer; i++))
         {
+            // if buffer i to i+2 is equal to the given values, and if the intersection of buffer[i+3] and 1111 0000 is 1110 0000 (meaning buffer[i+3] must have first four bits of 1110)
             if (buffer[i] == 0xff && buffer[i + 1] == 0xd8 && buffer[i + 2] == 0xff && (buffer[i + 3] & 0xf0) == 0xe0)
-            for (int a = 224; a < 238; a++)
             {
-                if (a == buffer[i + 4])
-                {
-
-                }
+                
             }
         }
     }
