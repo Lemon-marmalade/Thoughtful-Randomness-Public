@@ -6,13 +6,17 @@ int main(int argc, char *argv[])
     // accept only one command line argument that has to be a file name
     if (argc != 2)
     {
-        printf{"Usage: ./recover FILE\n"};
+        printf("Usage: ./recover FILE\n");
         return 1;
     }
     // open memory card to read
-    FILE *card = fopen(argv[1], "r")
+    FILE *card = fopen(argv[1], "r");
     if (card == NULL)
     {
-        printf{"Could not open %s\n", char *argv[]};
+        printf("Could not open %s\n", argv[1]);
+        return 1;
     }
+    // Create buffer for a block of data
+    // While there is still data left
+    // Create JPEGS from data
 }
