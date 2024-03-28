@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
         printf("Could not open %s\n", argv[1]);
         return 1;
     }
-    
+
     // Create buffer for a block of data, and counter for # of images found
     uint8_t buffer[512];
     int file_count = 0;
@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
     }
     else if (file_count != 0)
     {
-        fwrite(buffer, 1 ,sizeof(buffer), img);
+        fwrite(buffer, 1 , sizeof(buffer), img);
     }
 
     fclose(img);
