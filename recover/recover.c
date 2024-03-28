@@ -33,8 +33,9 @@ int main(int argc, char *argv[])
             if (buffer[i] == 0xff && buffer[i + 1] == 0xd8 && buffer[i + 2] == 0xff && (buffer[i + 3] & 0xf0) == 0xe0)
             {
                 sprintf(jpgname,"%03i.jpg",image_count);
-                img = fopen(jpgname, "w");
-                fwrite(buffer, 1 ,sizeof(buffer), image)
+
+                image = fopen(jpgname, "w");
+                fwrite(buffer, 1 ,sizeof(buffer), image);
             }
         }
     }
