@@ -15,7 +15,6 @@ typedef struct person
 const int GENERATIONS = 3;
 const int INDENT_LENGTH = 4;
 
-
 person *create_family(int generations);
 void print_family(person *p, int generation);
 void free_family(person *p);
@@ -29,8 +28,6 @@ int main(void)
     // Create a new family with three generations
     person *p = create_family(GENERATIONS);
 
-    int number_of_parents = sizeof(p->parents)/sizeof(p->parents[0]);
-
     // Print family tree of blood types
     print_family(p, 0);
 
@@ -43,6 +40,9 @@ person *create_family(int generations)
 {
     // TODO: Allocate memory for new person
     person *child = malloc(sizeof(person));
+
+    int number_of_parents = sizeof(child->parents) / sizeof(child->parents[0]);
+
     // If there are still generations left to create
     if (generations > 1)
     {
@@ -54,9 +54,9 @@ person *create_family(int generations)
         for (int i = 0; i < number_of_parents; i++)
         {
             // TODO: Set parent pointers for current person
-           child->parents[i] = parent[i];
-           // TODO: Randomly assign current person's alleles based on the alleles of their parents
-           child->alleles[i] = parent[i]->alleles[rand() % 2];
+            child->parents[i] = parent[i];
+            // TODO: Randomly assign current person's alleles based on the alleles of their parents
+            child->alleles[i] = parent[i]->alleles[rand() % 2];
         }
     }
     // If there are no generations left to create
@@ -64,10 +64,10 @@ person *create_family(int generations)
     {
         for (int i = 0; i < number_of_parents; i++)
         {
-        // TODO: Set parent pointers to NULL
-        child->parents[i] = NULL;
-        // TODO: Randomly assign alleles
-        child->alleles[i] = random_allele();
+            // TODO: Set parent pointers to NULL
+            child->parents[i] = NULL;
+            // TODO: Randomly assign alleles
+            child->alleles[i] = random_allele();
         }
     }
     // TODO: Return newly created person
@@ -83,6 +83,7 @@ void free_family(person *p)
         return;
     }
     // TODO: Free parents recursively
+    int number_of_parents = sizeof(p->parents) / sizeof(p->parents[0]);
     for (int i = 0; i < number_of_parents; i++)
     {
         free_family(p->parents[i]);
