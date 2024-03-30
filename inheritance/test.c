@@ -8,5 +8,5 @@ typedef struct person
 
 int main(void)
 {
-    printf("%lu\n", sizeof());
+    printf("%lu\n", sizeof(*parents));
 }
