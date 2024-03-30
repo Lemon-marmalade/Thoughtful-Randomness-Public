@@ -14,6 +14,7 @@ typedef struct person
 
 const int GENERATIONS = 3;
 const int INDENT_LENGTH = 4;
+int number_of_parents;
 
 person *create_family(int generations);
 void print_family(person *p, int generation);
