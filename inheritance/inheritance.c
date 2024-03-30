@@ -48,7 +48,7 @@ person *create_family(int generations)
         parent[0] = create_family(generations - 1);
         parent[1] = create_family(generations - 1);
 
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < sizeof(child->parents)/sizeof(child->parents[0]); i++)
         {
             // TODO: Set parent pointers for current person
            child->parents[i] = parent[i];
