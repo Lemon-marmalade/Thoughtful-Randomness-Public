@@ -48,7 +48,9 @@ person *create_family(int generations)
         parent[0] = create_family(generations - 1);
         parent[1] = create_family(generations - 1);
 
-        for (int i = 0; i < sizeof(child->parents)/sizeof(child->parents[0]); i++)
+        int number_of_parents = sizeof(child->parents)/sizeof(child->parents[0]);
+
+        for (int i = 0; i < number_of_parents; i++)
         {
             // TODO: Set parent pointers for current person
            child->parents[i] = parent[i];
@@ -59,7 +61,7 @@ person *create_family(int generations)
     // If there are no generations left to create
     else
     {
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < number_of_parents; i++)
         {
         // TODO: Set parent pointers to NULL
         child->parents[i] = NULL;
@@ -80,7 +82,7 @@ void free_family(person *p)
         return;
     }
     // TODO: Free parents recursively
-    for (int i = 0; i < 2; i++)
+    for (int i = 0; i < number_of_parents; i++)
     {
         free_family(p->parents[i]);
     }
