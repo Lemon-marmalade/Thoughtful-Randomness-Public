@@ -14,7 +14,7 @@ typedef struct person
 
 const int GENERATIONS = 3;
 const int INDENT_LENGTH = 4;
-int number_of_parents;
+
 
 person *create_family(int generations);
 void print_family(person *p, int generation);
@@ -28,6 +28,8 @@ int main(void)
 
     // Create a new family with three generations
     person *p = create_family(GENERATIONS);
+
+    int number_of_parents = sizeof(p->parents)/sizeof(p->parents[0]);
 
     // Print family tree of blood types
     print_family(p, 0);
@@ -48,8 +50,6 @@ person *create_family(int generations)
         person *parent[2];
         parent[0] = create_family(generations - 1);
         parent[1] = create_family(generations - 1);
-
-        int number_of_parents = sizeof(child->parents)/sizeof(child->parents[0]);
 
         for (int i = 0; i < number_of_parents; i++)
         {
