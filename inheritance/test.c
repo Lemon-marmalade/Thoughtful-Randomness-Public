@@ -8,5 +8,6 @@ typedef struct person
 
 int main(void)
 {
-    printf("%lu\n", sizeof(person)/sizeof(person[0]));
+    person test;
+    printf("%lu\n", sizeof(test.parents));
 }
