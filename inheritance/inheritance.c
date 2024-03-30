@@ -44,9 +44,11 @@ person *create_family(int generations)
     if (generations > 1)
     {
         // Create two new parents for current person by recursively calling create_family
-        person *parent[2] = create_family(generations - 1);
+        person *parent[2];
+        parent[0] = create_family(generations - 1);
+        parent[1] = create_family(generations - 1);
 
-        for (int i = 0; i < 2: i++)
+        for (int i = 0; i < 2; i++)
         {
             // TODO: Set parent pointers for current person
            child->parents[i] = parent[i];
@@ -57,7 +59,7 @@ person *create_family(int generations)
     // If there are no generations left to create
     else
     {
-        for (int i = 0; i < 2: i++)
+        for (int i = 0; i < 2; i++)
         {
         // TODO: Set parent pointers to NULL
         child->parents[i] = NULL;
