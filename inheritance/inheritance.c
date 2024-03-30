@@ -54,7 +54,6 @@ person *create_family(int generations)
         child->alleles[0] = parent0->alleles[rand() % 2];
         child->alleles[0] = parent0->alleles[rand() % 2];
     }
-
     // If there are no generations left to create
     else
     {
@@ -67,17 +66,23 @@ person *create_family(int generations)
     }
 
     // TODO: Return newly created person
-    return NULL;
+    return child;
 }
 
 // Free `p` and all ancestors of `p`.
 void free_family(person *p)
 {
     // TODO: Handle base case
-
+    // if finished grandparents
+    if (p == NULL)
+    {
+        return;
+    }
     // TODO: Free parents recursively
-
+    free_family(p->parents[0]);
+    free_family(p->parents[1]);
     // TODO: Free child
+    free(p);
 }
 
 // Print each family member and their alleles.
