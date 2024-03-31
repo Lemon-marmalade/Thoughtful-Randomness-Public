@@ -56,9 +56,9 @@ bool load(const char *dictionary)
         }
         strcpy(new->word,word);
         // hash the word to obtain hash value
-        int index = hash(word);
+        int hash_value = hash(word);
         // insert the new node into the hash table according to its hash value
-        
+
     }
     // add each word read. to the hash table
     // close dictionary file
