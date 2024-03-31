@@ -67,11 +67,15 @@ bool load(const char *dictionary)
         // if word is first of its hash value
         if (table[hash_value] == NULL)
         {
-            table[hash_value] = new_node;
+        
             new_node->next = NULL;
         }
-        new_node->next = table[hash_value];
+        else
+        {
+            new_node->next = table[hash_value];
         table[hash_value] = new_node;
+        }
+
     }
     // add each word read to the hash table
     // close dictionary file and free memory
