@@ -4,6 +4,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "dictionary.h"
 
@@ -46,13 +47,13 @@ bool load(const char *dictionary)
         printf("Could not open %s\n", dictionary);
         return 1;
     }
-    char word = malloc(LENGTH + 1);
+    char *word = malloc(LENGTH + 1);
     if (word == NULL)
         {
             return 1;
         }
     // read each word(aka line) in file (scan string and set it as a word) until end of file
-    while (fscanf(source, %s, word) == 1)
+    while (fscanf(source, "%s", word) == 1)
     {
         // create a new node and copy word into that node
         node *new_node = malloc(sizeof(node));
