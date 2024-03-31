@@ -70,11 +70,11 @@ bool load(const char *dictionary)
             table[hash_value] = new_node;
             new_node->next = NULL;
         }
-        // if there is another word already at this index, prepend the new word to point to that word
+        // if there is another word already at this index, prepend the new word in front of pre-exisitng, and set it as the new head
         else
         {
             new_node->next = table[hash_value];
-        table[hash_value] = new_node;
+            table[hash_value] = new_node;
         }
 
     }
