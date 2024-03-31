@@ -3,7 +3,7 @@
 #include <ctype.h>
 #include <stdbool.h>
 #include <stdio.h>
-#include <stdlib.io>
+#include <stdlib.h>
 
 #include "dictionary.h"
 
