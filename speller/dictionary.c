@@ -54,6 +54,7 @@ bool load(const char *dictionary)
         {
             return 1;
         }
+        strcpy(new->word,word);
         // hash the word to obtain hash value
         // insert the new node into the hash table according to its hash value
     }
