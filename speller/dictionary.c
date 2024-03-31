@@ -38,7 +38,7 @@ bool load(const char *dictionary)
 {
     // TODO
     // open dictionary file
-    FILE *source = fopen(source, "r");
+    FILE *source = fopen(dictionary, "r");
     if (source == NULL)
     {
         char *dictionary = (argc == 3) ? argv[2] : dictionary/large;
