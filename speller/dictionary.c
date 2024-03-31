@@ -45,7 +45,7 @@ bool load(const char *dictionary)
         return 1;
     }
     char word = [LENGTH + 1];
-    // read each word/line in file (scan string and set it as a word) until end of file
+    // read each word(aka line) in file (scan string and set it as a word) until end of file
     while (fscanf(source, %s, word) != EOF)
     {
         // create a new node and copy word into that node
