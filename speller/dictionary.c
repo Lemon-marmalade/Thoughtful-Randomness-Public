@@ -49,16 +49,17 @@ bool load(const char *dictionary)
     while (fscanf(source, %s, word) != EOF)
     {
         // create a new node and copy word into that node
-        node *new = malloc(sizeof(node));
-        if (new == NULL)
+        node *new_node = malloc(sizeof(node));
+        if (new_node == NULL)
         {
             return 1;
         }
-        strcpy(new->word,word);
+        strcpy(new_node->word,word);
         // hash the word to obtain hash value
         int hash_value = hash(word);
         // insert the new node into the hash table according to its hash value
-        new->next = table[hash_value];
+        new_node->next = table[hash_value];
+        table[hash_value] = new_node;
     }
     // add each word read. to the hash table
     // close dictionary file
