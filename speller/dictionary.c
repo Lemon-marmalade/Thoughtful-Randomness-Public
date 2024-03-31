@@ -46,6 +46,10 @@ bool load(const char *dictionary)
         return 1;
     }
     char word = [LENGTH + 1];
+    if (word == NULL)
+        {
+            return 1;
+        }
     // read each word(aka line) in file (scan string and set it as a word) until end of file
     while (fscanf(source, %s, word) == 1)
     {
