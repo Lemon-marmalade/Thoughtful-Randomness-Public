@@ -53,8 +53,6 @@ bool load(const char *dictionary)
     // read each word(aka line) in file (scan string and set it as a word) until end of file
     while (fscanf(source, %s, word) == 1)
     {
-        // keep track of how many words for the size function
-        wordcount++;
         // create a new node and copy word into that node
         node *new_node = malloc(sizeof(node));
         if (new_node == NULL)
@@ -64,20 +62,20 @@ bool load(const char *dictionary)
         strcpy(new_node->word,word);
         // hash the word to obtain hash value
         int hash_value = hash(word);
-        // if word is first of its hash value, set it as the head for this index
+        // if word is first of its hash value
         if (table[hash_value] == NULL)
         {
-            table[hash_value] = new_node;
             new_node->next = NULL;
         }
-        // if there is another word already at this index, prepend the new word in front of pre-exisitng, and set it as the new head
-        else
+        // if there is another word already at this index, prepend the new word in front of pre-exisitng head
         {
             new_node->next = table[hash_value];
-            table[hash_value] = new_node;
         }
+        // set the new node as the new head in this index
+        table[hash_value] = new_node;
+        // keep track of how many words have been hashed for the size function
+        wordcount++;
     }
-    // add each word read to the hash table
     // close dictionary file and free memory
     fclose(source);
     free(word);
