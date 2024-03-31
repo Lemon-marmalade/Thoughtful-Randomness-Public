@@ -45,7 +45,7 @@ bool load(const char *dictionary)
         return 1;
     }
     // read each word in file
-    while (fread(,,1,source))
+    while (fscanf(source, wor))
     // add each word read. to the hash table
     // close dictionary file
     fclose(source);
