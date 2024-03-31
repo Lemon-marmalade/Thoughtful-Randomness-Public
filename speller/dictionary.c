@@ -68,9 +68,10 @@ bool load(const char *dictionary)
         new_node->next = table[hash_value];
         table[hash_value] = new_node;
     }
-    // add each word read. to the hash table
-    // close dictionary file
+    // add each word read to the hash table
+    // close dictionary file and free memory
     fclose(source);
+    free(word);
     return false;
 }
 
