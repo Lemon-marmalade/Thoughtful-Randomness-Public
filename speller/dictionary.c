@@ -33,6 +33,7 @@ unsigned int hash(const char *word)
     return toupper(word[0]) - 'A';
 }
 
+int wordcount = 0;
 // Loads dictionary into memory, returning true if successful, else false
 bool load(const char *dictionary)
 {
@@ -48,6 +49,8 @@ bool load(const char *dictionary)
     // read each word(aka line) in file (scan string and set it as a word) until end of file
     while (fscanf(source, %s, word) == 1)
     {
+        // keep track of how many words for the size function
+        wordcount++;
         // create a new node and copy word into that node
         node *new_node = malloc(sizeof(node));
         if (new_node == NULL)
