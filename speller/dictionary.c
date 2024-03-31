@@ -22,6 +22,18 @@ node *table[N];
 bool check(const char *word)
 {
     // TODO
+    // open dictionary file
+    File *dictionary = fopen(dictionary, "r");
+    if (dictionary == NULL)
+    {
+        printf("Could not open %s\n", argv[1]);
+        return 1;
+    }
+    // read each word in file
+
+    // add each word read. to the hash table
+    // close dictionary file
+    fclose(dictionary);
     return false;
 }
 
