@@ -48,7 +48,14 @@ bool load(const char *dictionary)
     // read each word/line in file (scan string and set it as a word) until end of file
     while (fscanf(source, %s, word) != EOF)
     {
-        
+        // create a new node and copy word into that node
+        node *new = malloc(sizeof(node));
+        if (new == NULL)
+        {
+            return 1;
+        }
+        // hash the word to obtain hash value
+        // insert the new node into the hash table according to its hash value
     }
     // add each word read. to the hash table
     // close dictionary file
