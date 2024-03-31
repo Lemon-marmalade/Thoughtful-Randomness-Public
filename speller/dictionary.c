@@ -64,12 +64,13 @@ bool load(const char *dictionary)
         strcpy(new_node->word,word);
         // hash the word to obtain hash value
         int hash_value = hash(word);
-        // if word is first of its hash value
+        // if word is first of its hash value, set it as the head for this index
         if (table[hash_value] == NULL)
         {
-        
+            table[hash_value] = new_node;
             new_node->next = NULL;
         }
+        // if there is another word already at this index, prepend the new word to point to that word
         else
         {
             new_node->next = table[hash_value];
