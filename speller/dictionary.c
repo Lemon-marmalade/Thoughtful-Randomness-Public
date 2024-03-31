@@ -66,6 +66,10 @@ bool load(const char *dictionary)
         int hash_value = hash(word);
         // if word is first of its hash value
         if (table[hash_value] == NULL)
+        {
+            table[hash_value] = new_node;
+            new_node->next = NULL;
+        }
         new_node->next = table[hash_value];
         table[hash_value] = new_node;
     }
