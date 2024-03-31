@@ -3,6 +3,7 @@
 #include <ctype.h>
 #include <stdbool.h>
 #include <stdio.h>
+#include <stdlib.io>
 
 #include "dictionary.h"
 
@@ -45,7 +46,7 @@ bool load(const char *dictionary)
         printf("Could not open %s\n", dictionary);
         return 1;
     }
-    char word = [LENGTH + 1];
+    char word = malloc(LENGTH + 1);
     if (word == NULL)
         {
             return 1;
