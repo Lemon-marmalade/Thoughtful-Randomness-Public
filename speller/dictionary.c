@@ -23,9 +23,10 @@ bool check(const char *word)
 {
     // TODO
     // open dictionary file
-    File *dictionary = fopen(dictionary, "r");
-    if (dictionary == NULL)
+    FILE *source = fopen(source, "r");
+    if (source == NULL)
     {
+        char *dictionary = (argc == 3) ? argv[2] : dictionary/large;
         printf("Could not open %s\n", argv[1]);
         return 1;
     }
@@ -33,7 +34,7 @@ bool check(const char *word)
 
     // add each word read. to the hash table
     // close dictionary file
-    fclose(dictionary);
+    fclose(source);
     return false;
 }
 
