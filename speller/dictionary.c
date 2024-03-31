@@ -64,7 +64,8 @@ bool load(const char *dictionary)
         strcpy(new_node->word,word);
         // hash the word to obtain hash value
         int hash_value = hash(word);
-        // insert the new node into the hash table according to its hash value
+        // if word is first of its hash value
+        if (table[hash_value] == NULL)
         new_node->next = table[hash_value];
         table[hash_value] = new_node;
     }
