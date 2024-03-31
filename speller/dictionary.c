@@ -44,8 +44,9 @@ bool load(const char *dictionary)
         printf("Could not open %s\n", dictionary);
         return 1;
     }
+    char word = [LENGTH + 1];
     // read each word in file
-    while (fscanf(source, wor))
+    while (fscanf(source, %s, word))
     // add each word read. to the hash table
     // close dictionary file
     fclose(source);
