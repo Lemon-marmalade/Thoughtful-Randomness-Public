@@ -41,8 +41,7 @@ bool load(const char *dictionary)
     FILE *source = fopen(dictionary, "r");
     if (source == NULL)
     {
-        char *dictionary = (argc == 3) ? argv[2] : dictionary/large;
-        printf("Could not open %s\n", argv[1]);
+        printf("Could not open %s\n", dictionary);
         return 1;
     }
     // read each word in file
