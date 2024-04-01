@@ -102,6 +102,14 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
-    
-    return false;
+    for (int i = 0; i <= N; i++)
+    {
+        while (table[i] != NULL)
+        {
+            node *freeing = table[i]->next;
+            free table[i];
+            table[i] = freeing;
+        }
+    }
+    return true;
 }
