@@ -102,13 +102,15 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
+    // for all buckets
     for (int i = 0; i <= N; i++)
     {
+        // while there is something in the bucket, free each node
         while (table[i] != NULL)
         {
-            node *freeing = table[i]->next;
-            free table[i];
-            table[i] = freeing;
+            node *waiting_free = table[i]->next;
+            free(table[i]);
+            table[i] = waiting_free;
         }
     }
     return true;
