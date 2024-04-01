@@ -38,14 +38,19 @@ bool check(const char *word)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
+    int hash_value = 0;
     // TODO: Improve this hash function
-    for (int i = 0; i + 1 < strlen(word);i = i + 2)
+    // this hash function adds every other letter's 0-25 value (starting with the first), moving it to the tens place, then adds every other value 0-25 (starting from the second) in the ones place
+    for (int i = 0; i < strlen(word);i = i + 2)
     {
-        int hash_value = 0;
-        hash_value += toupper(word[i]<<1) + toupper(word[i+1]);
+        if (i + 1 < strlen(word))
+        {
+            hash_value += toupper(word[i+1]) - 'A';
+        }
+        hash_value += toupper(word[i]<<1) - 'A';
     }
     //
-    return toupper(word[0]) - 'A';
+    return hash_value;
 }
 
 int wordcount = 0;
