@@ -51,7 +51,7 @@ bool load(const char *dictionary)
     FILE *source = fopen(dictionary, "r");
     if (source == NULL)
     {
-        return 1;
+        return false;
     }
     // create temporary string for loading words
     char *word = malloc(LENGTH + 1);
@@ -77,6 +77,7 @@ bool load(const char *dictionary)
             new_node->next = NULL;
         }
         // if there is another word already at this index, prepend the new word in front of pre-exisitng head
+        else
         {
             new_node->next = table[hash_value];
         }
@@ -88,7 +89,7 @@ bool load(const char *dictionary)
     // close dictionary file and free memory
     fclose(source);
     free(word);
-    return false;
+    return true;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
