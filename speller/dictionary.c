@@ -16,7 +16,7 @@ typedef struct node
 } node;
 
 // TODO: Choose number of buckets in hash table
-const unsigned int N = 6553;
+const unsigned int N = 26;
 
 // Hash table
 node *table[N];
@@ -38,19 +38,8 @@ bool check(const char *word)
 // Hashes word to a number
 unsigned int hash(const char *word)
 {
-    int hash_value = 0;
     // TODO: Improve this hash function
-    // this hash function adds every other letter's 1-26 value (starting with the first), moving it to the tens place, then adds every other value 1-26 (starting from the second) in the ones place
-    for (int i = 0; i < strlen(word);i = i + 2)
-    {
-        if (i + 1 < strlen(word))
-        {
-            hash_value += toupper(word[i+1]) + 1 - 'A';
-        }
-        hash_value += toupper((word[i] + 1 - 'A') << 1);
-    }
-    //
-    return hash_value;
+    return toupper(word[0]) - 'A';
 }
 
 int wordcount = 0;
@@ -62,14 +51,14 @@ bool load(const char *dictionary)
     FILE *source = fopen(dictionary, "r");
     if (source == NULL)
     {
-        printf("Could not open %s\n", dictionary);
         return 1;
     }
+    // create temporary string for loading words
     char *word = malloc(LENGTH + 1);
     if (word == NULL)
-        {
-            return 1;
-        }
+    {
+        return false;
+    }
     // read each word(aka line) in file (scan string and set it as a word) until end of file
     while (fscanf(source, "%s", word) == 1)
     {
@@ -77,7 +66,7 @@ bool load(const char *dictionary)
         node *new_node = malloc(sizeof(node));
         if (new_node == NULL)
         {
-            return 1;
+            return false;
         }
         strcpy(new_node->word,word);
         // hash the word to obtain hash value
