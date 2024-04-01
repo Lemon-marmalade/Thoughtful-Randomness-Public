@@ -16,7 +16,7 @@ typedef struct node
 } node;
 
 // TODO: Choose number of buckets in hash table
-const unsigned int N = 6301;
+const unsigned int N = 6553;
 
 // Hash table
 node *table[N];
@@ -40,14 +40,14 @@ unsigned int hash(const char *word)
 {
     int hash_value = 0;
     // TODO: Improve this hash function
-    // this hash function adds every other letter's 0-25 value (starting with the first), moving it to the tens place, then adds every other value 0-25 (starting from the second) in the ones place
+    // this hash function adds every other letter's 1-26 value (starting with the first), moving it to the tens place, then adds every other value 1-26 (starting from the second) in the ones place
     for (int i = 0; i < strlen(word);i = i + 2)
     {
         if (i + 1 < strlen(word))
         {
-            hash_value += toupper(word[i+1]) - 'A';
+            hash_value += toupper(word[i+1]) + 1 - 'A';
         }
-        hash_value += toupper(word[i]<<1) - 'A';
+        hash_value += toupper((word[i] + 1 - 'A') << 1);
     }
     //
     return hash_value;
