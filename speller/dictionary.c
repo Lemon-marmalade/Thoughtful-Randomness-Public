@@ -25,7 +25,7 @@ node *table[N];
 bool check(const char *word)
 {
     // TODO
-    hash_value = hash(word);
+    int hash_value = hash(word);
     for (node *n = table[hash_value]; n != NULL; n = n->next)
     {
         if (strcmp(n->word, word))
@@ -114,6 +114,7 @@ bool unload(void)
             free(table[i]);
             table[i] = waiting_free;
         }
+        return true;
     }
-    return true;
+    return false;
 }
