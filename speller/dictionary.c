@@ -68,7 +68,7 @@ bool load(const char *dictionary)
         {
             return false;
         }
-        strcpy(new_node->word,word);
+        strcpy(new_node->word, word);
         // hash the word to obtain hash value
         int hash_value = hash(word);
         // if word is first of its hash value
