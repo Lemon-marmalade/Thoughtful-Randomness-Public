@@ -25,8 +25,7 @@ node *table[N];
 bool check(const char *word)
 {
     // TODO
-    int hash_value = hash(word);
-    for (node *n = table[hash_value]; n != NULL; n = n->next)
+    for (node *n = table[hash(word)]; n != NULL; n = n->next)
     {
         if (strcmp(n->word, word))
         {
