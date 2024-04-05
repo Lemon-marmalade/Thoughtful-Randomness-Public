@@ -40,7 +40,11 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    return toupper(word[0]) - 'A';
+    int hash_value = word[0];
+    for (int i = 0; i < strlen(word); i++)
+    {
+        hash_value = hash_value * 31 + word[i];
+    }
 }
 
 int wordcount = 0;
