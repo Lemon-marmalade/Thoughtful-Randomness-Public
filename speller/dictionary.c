@@ -40,11 +40,17 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    int hash_value = word[0];
-    for (int i = 0; i < strlen(word); i++)
+    // this hash function will initialize the hashvalue to the numerical value of the first letter
+    int hash_value = toupper(word[0]);
+    // if the word has more than 1 letter, it will multiply the previous hash value by 31 (an odd prime number in order to create more possibilities) before adding the next numerical value
+    if (strlen(word) > 2)
     {
-        hash_value = hash_value * 31 + word[i];
+        for (int i = 1; i < strlen(word); i++)
+        {
+            hash_value = hash_value * 31 + toupper(word[i]);
+        }
     }
+
 }
 
 int wordcount = 0;
