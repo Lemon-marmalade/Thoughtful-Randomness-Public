@@ -7,7 +7,9 @@ unsigned int hash(const char *word);
 
 int main(void)
 {
-    char *word = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz";
+    //zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+
+    char *word = "ab";
     int hash_value = hash(word);
     printf("%i\n", hash_value);
 }
@@ -23,7 +25,7 @@ unsigned int hash(const char *word)
     {
         for (int i = 1; i < word_length; i++)
         {
-            hash_value = hash_value * 2 + (toupper(word[i] + 1)-'A');
+            hash_value = hash_value * (46 - word_length) + (toupper(word[i] + 1)-'A');
         }
     }
     return hash_value;
