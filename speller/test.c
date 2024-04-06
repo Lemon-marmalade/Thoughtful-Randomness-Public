@@ -9,7 +9,7 @@ int main(void)
 {
     //zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
 
-    char *word = "ab";
+    char *word = "catapil";
     int hash_value = hash(word);
     printf("%i\n", hash_value);
 }
