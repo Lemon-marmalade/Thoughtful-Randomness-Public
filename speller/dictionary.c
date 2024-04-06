@@ -17,7 +17,7 @@ typedef struct node
 } node;
 
 // TODO: Choose number of buckets in hash table
-const unsigned int N = 65536;
+const unsigned int N = 26;
 
 // Hash table
 node *table[N];
@@ -40,7 +40,10 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    int hash_value = word[0] - 'A';
+    int hash_value = 0;
+    int wordlength = strlen(word);
+    for (int i = 0; i < wordlength; i++)
+    {
     return hash_value;
 }
 
