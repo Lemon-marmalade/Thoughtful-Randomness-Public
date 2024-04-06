@@ -42,7 +42,11 @@ unsigned int hash(const char *word)
     // TODO: Improve this hash function
     // this hash function will initialize the hashvalue to the numerical value of the first letter (0-25)
     uint hash_value = toupper(word[0]) - 'A';
-    // if the word has more than 1 letter, it will multiply the previous hash value by 31 (an odd prime number in order to create more possibilities) before adding the next numerical value
+    int word_length = strlen(word);
+    for (int i = 0; i < word_length; i = i++)
+        {
+            hash_value = 
+        }
     return hash_value;
 
 }
