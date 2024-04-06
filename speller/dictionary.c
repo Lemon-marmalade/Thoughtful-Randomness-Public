@@ -93,7 +93,6 @@ bool load(const char *dictionary)
     // close dictionary file and free memory
     fclose(source);
     free(word);
-    free(new_node);
     return true;
 }
 
