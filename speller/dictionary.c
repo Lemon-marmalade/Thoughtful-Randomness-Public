@@ -89,12 +89,11 @@ bool load(const char *dictionary)
         table[hash_value] = new_node;
         // keep track of how many words have been hashed for the size function
         wordcount++;
-        free(new_node);
     }
     // close dictionary file and free memory
     fclose(source);
     free(word);
-
+    free(new_node);
     return true;
 }
 
