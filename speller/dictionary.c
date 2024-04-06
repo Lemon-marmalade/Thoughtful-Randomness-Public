@@ -40,15 +40,8 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    // this hash function will initialize the hashvalue to the numerical value of the first letter (0-25)
-    unsigned int hash_value = 0;
-    int word_length = strlen(word);
-    for (int i = 0; i < word_length; i++)
-        {
-            hash_value = (hash_value << 2) ^ word[i];
-        }
+    int hash_value = word[0] - 'A';
     return hash_value;
-
 }
 
 int wordcount = 0;
