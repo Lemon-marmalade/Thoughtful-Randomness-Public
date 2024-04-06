@@ -9,7 +9,7 @@ int main(void)
 {
     //zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
 
-    char *word = "catapil";
+    char *word = "zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz";
     int hash_value = hash(word);
     printf("%i\n", hash_value);
 }
@@ -28,7 +28,14 @@ unsigned int hash(const char *word)
             hash_value = hash_value * 2 + (toupper(word[i] + 1)-'A');
             if ((i + 1) < word_length )
             {
-                if (hash_value % 2 )
+                if (hash_value % 2 != 0)
+                {
+                    hash_value = (hash_value + 1) / 2 + (toupper(word[i + 1] + 1)-'A');
+                }
+                else
+                {
+                    hash_value = hash_value / 2 + (toupper(word[i + 1] + 1)-'A');
+                }
             }
         }
     }
