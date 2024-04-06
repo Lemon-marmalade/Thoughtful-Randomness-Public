@@ -44,6 +44,7 @@ unsigned int hash(const char *word)
     int hash_value = toupper(word[0]) - 'A';
     // if the word has more than 1 letter, it will multiply the previous hash value by 31 (an odd prime number in order to create more possibilities) before adding the next numerical value
     return hash_value;
+
 }
 
 int wordcount = 0;
