@@ -23,7 +23,7 @@ unsigned int hash(const char *word)
     int word_length = strlen(word);
     if (word_length > 1)
     {
-        for (int i = 1; i < word_length; i++)
+        for (int i = 1; i + 1) < word_length; i = i + 2)
         {
             hash_value = hash_value * (46 - word_length) + (toupper(word[i] + 1)-'A');
         }
