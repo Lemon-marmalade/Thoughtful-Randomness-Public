@@ -63,15 +63,17 @@ bool load(const char *dictionary)
     {
         return false;
     }
+
+    node *new_node = malloc(sizeof(node));
+    if (new_node == NULL)
+    {
+        return false;
+    }
     // read each word(aka line) in file (scan string and set it as a word) until end of file
     while (fscanf(source, "%s", word) == 1)
     {
         // create a new node and copy word into that node
-        node *new_node = malloc(sizeof(node));
-        if (new_node == NULL)
-        {
-            return false;
-        }
+
         strcpy(new_node->word, word);
         // hash the word to obtain hash value
         int hash_value = hash(word);
@@ -93,6 +95,7 @@ bool load(const char *dictionary)
     // close dictionary file and free memory
     fclose(source);
     free(word);
+    free(new_node);
     return true;
 }
 
