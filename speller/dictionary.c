@@ -117,7 +117,6 @@ bool unload(void)
             free(table[i]);
             table[i] = waiting_free;
         }
-        return true;
     }
-    return false;
+    return true;
 }
