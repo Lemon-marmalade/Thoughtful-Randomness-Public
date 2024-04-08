@@ -108,16 +108,18 @@ bool unload(void)
 {
     // TODO
     // for all buckets
-    for (int i = 0; i <= N; i++)
+    for (int i = 0; i < N; i++)
     {
         // while there is something in the bucket, free each node
-        while (table[i] != NULL)
+       node *to_free = NULL;
+       node *waiting_free = table[i];
+
+        while (waiting_free != NULL)
         {
-            node *waiting_free = table[i]->next;
-            free(table[i]);
-            table[i] = waiting_free;
+            to_free = waiting_free;
+            waiting_free = waiting_free->next;
+            free(to_free);
         }
-        return true;
     }
-    return false;
+    return true;
 }
