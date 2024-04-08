@@ -41,11 +41,3 @@ unsigned int hash(const char *word)
     }
     return hash_value;
 }
-
-    unsigned int hash_value = 0;
-    int word_length = strlen(word);
-    for (int i = 0; i < word_length; i = i++)
-        {
-            hash_value = (hash << 2) ^ word[i];
-        }
-    return hash_value;
