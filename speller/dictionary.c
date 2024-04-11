@@ -40,17 +40,17 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    unsigned long hash = 5381;
+    unsigned long hash_value = toupper(word[0] + 1) - 'A';
     // have an integer value of a letter in the word
     int c = *word;
     c = toupper(c);
     while (*word != 0)
     {
-        hash = ((hash << 2) + hash) + c;
+        hash_value = ((hash_value << 2) + hash_value) + c;
         c = *word++;
         c = toupper(c);
     }
-    return hash % N;
+    return hash_value % N;
 }
 
 int wordcount = 0;
