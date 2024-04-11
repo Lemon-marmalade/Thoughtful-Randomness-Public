@@ -46,7 +46,7 @@ unsigned int hash(const char *word)
     c = toupper(c);
     while (*word != 0)
     {
-        hash = ((hash << 5) + hash) + c;
+        hash = ((hash << 2) + hash) + c;
         c = *word++;
         c = toupper(c);
     }
