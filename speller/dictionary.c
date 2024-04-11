@@ -40,7 +40,7 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    unsigned long hash = 31;
+    unsigned long hash = 5381;
     // have an integer value of a letter in the word
     int c = *word;
     c = toupper(c);
