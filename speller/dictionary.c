@@ -43,12 +43,12 @@ unsigned int hash(const char *word)
     unsigned long hash = 5381;
     // have an integer value of a letter in the word
     int c = *word;
-    c = tolower(c);
+    c = toupper(c);
     while (*word != 0)
     {
         hash = ((hash << 5) + hash) + c;
         c = *word++;
-        c = tolower(c);
+        c = toupper(c);
     }
     return hash % N;
 }
