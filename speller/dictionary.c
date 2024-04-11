@@ -41,6 +41,7 @@ unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
     unsigned long hash = 5381;
+    // have an integer value of a letter in the word
     int c = *word;
     c = tolower(c);
     while (*word != 0)
