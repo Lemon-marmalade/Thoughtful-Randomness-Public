@@ -40,13 +40,15 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
+
+    // initialize hash value to a number 1-26 based on first letter
     unsigned long hash_value = toupper(word[0] + 1) - 'A';
     // have an integer value of a letter in the word
     int c = *word;
     c = toupper(c);
     while (*word != 0)
     {
-        hash_value = ((hash_value << 2) + hash_value) + c;
+        hash_value = (hash_value << 2) + c;
         c = *word++;
         c = toupper(c);
     }
