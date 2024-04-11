@@ -48,7 +48,9 @@ unsigned int hash(const char *word)
     c = toupper(c);
     while (*word != 0)
     {
+        // for each letter, shift original hash value 2 bits left and add the uppercase value of the current letter
         hash_value = (hash_value << 2) + c;
+        // move on to next letter
         c = *word++;
         c = toupper(c);
     }
