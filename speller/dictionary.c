@@ -40,10 +40,16 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    int hash_value = toupper(word[0] + 1) - 'A';
-    int word_length = strlen(word);
-
-    return hash_value;
+    unsigned long hash = 5381;
+    int c = *word;
+    c = tolower(c);
+    while (*word != 0)
+    {
+        hash = ((hash << 5) + hash) + c;
+        c = *word++;
+        c = tolower(c);
+    }
+    return hash % N;
 }
 
 int wordcount = 0;
