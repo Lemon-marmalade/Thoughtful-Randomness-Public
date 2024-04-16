@@ -36,4 +36,5 @@ def calculate_sentences(text):
         if text[i] == 46 or text[i] == 63 or text[i] == 33:
             sentences += 1
     return sentences
+
 main()
