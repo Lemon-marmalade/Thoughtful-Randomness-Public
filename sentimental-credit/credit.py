@@ -33,4 +33,4 @@ def calculate_digit(number):
         number = number / 10
     return digit
 
-
+main()
