@@ -33,7 +33,7 @@ def calculate_words(text):
 def calculate_sentences(text):
     sentences = 0
     for i in range(len(text)):
-        if text[i] == "." or text[i] == "!" or text[i] == "?"
+        if text[i] == "." or text[i] == "!" or text[i] == "?":
             sentences += 1
     return sentences
 
