@@ -7,7 +7,7 @@ def main():
             break
     digit = calculate_digit(number)
     if digit % 10 == 0:
-        if number in range(340000000000000 and number < 350000000000000) or (number > 370000000000000 and number < 380000000000000):
+        if number in range(340000000000000,350000000000000 or number in range(370000000000000, 380000000000000
             print("AMEX")
 
         elif number > 5100000000000000 and number < 5600000000000000:
