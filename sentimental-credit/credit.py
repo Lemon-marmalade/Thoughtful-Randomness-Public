@@ -5,6 +5,8 @@ def main()
         number = get_int("Number: ")
         if number >= 1:
             break
+    digit = calculate_digit(number)
+    if digit % 10 == 0:
         
 
 def calculate_digit(number)
