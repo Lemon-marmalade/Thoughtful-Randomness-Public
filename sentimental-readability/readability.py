@@ -33,7 +33,7 @@ def calculate_words(text):
 def calculate_sentences(text):
     sentences = 0
     for i in range(len(text)):
-        if text[i] == 46 or text[i] == 63 or text[i] == 33:
+        if int(text[i]) == 46 or 63 or 33:
             sentences += 1
     return sentences
 
