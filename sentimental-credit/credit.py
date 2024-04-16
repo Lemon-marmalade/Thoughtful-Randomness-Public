@@ -31,11 +31,11 @@ def calculate_digit(number):
         #let digit be the last digit of the number
         digit += number % 10
         #move on
-        number = number / 10 - (number % 10) / 10
+        number = (number / 10) - (number % 10) / 10
         #add to digit, the next digit multiplied by 2
         digit += ((number % 10) * 2)
         #move on
-        number = number / 10
+        number = (number / 10) - (number % 10) / 10
     return digit
 
 main()
