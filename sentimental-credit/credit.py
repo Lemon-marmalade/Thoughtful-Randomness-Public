@@ -31,11 +31,11 @@ def calculate_digit(number):
     while number > 0:
         # let digit be the last digit of the number
         digit += number % 10
-        # move on
+        # move on (accounting for truncation fix)
         number = (number / 10) - (number % 10) / 10
-        # add to digit, the next digit multiplied by 2's digits
+        # add to digit, the next digit multiplied by 2's digits (accounting for truncation fix)
         digit += ((number % 10) * 2) % 10 + ((number % 10) * 2) / 10 - ((number % 10 * 2) % 10) / 10
-        # move on
+        # move on (accounting for truncation fix)
         number = (number / 10) - (number % 10) / 10
     return digit
 
