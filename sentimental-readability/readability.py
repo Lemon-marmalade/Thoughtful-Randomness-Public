@@ -33,8 +33,8 @@ def calculate_words(text):
 def calculate_sentences(text):
     sentences = 0
     for i in range(len(text)):
-        character = text[i]
-        if character == 46 or character == 63 or character == 33:
+        character = ord(text[i])
+        if character == 46 or 63 or 33:
             sentences += 1
     return sentences
 
