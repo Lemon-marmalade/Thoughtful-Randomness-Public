@@ -33,7 +33,7 @@ def calculate_digit(number):
         #move on
         number = (number / 10) - (number % 10) / 10
         #add to digit, the next digit multiplied by 2's digits
-        digit += ((number % 10) * 2) % 10 + ((number % 10) * 2) / 10
+        digit += ((number % 10) * 2) % 10 + ((number % 10) * 2) / 10 - (number % 10) / 10
         #move on
         number = (number / 10) - (number % 10) / 10
     return digit
