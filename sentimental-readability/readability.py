@@ -34,7 +34,7 @@ def calculate_sentences(text):
     sentences = 0
     for i in range(len(text)):
         character = ord(text[i])
-        if character == 46 or 63 or 33:
+        if character == 46 or charactor == 63 or character == 33:
             sentences += 1
     return sentences
 
