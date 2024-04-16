@@ -6,7 +6,7 @@ def main():
         if number >= 1:
             break
     digit = calculate_digit(number)
-    
+
     if digit % 10 == 0:
         if number in range(340000000000000, 350000000000000) or number in range(370000000000000, 380000000000000):
             print("AMEX")
@@ -28,10 +28,10 @@ def calculate_digit(number):
     digit = 0
     number = float(number)
     while number > 0:
-        digit = digit + number % 10
+        digit += number % 10
         number = number / 10
 
-        digit = digit + (((number % 10) * 2) % 10 + ((number % 10) * 2) / 10)
+        digit += (((number % 10) * 2) % 10 + ((number % 10) * 2) / 10)
         number = number / 10
     return digit
 
