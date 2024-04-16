@@ -27,12 +27,11 @@ def main():
 
 def calculate_digit(number):
     digit = 0
-    number = int(number)
     while number > 0:
         #let digit be the last digit of the number
         digit += number % 10
         #move on
-        number = number / 10
+        number = number / 10 - (number % 10) / 10
         #add to digit, the next digit multiplied by 2
         digit += ((number % 10) * 2)
         #move on
