@@ -16,12 +16,14 @@ def main():
     else:
         print(f"Grade {round(index)}")
 
+
 def calculate_letters(text):
     letters = 0
     for i in range(len(text)):
         if text[i].isalpha():
             letters += 1
     return letters
+
 
 def calculate_words(text):
     words = 1
@@ -30,11 +32,13 @@ def calculate_words(text):
             words += 1
     return words
 
+
 def calculate_sentences(text):
     sentences = 0
     for i in range(len(text)):
         if text[i] == "." or text[i] == "!" or text[i] == "?":
             sentences += 1
     return sentences
+
 
 main()
