@@ -27,7 +27,7 @@ def main():
 
 def calculate_digit(number):
     digit = 0
-    number = number
+    number = int(number)
     while number > 0:
         #let digit be the last digit of the number
         digit += number % 10
