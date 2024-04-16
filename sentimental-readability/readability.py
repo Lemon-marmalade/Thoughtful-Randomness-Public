@@ -14,7 +14,7 @@ def main():
     elif index > 16:
         print("Grade 16+")
     else:
-        printf(f"Grade {round(index)}")
+        print(f"Grade {round(index)}")
 
 def calculate_letters(text):
     letters = 0
@@ -24,15 +24,16 @@ def calculate_letters(text):
     return letters
 
 def calculate_words(text):
-    int words = 1
+    words = 1
     for i in range(len(text)):
         if text[i].isspace():
             words += 1
     return words
 
-def calculate_sentences(text)
+def calculate_sentences(text):
     sentences = 0
     for i in range(len(text)):
         if text[i] == 46 or text[i] == 63 or text[i] == 33:
             sentences += 1
     return sentences
+main()
