@@ -25,6 +25,7 @@ def main():
 
 def calculate_digit(number):
     digit = 0
+    number = float(number)
     while number > 0:
         digit = digit + number % 10
         number = number / 10
