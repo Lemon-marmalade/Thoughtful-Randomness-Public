@@ -10,6 +10,7 @@ def main():
         print("Please input a singular CSV file")
     else:
     # TODO: Read database file into a variable
+            rows = []
             with open("sysargv[1]") as file:
                 reader = csv.DictReader(file)
                 for row in reader:
