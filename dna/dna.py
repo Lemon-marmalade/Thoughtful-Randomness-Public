@@ -5,11 +5,14 @@ import sys
 def main():
 
     # TODO: Check for command-line usage
+
     if len(sys.argv) != 2:
         print("Please input a singular CSV file")
     else:
     # TODO: Read database file into a variable
-        csv.reader(sys.argv[1], )
+            with open("sysargv[1]") as file:
+                reader = csv.DictReader(file)
+                csv.reader(sys.argv[1], )
     # TODO: Read DNA sequence file into a variable
 
     # TODO: Find longest match of each STR in DNA sequence
