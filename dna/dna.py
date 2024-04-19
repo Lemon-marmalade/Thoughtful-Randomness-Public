@@ -30,12 +30,14 @@ def main():
             #for each person in the database, check for each STR if the longest is a match
             for person in database:
                 match = 0
-                for STR in STRS:
+                for STR in STRs:
                     if int(person[STR]) == longest[STR]:
                         match += 1
-                #if all STRs match the longest of the given dna sequence, print name
-                if match == len(STRS):
-                    print(f"{person["name"]})
+            #if all STRs match the longest of the given dna sequence, print name
+            if match == len(STRs):
+                print(f"{person[0]}")
+            else:
+                print("No match")
             return
 
 
