@@ -21,7 +21,7 @@ def main():
     # TODO: Find longest match of each STR in DNA sequence
                 #compile a list of STRs from the first row of database excluding first element
                 STRs = list(database[0].keys())[1:]
-                #create dictionary
+                #create dictionary for longest number of repeats for each str
                 longest = {}
                 for STR in STRs:
                     #find longest match
