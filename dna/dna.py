@@ -20,14 +20,22 @@ def main():
                 dna = file.read
     # TODO: Find longest match of each STR in DNA sequence
                 #compile a list of STRs from the first row of database excluding first element
-                STRs = list(database[0].keys())[1:]
-                #create dictionary for longest number of repeats for each str
-                longest = {}
-                for STR in STRs:
-                    #find longest match
-                    longest[STR] = longest_match(dna, STR)
+            STRs = list(database[0].keys())[1:]
+            #create dictionary for longest number of repeats for each str
+            longest = {}
+            for STR in STRs:
+                #find longest match
+                longest[STR] = longest_match(dna, STR)
     # TODO: Check database for matching profiles
-
+            #for each person in the database, check for each STR if the longest is a match
+            for person in database:
+                match = 0
+                for STR in STRS:
+                    if int(person[STR]) == longest[STR]:
+                        match += 1
+                #if all STRs match the longest of the given dna sequence, print name
+                if match == len(STRS):
+                    print(f"{person["name"]})
             return
 
 
