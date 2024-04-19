@@ -20,11 +20,11 @@ def main():
                 dna = file.read
     # TODO: Find longest match of each STR in DNA sequence
                 #compile a list of STRs from the first row of database excluding first element
-                str = list(database[0].keys())[1:]
+                STRs = list(database[0].keys())[1:]
                 #create dictionary
                 longest = {}
-                for i in str:
-                    longest[str] = longest_match(dna, str)
+                for STR in STRs:
+                    longest[STR] = longest_match(dna, STR)
     # TODO: Check database for matching profiles
 
             return
