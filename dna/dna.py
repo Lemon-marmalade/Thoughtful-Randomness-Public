@@ -14,19 +14,19 @@ def main():
             with open("sysargv[1]") as file:
                 reader = csv.DictReader(file)
                 for row in reader:
-                    rows.append(database)
+                    database.append(row)
     # TODO: Read DNA sequence file into a variable
             dna = []
             with open("sysargv[2]") as file:
                 reader = file.read()
-                for dna in reader:
-                    rows.append(dna)
+                for row in reader:
+                    dna.append(row)
     # TODO: Find longest match of each STR in DNA sequence
-            for i in range(len(rows[1])-1):
+            for i in range(len(database[1])-1):
 
     # TODO: Check database for matching profiles
 
-    return
+            return
 
 
 def longest_match(sequence, subsequence):
