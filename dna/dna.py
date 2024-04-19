@@ -19,7 +19,8 @@ def main():
             dna = []
             with open("sysargv[2]") as file:
                 reader = file.read()
-                rows.append(dna)
+                for dna in reader:
+                    rows.append(dna)
     # TODO: Find longest match of each STR in DNA sequence
 
     # TODO: Check database for matching profiles
