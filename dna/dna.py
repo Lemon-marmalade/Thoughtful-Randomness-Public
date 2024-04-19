@@ -24,6 +24,7 @@ def main():
                 #create dictionary
                 longest = {}
                 for STR in STRs:
+                    #find longest match
                     longest[STR] = longest_match(dna, STR)
     # TODO: Check database for matching profiles
 
