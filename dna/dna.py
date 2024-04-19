@@ -7,14 +7,14 @@ def main():
     # TODO: Check for command-line usage
 
     if len(sys.argv) != 3:
-        print("Please input one singular CSV file and one singular sequence of DNA")
+        sys.exit("Usage: python dna.py database.csv sequence.csv")
     else:
     # TODO: Read database file into a variable
-            rows = []
+            database = []
             with open("sysargv[1]") as file:
                 reader = csv.DictReader(file)
                 for row in reader:
-                    rows.append(row)
+                    rows.append(database)
     # TODO: Read DNA sequence file into a variable
             dna = []
             with open("sysargv[2]") as file:
@@ -23,7 +23,7 @@ def main():
                     rows.append(dna)
     # TODO: Find longest match of each STR in DNA sequence
             for i in range(len(rows[1])-1):
-                
+
     # TODO: Check database for matching profiles
 
     return
