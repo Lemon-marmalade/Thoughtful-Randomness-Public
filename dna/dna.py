@@ -36,8 +36,8 @@ def main():
                         match += 1
             #if all STRs match the longest of the given dna sequence, print name
                     if match == len(STRs):
-                        print("person")
-                        break
+                        print(person["name"])
+                        exit()
 
             print("No match")
             return
