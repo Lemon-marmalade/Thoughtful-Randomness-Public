@@ -9,38 +9,38 @@ def main():
     if len(sys.argv) != 3:
         sys.exit("Usage: python dna.py database.csv sequence.csv")
     else:
-    # TODO: Read database file into a variable
-            #create list for database, appending each row as one element in the list
-            database = []
-            with open(sys.argv[1], 'r') as file:
-                reader = csv.DictReader(file)
-                for row in reader:
-                    database.append(row)
+        # TODO: Read database file into a variable
+        # create list for database, appending each row as one element in the list
+        database = []
+        with open(sys.argv[1], 'r') as file:
+            reader = csv.DictReader(file)
+            for row in reader:
+                database.append(row)
     # TODO: Read DNA sequence file into a variable
-            with open(sys.argv[2], 'r') as file:
-                dna = file.read()
+        with open(sys.argv[2], 'r') as file:
+            dna = file.read()
     # TODO: Find longest match of each STR in DNA sequence
-                #compile a list of STRs from the first row of database excluding first element (which is 'name')
-            STRs = list(database[0].keys())[1:]
-            #create dictionary for longest number of repeats for each str
-            longest_repeat = {}
-            for STR in STRs:
-                #find longest match
-                longest_repeat[STR] = longest_match(dna, STR)
+            # compile a list of STRs from the first row of database excluding first element (which is 'name')
+        STRs = list(database[0].keys())[1:]
+        # create dictionary for longest number of repeats for each str
+        longest_repeat = {}
+        for STR in STRs:
+            # find longest match
+            longest_repeat[STR] = longest_match(dna, STR)
     # TODO: Check database for matching profiles
-            #for each person in the database, check for each STR if the longest is a match
-            for person in database:
-                match = 0
-                for STR in STRs:
-                    if int(person[STR]) == longest_repeat[STR]:
-                        match += 1
-            #if all STRs match the longest of the given dna sequence, print name
-                    if match == len(STRs):
-                        print(person["name"])
-                        exit()
+        # for each person in the database, check for each STR if the longest is a match
+        for person in database:
+            match = 0
+            for STR in STRs:
+                if int(person[STR]) == longest_repeat[STR]:
+                    match += 1
+        # if all STRs match the longest of the given dna sequence, print name
+                if match == len(STRs):
+                    print(person["name"])
+                    exit()
 
-            print("No match")
-            return
+        print("No match")
+        return
 
 
 def longest_match(sequence, subsequence):
