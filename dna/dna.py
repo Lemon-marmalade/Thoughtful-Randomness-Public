@@ -19,7 +19,7 @@ def main():
             with open(sys.argv[2], 'r') as file:
                 dna = file.read
     # TODO: Find longest match of each STR in DNA sequence
-                #compile a list of STRs from the first row of database excluding first element
+                #compile a list of STRs from the first row of database excluding first element (which is 'name')
             STRs = list(database[0].keys())[1:]
             #create dictionary for longest number of repeats for each str
             longest = {}
