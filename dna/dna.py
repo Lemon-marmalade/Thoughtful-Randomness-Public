@@ -10,6 +10,7 @@ def main():
         sys.exit("Usage: python dna.py database.csv sequence.csv")
     else:
     # TODO: Read database file into a variable
+            #create list for database, appending each row as one element in the list
             database = []
             with open(sys.argv[1], 'r') as file:
                 reader = csv.DictReader(file)
@@ -17,7 +18,7 @@ def main():
                     database.append(row)
     # TODO: Read DNA sequence file into a variable
             with open(sys.argv[2], 'r') as file:
-                dna = file.read
+                dna = file.read()
     # TODO: Find longest match of each STR in DNA sequence
                 #compile a list of STRs from the first row of database excluding first element (which is 'name')
             STRs = list(database[0].keys())[1:]
