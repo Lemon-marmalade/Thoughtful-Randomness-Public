@@ -35,12 +35,11 @@ def main():
                     if int(person[STR]) == longest_repeat[STR]:
                         match += 1
             #if all STRs match the longest of the given dna sequence, print name
-            test = match
-            testt = len(STRs)
-            if match == len(STRs):
-                print(f"{person[0]}")
-            else:
-                print("No match")
+                    if match == len(STRs):
+                        print(f"{person[0]}")
+                        break
+
+            print("No match")
             return
 
 
