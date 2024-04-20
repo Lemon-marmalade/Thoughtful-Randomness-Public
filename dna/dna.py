@@ -21,21 +21,21 @@ def main():
             dna = file.read()
     # TODO: Find longest match of each STR in DNA sequence
             # compile a list of STRs from the first row of database excluding first element (which is 'name')
-        STRs = list(database[0].keys())[1:]
+        Strs = list(database[0].keys())[1:]
         # create dictionary for longest number of repeats for each str
         longest_repeat = {}
-        for STR in STRs:
+        for Str in Strs:
             # find longest match
-            longest_repeat[STR] = longest_match(dna, STR)
+            longest_repeat[Str] = longest_match(dna, Str)
     # TODO: Check database for matching profiles
         # for each person in the database, check for each STR if the longest is a match
         for person in database:
             match = 0
-            for STR in STRs:
-                if int(person[STR]) == longest_repeat[STR]:
+            for Str in Strs:
+                if int(person[Str]) == longest_repeat[Str]:
                     match += 1
         # if all STRs match the longest of the given dna sequence, print, at location person in database, the corrosponding value to the key 'name'
-                if match == len(STRs):
+                if match == len(Strs):
                     print(person["name"])
                     exit()
 
