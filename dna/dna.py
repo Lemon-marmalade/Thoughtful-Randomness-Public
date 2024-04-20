@@ -32,11 +32,11 @@ def main():
             for person in database:
                 match = 0
                 for STR in STRs:
-                    test = int(person[STR])
-                    testt = longest_repeat[STR]
                     if int(person[STR]) == longest_repeat[STR]:
                         match += 1
             #if all STRs match the longest of the given dna sequence, print name
+            test = match
+            testt = len(STRs)
             if match == len(STRs):
                 print(f"{person[0]}")
             else:
