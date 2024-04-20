@@ -26,13 +26,13 @@ def main():
             longest_repeat = {}
             for short in STRs:
                 #find longest match
-                longest_repeat[short] = longest_match(dna, short)
+                longest_repeat[STR] = longest_match(dna, STR)
     # TODO: Check database for matching profiles
             #for each person in the database, check for each STR if the longest is a match
             for person in database:
                 match = 0
-                for short in STRs:
-                    if int(person[short]) == longest_repeat[short]:
+                for STR in STRs:
+                    if int(person[STR]) == longest_repeat[STR]:
                         match += 1
             #if all STRs match the longest of the given dna sequence, print name
             if match == len(STRs):
