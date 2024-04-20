@@ -34,7 +34,7 @@ def main():
             for STR in STRs:
                 if int(person[STR]) == longest_repeat[STR]:
                     match += 1
-        # if all STRs match the longest of the given dna sequence, print name
+        # if all STRs match the longest of the given dna sequence, print, at location person in database, the corrosponding value to the key 'name'
                 if match == len(STRs):
                     print(person["name"])
                     exit()
