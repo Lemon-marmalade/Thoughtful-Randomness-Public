@@ -1,1 +1,0 @@
-If songs.db contains the top 100 songs of a listener from 2018, their audio aura could be characterized
