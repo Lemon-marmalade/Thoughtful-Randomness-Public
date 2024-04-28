@@ -1,2 +1,2 @@
 SELECT name FROM people
-WHERE id = (SELECT person_id FROM stars WHERE movie_id = (SELECT id FROM movies WHERE title = 'Toy Story'));
+WHERE people.id = (SELECT person_id FROM stars WHERE stars.movie_id = (SELECT id FROM movies WHERE movies.title = 'Toy Story'));
