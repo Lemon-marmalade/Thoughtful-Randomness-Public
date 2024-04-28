@@ -1,2 +1,2 @@
 SELECT birth FROM people
-WHERE 
+WHERE people.name = 'Emma Stone';
