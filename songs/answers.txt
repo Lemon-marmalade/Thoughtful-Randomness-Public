@@ -1,0 +1,7 @@
+If songs.db contains the top 100 songs of a listener from 2018, their audio aura could be characterized by taking in factors such as the numerical values of danceability, energy, loudness, speechiness, valence, tempo, and duration.
+Each ‘mood’ would presumably be assigned with a certain range of values for each characteristic of song. I would then check, for each song, based on these ranges, the ordering of moods the song best aligns to.
+Once each song has a ranked list of moods, the data can then be inserted into a data table consisting of each song and their mood rankings.
+I would then find the most frequent mood in rank 1 and rank 2, and those would become the 2 most suitable moods for the listener. Using these top 2 moods, the listener’s aura is determined.
+
+The way this was calculated may not be very representative of the listener, as a listener may have listened to their top song a thousand times, and the rest of their 99 top 100 songs only once. If the first song is a drastically different genre than the rest, even though it wins by frequency, the method stated above does not account for that, and its value would then be overshadowed by the rest of the songs listened to.
+To fix this, when inputting values into the data table, a play frequency field could be included so different songs are weighed differently based on how much they are listened to.
