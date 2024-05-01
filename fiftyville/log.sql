@@ -14,15 +14,18 @@ SELECT id, name, transcript FROM interviews
     --name: Ruth
     -- transcript details:
         -- sometime within 10 minutes of theft, Ruth saw thief get into car in bakery parking lot and drive away
-        -- advises interviewer to look in security footage from the parking lot in that time frame (check to confirm)
+        -- advises interviewer to look in security footage from the parking lot in that time frame (check bakery_security logs)
     -- id: 162
     -- name: Eugene
     -- transcript details:
         -- doesn't know the theif's name, but recognized them
-        -- that morning, before arriving at Emma's bakery, Eugene was walking by the ATM on Leggett Street and saw the theif there withdrawing money (check to confirm)
+        -- that morning, before arriving at Emma's bakery, Eugene was walking by the ATM on Leggett Street and saw the theif there withdrawing money (check atm transactions and bank_ accounts)
     --id: 163
     --name: Raymond
     -- transcript details:
         -- as the thief was leaving the bakery, they called someone who talked to them for less than a minute
             -- in the call, Raymond heard the thief plan to take the earliest flight out of Fiftyville the next day
-            -- thief asked person on other end of call to purchase a flight ticket
+                -- thief asked person on other end of call to purchase a flight ticket (check phone_calls, airports, flights, passengers)
+-- 3: (based on info from interview 161) selecting id, activity and license plate according to time frame
+SELECT id, activity, license_plate FROM bakery_security_logs
+    WHERE year = '2023' AND month = '7' AND day = '28' AND hour = '10' AND (minute in = '15', '16','17','18','19', '20', '21', '22', '23', '24', '25', '26');
