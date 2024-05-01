@@ -35,5 +35,6 @@ SELECT transaction_type FROM atm_transactions;
 -- results: 2 types are 'withdraw' and 'deposit'
 -- 5: (based on info from interview 162) selecting id, account number, and amount from atm_transactions given the date, withdrawal and street
 SELECT id, account_number, amount FROM atm_transactions
-    WHERE year = '2023' AND month = '7' AND day = '28' AND transaction_type = 'withdraw';
--- results: many account numbers and amounts, table has been noted
+    WHERE year = '2023' AND month = '7' AND day = '28' AND transaction_type = 'withdraw' AND atm_location = 'Leggett Street';
+-- results: 8 ids, account numbers, and amounts. Table has been noted
+-- 6: 
