@@ -10,4 +10,19 @@ SELECT id, description FROM crime_scene_reports
 SELECT id, name, transcript FROM interviews
     WHERE year = '2023' AND month = '7' AND day = '28';
 -- results: those that included mention of the bakery
-    --
+    -- id: 161
+    --name: Ruth
+    -- transcript details:
+        -- sometime within 10 minutes of theft, Ruth saw thief get into car in bakery parking lot and drive away
+        -- advises interviewer to look in security footage from the parking lot in that time frame (check to confirm)
+    -- id: 162
+    -- name: Eugene
+    -- transcript details:
+        -- doesn't know the theif's name, but recognized them
+        -- that morning, before arriving at Emma's bakery, Eugene was walking by the ATM on Leggett Street and saw the theif there withdrawing money (check to confirm)
+    --id: 163
+    --name: Raymond
+    -- transcript details:
+        -- as the thief was leaving the bakery, they called someone who talked to them for less than a minute
+            -- in the call, Raymond heard the thief plan to take the earliest flight out of Fiftyville the next day
+            -- thief asked person on other end of call to purchase a flight ticket
