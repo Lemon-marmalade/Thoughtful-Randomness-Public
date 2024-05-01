@@ -28,4 +28,4 @@ SELECT id, name, transcript FROM interviews
                 -- thief asked person on other end of call to purchase a flight ticket (check phone_calls, airports, flights, passengers)
 -- 3: (based on info from interview 161) selecting id, activity and license plate according to time frame
 SELECT id, activity, license_plate FROM bakery_security_logs
-    WHERE year = '2023' AND month = '7' AND day = '28' AND hour = '10' AND minute BETWEEN 
+    WHERE year = '2023' AND month = '7' AND day = '28' AND hour = '10' AND (minute BETWEEN 15 AND 25);
