@@ -37,4 +37,4 @@ SELECT transaction_type FROM atm_transactions;
 SELECT id, account_number, amount FROM atm_transactions
     WHERE year = '2023' AND month = '7' AND day = '28' AND transaction_type = 'withdraw' AND atm_location = 'Leggett Street';
 -- results: 8 ids, account numbers, and amounts. Table has been noted
--- 6: 
+-- 6: select id, caller, receiver,
