@@ -30,6 +30,9 @@ SELECT id, name, transcript FROM interviews
 SELECT id, activity, license_plate FROM bakery_security_logs
     WHERE year = '2023' AND month = '7' AND day = '28' AND hour = '10' AND (minute BETWEEN 15 AND 25);
 --results: id 260-267 were all exiting. license plates noted
--- 4: (based on info from interview 162) selecting id, account number, and amount from atm_transactions given the date, withdrawal and street
+-- 4: figuring out the types of transactions
+SELECT transaction_type FROM atm_transactions;
+-- results: 2 types are 'withdraw' and 'deposit'
+-- 5: (based on info from interview 162) selecting id, account number, and amount from atm_transactions given the date, withdrawal and street
 SELECT id, account_number, amount FROM atm_transactions
-    WHERE year = '2023' AND month = '7' AND day = '28' AND (hour <= 10 WHERE minute BETWEEN 15 AND 
+    WHERE year = '2023' AND month = '7' AND day = '28' AND transaction_type = 'withdraw';
