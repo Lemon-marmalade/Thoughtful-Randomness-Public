@@ -32,4 +32,4 @@ SELECT id, activity, license_plate FROM bakery_security_logs
 --results: id 260-267 were all exiting. license plates noted
 -- 4: (based on info from interview 162) selecting id, account number, and amount from atm_transactions given the date, withdrawal and street
 SELECT id, account_number, amount FROM atm_transactions
-    WHERE year = '2023' AND month = '7' AND day = '28' AND hour BETWEEN 
+    WHERE year = '2023' AND month = '7' AND day = '28' AND (hour <= 10 WHERE minute BETWEEN 15 AND 
