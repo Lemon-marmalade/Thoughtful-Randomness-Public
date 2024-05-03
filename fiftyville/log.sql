@@ -51,3 +51,18 @@ SELECT id, abbreviation, full_name FROM airports
 -- 9: select from flights: id, destination, hour and minute for earliest flight out of fiftyville the next day
 SELECT id, destination_airport_id, hour, minute FROM flights
     WHERE origin_airport_id = 8 AND year = '2023' AND month = '7' AND day = '29';
+-- results: the ids are not in order. earliest flight is at 8:20, id = 36, destination airport id = 4
+-- 10: selecting from people where where passenger's flight id is 8, passport number is in people where phone_number is in query 7, and license_plate is in query 3
+SELECT name FROM people
+    WHERE (people.passport_number = SELECT passport_number FROM passengers WHERE passengers.flight_id = 8)
+    AND (people.phone_number IN (SELECT  caller FROM phone_calls
+        WHERE year = '2023'
+        AND month = '7'
+        AND day = '28'
+        AND duration < 60))
+    AND people.license_plate IN (SELECT license_plate FROM bakery_security_logs
+        WHERE year = '2023'
+        AND month = '7'
+        AND day = '28'
+        AND hour = '10'
+        AND (minute BETWEEN 15 AND 25));
