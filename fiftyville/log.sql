@@ -37,6 +37,10 @@ SELECT transaction_type FROM atm_transactions;
 SELECT id, account_number, amount FROM atm_transactions
     WHERE year = '2023' AND month = '7' AND day = '28' AND transaction_type = 'withdraw' AND atm_location = 'Leggett Street';
 -- results: 8 ids, account numbers, and amounts. Table has been noted
--- 6: select id, caller, receiver, duration from phone_calls
+-- 6: scoping out the unit of measurement for duration
+SELECT duration FROM phone_calls;
+-- result: mostly in hundreds and two hundreds, so will assume duration is measured in seconds
+-- 7:select id, caller, receiver from phone_calls with date and duration less than a minute
 SELECT id, caller, receiver, duration FROM phone_calls
-    WHERE year = '2023' AND month = '7' AND day = '28';
+    WHERE year = '2023' AND month = '7' AND day = '28' AND duration < 60;
+-- results: 9 calls. Table has been noted
