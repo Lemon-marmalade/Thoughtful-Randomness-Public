@@ -44,4 +44,10 @@ SELECT duration FROM phone_calls;
 SELECT id, caller, receiver, duration FROM phone_calls
     WHERE year = '2023' AND month = '7' AND day = '28' AND duration < 60;
 -- results: 9 calls. Table has been noted
--- 8: select from flights: id, destination, for earliest flight out of fiftyville the next day
+-- 8: find airports in fiftyville
+SELECT id, abbreviation, full_name FROM airports
+    WHERE city = 'Fiftyville';
+-- results: one airport, id = 8, abbreviation = CSF, full name = Fiftyville Regional Airport
+-- 9: select from flights: id, destination, hour and minute for earliest flight out of fiftyville the next day
+SELECT id, destination_airport_id, hour, minute FROM flights
+    WHERE origin_airport_id = 8 AND year = '2023' AND month = '7' AND day = '29';
