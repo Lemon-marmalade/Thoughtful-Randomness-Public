@@ -44,3 +44,4 @@ SELECT duration FROM phone_calls;
 SELECT id, caller, receiver, duration FROM phone_calls
     WHERE year = '2023' AND month = '7' AND day = '28' AND duration < 60;
 -- results: 9 calls. Table has been noted
+-- 8: select from flights: id, destination,
