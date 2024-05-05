@@ -50,12 +50,14 @@ SELECT id, abbreviation, full_name FROM airports
 -- results: one airport, id = 8, abbreviation = CSF, full name = Fiftyville Regional Airport
 -- 9: select from flights: id, destination, hour and minute for earliest flight out of fiftyville the next day
 SELECT id, destination_airport_id, hour, minute FROM flights
-    WHERE origin_airport_id = 8 AND year = '2023' AND month = '7' AND day = '29';
+    WHERE origin_airport_id = 8 AND year = 2023 AND month = 7 AND day = 29;
 -- results: the ids are not in order. earliest flight is at 8:20, id = 36, destination airport id = 4
--- 10: selecting from people where where passenger's flight id is 8, passport number is in people where phone_number is in query 7, and license_plate is in query 3
+-- 10: join tables... selecting name from people where flights, phone number, and license plate all line up
 SELECT name FROM people
-    WHERE (people.passport_number IN (SELECT passport_number FROM passengers WHERE passengers.flight_id = 36
-            AND destination_airport_id = 4 AND year = '2023' AND month = '7' AND day = '29'))
+JOIN passengers ON people.passport_number = passengers.passport_number
+JOIN flights ON flights.id = passengers.flight_id
+WHERE passengers.flight_id = 36 AND year = 2023 AND month = 7 AND day = 29
+            AND origin_airport_id = 8 AND destination_airport_id = 4AND year = '2023' AND month = '7' AND day = '29'))
     AND (people.phone_number IN (SELECT caller FROM phone_calls
         WHERE phone_calls.year = '2023'
         AND phone_calls.month = '7'
