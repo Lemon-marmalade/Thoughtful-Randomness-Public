@@ -52,7 +52,7 @@ SELECT id, abbreviation, full_name FROM airports
 SELECT id, destination_airport_id, hour, minute FROM flights
     WHERE origin_airport_id = 8 AND year = 2023 AND month = 7 AND day = 29;
 -- results: the ids are not in order. earliest flight is at 8:20, id = 36, destination airport id = 4
--- 10: join tables... selecting name from people where flights, phone number, and license plate all line up
+-- 10: join tables... selecting name from people where flights, phone number, bank info, and license plate all line up
 SELECT name FROM people
 JOIN passengers ON people.passport_number = passengers.passport_number
 JOIN flights ON flights.id = passengers.flight_id
@@ -63,7 +63,8 @@ AND (people.phone_number IN (SELECT caller FROM phone_calls
         AND phone_calls.month = '7'
         AND phone_calls.day = '28'
         AND phone_calls.duration < 60))
-    AND (people.license_plate IN (SELECT license_plate FROM bakery_security_logs
+AND ()
+AND (people.license_plate IN (SELECT license_plate FROM bakery_security_logs
         WHERE bakery_security_logs.year = '2023'
         AND bakery_security_logs.month = '7'
         AND bakery_security_logs.day = '28'
