@@ -54,7 +54,8 @@ SELECT id, destination_airport_id, hour, minute FROM flights
 -- results: the ids are not in order. earliest flight is at 8:20, id = 36, destination airport id = 4
 -- 10: selecting from people where where passenger's flight id is 8, passport number is in people where phone_number is in query 7, and license_plate is in query 3
 SELECT name FROM people
-    WHERE (people.passport_number IN (SELECT passport_number FROM passengers WHERE passengers.flight_id = 36))
+    WHERE (people.passport_number IN (SELECT passport_number FROM passengers WHERE passengers.flight_id = 36
+            AND destination_airport_id = 4 AND year = '2023' AND month = '7' AND day = '29'))
     AND (people.phone_number IN (SELECT caller FROM phone_calls
         WHERE phone_calls.year = '2023'
         AND phone_calls.month = '7'
