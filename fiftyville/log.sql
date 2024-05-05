@@ -57,8 +57,8 @@ SELECT name FROM people
 JOIN passengers ON people.passport_number = passengers.passport_number
 JOIN flights ON flights.id = passengers.flight_id
 WHERE passengers.flight_id = 36 AND year = 2023 AND month = 7 AND day = 29
-            AND origin_airport_id = 8 AND destination_airport_id = 4AND year = '2023' AND month = '7' AND day = '29'))
-    AND (people.phone_number IN (SELECT caller FROM phone_calls
+    AND flights.origin_airport_id = 8 AND flights.destination_airport_id = 4
+AND (people.phone_number IN (SELECT caller FROM phone_calls
         WHERE phone_calls.year = '2023'
         AND phone_calls.month = '7'
         AND phone_calls.day = '28'
