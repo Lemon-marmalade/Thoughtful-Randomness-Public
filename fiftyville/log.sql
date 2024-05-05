@@ -78,3 +78,4 @@ AND (people.license_plate IN (SELECT license_plate FROM bakery_security_logs
         AND bakery_security_logs.day = '28'
         AND bakery_security_logs.hour = '10'
         AND (minute BETWEEN 15 AND 25)));
+--results!!! BRUCE!
