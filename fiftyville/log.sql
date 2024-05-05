@@ -87,3 +87,7 @@ WHERE phone_number = (SELECT receiver FROM phone_calls
     AND day = '28'
     AND duration < 60
     AND caller = (SELECT phone_number FROM people WHERE name = 'Bruce'));
+-- result: Robin
+-- 12: finding destination city
+SELECT destination
+
