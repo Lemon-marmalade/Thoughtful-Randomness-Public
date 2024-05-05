@@ -79,3 +79,11 @@ AND (people.license_plate IN (SELECT license_plate FROM bakery_security_logs
         AND bakery_security_logs.hour = '10'
         AND (minute BETWEEN 15 AND 25)));
 --results!!! BRUCE!
+-- 11: finding accomplice through the phone call
+SELECT name FROM people
+WHERE phone_number = (SELECT receiver FROM phone_calls
+    WHERE year = '2023'
+    AND month = '7'
+    AND day = '28'
+    AND duration < 60
+    AND caller = (SELECT phone_number FROM people WHERE name = 'Bruce'));
