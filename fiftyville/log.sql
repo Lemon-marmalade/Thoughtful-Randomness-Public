@@ -55,7 +55,7 @@ SELECT id, destination_airport_id, hour, minute FROM flights
 -- 10: selecting from people where where passenger's flight id is 8, passport number is in people where phone_number is in query 7, and license_plate is in query 3
 SELECT name FROM people
     WHERE (people.passport_number IN (SELECT passport_number FROM passengers WHERE passengers.flight_id = 8))
-    AND (people.phone_number IN (SELECT  caller FROM phone_calls
+    AND (people.phone_number IN (SELECT caller FROM phone_calls
         WHERE year = '2023'
         AND month = '7'
         AND day = '28'
