@@ -56,10 +56,10 @@ SELECT id, destination_airport_id, hour, minute FROM flights
 SELECT name FROM people
     WHERE (people.passport_number IN (SELECT passport_number FROM passengers WHERE passengers.flight_id = 8))
     AND (people.phone_number IN (SELECT caller FROM phone_calls
-        WHERE year = '2023'
-        AND month = '7'
-        AND day = '28'
-        AND duration < 60))
+        WHERE phone_calls.year = '2023'
+        AND phone_calls.month = '7'
+        AND phone_calls.day = '28'
+        AND phone_calls.duration < 60))
     AND (people.license_plate IN (SELECT license_plate FROM bakery_security_logs
         WHERE year = '2023'
         AND month = '7'
