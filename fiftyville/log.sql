@@ -56,6 +56,7 @@ SELECT id, destination_airport_id, hour, minute FROM flights
 SELECT name FROM people
 JOIN passengers ON people.passport_number = passengers.passport_number
 JOIN flights ON flights.id = passengers.flight_id
+JOIN bank_accounts ON people.id = bank_accounts.person_id
 WHERE passengers.flight_id = 36 AND year = 2023 AND month = 7 AND day = 29
     AND flights.origin_airport_id = 8 AND flights.destination_airport_id = 4
 AND (people.phone_number IN (SELECT caller FROM phone_calls
@@ -64,12 +65,12 @@ AND (people.phone_number IN (SELECT caller FROM phone_calls
         AND phone_calls.day = '28'
         AND phone_calls.duration < 60))
 
-AND (people.id IN bank_accounts.person_id WHERE (SELECT account_number FROM bank_accounts IN (SELECT account_number FROM atm_transactions
+AND bank_accounts.account_number IN (SELECT account_number FROM atm_transactions
     WHERE year = '2023'
     AND month = '7'
     AND day = '28'
     AND transaction_type = 'withdraw'
-    AND atm_location = 'Leggett Street';)))
+    AND atm_location = 'Leggett Street')
 
 AND (people.license_plate IN (SELECT license_plate FROM bakery_security_logs
         WHERE bakery_security_logs.year = '2023'
