@@ -10,7 +10,6 @@
             // start script when DOM loads
             document.addEventListener('DOMContentLoaded', function() {
                 // create change in colour of buttons when hovered over
-                // get button element
                 let button = document.querySelector('button');
                 // when button is hovered over, turn blue
                 button.addEventListener('mouseover', function() {
@@ -25,6 +24,7 @@
                 let correct = document.querySelector('.correct');
                 correct.addEventListener('click', function() {
                     correct.style.backgroundColor = 'green';
+                    document.quearySelector('#feedback1').innerHTML = 'Correct :)';
                 })
             });
 
