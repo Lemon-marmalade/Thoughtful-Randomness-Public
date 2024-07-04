@@ -15,10 +15,10 @@
                 let incorrects = document.querySelectorAll('.incorrect');
 
                 let buttons = document.querySelector('button');
-                Array.from(incorrects).forEach(function(incorrect) {
-                    incorrect.addEventListener('click', function() {
+                Array.from(buttons).forEach(function(button) {
+                    button.addEventListener('click', function() {
                         setTimeout(function() {
-                            document.querySelector('#feedback1').innerHTML = 'Correct :)';
+                            document.querySelector('#feedback1').innerHTML = '';
                         }, 5000);
                     });
                 });
