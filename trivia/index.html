@@ -15,7 +15,15 @@
                 let incorrects = document.querySelectorAll('.incorrect');
 
                 correct.addEventListener('click', function() {
-                    if (firstclicked)
+                    if (firstclicked == false) {
+                        firstclick = correct;
+                        firstclicked = true;
+                    }
+                    else if (firstclicked == true) {
+                        firstclick.style.backgroundColor = '';
+                        firstclick.style.color = '';
+                        firstclick = 
+                    }
                     correct.style.backgroundColor = '#93C572';
                     correct.style.color = 'white';
                     document.querySelector('#feedback1').innerHTML = 'Correct :)';
