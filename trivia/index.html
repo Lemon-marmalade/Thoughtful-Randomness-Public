@@ -11,7 +11,7 @@
             document.addEventListener('DOMContentLoaded', function() {
 
                 // create change in colour of buttons when hovered over
-                const buttons = document.querySelectorAll('button');
+                const buttons = document.querySelector('button');
                 buttons.forEach(button, function() {
                      //is hovered over, turn blue
                     buttons.addEventListener('mouseover', function() {
@@ -33,9 +33,9 @@
 
                 let incorrect = document.querySelector('.incorrect');
                 incorrect.addEventListener('click', function() {
-                    incorrect.style.backgroundColor = '#93C572';
+                    incorrect.style.backgroundColor = '#E35335';
                     incorrect.style.color = 'white';
-                    document.quearySelector('#feedback1').innerHTML = 'Correct :)';
+                    document.quearySelector('#feedback1').innerHTML = 'Incorrect :(';
                 });
             });
 
