@@ -15,9 +15,12 @@
                 let incorrects = document.querySelectorAll('.incorrect');
 
                 correct.addEventListener('click', function() {
-                    correct.style.backgroundColor = '#93C572';
+                    setTimeout(function() {
+                       correct.style.backgroundColor = '#93C572';
                     correct.style.color = 'white';
                     document.querySelector('#feedback1').innerHTML = 'Correct :)';
+                    },3000);
+
                 });
 
                 // when incorrect button clicked, change colour to red
