@@ -19,6 +19,7 @@
                     correct.style.color = 'white';
                     document.querySelector('#feedback1').innerHTML = 'Correct :)';
                 });
+
                 // when incorrect button clicked, change colour to red
                 let incorrect = document.querySelector('.incorrect');
                 incorrect.addEventListener('click', function() {
@@ -27,22 +28,18 @@
                     document.querySelector('#feedback1').innerHTML = 'Incorrect :(';
                 });
 
-                Array.from(buttons).forEach(function(button) {
-                     //is hovered over, turn blue
-                     if (button.style.color != 'white') {
+                if (button.style.color != 'white') {
+                    Array.from(buttons).forEach(function(button) {
+                    //is hovered over, turn blue
                         button.addEventListener('mouseover', function() {
-                        button.style.backgroundColor = '#A7C7E7';
-                    });
-                     }
-
-                // when mouse leaves, return to normal only if button hasn't been clicked
-                    if (button.style.backgroundColor != 'white') {
+                            button.style.backgroundColor = '#A7C7E7';
+                        });
+                    // when mouse leaves, return to normal only if button hasn't been clicked
                         button.addEventListener('mouseout', function() {
                             button.style.backgroundColor = '';
                         });
-                    }
-                });
-
+                    });
+                }
             });
 
         </script>
