@@ -35,7 +35,14 @@
                         incorrect.style.backgroundColor = '#E35335';
                         incorrect.style.color = 'white';
                         document.querySelector('#feedback1').innerHTML = 'Incorrect :(';
-
+                        if (firstclicked = false) {
+                            firstclicked = true;
+                        }
+                        else if (firstclicked = true) {
+                            firstclick.style.backgroundColor = '';
+                            firstclick.style.color = '';
+                        }
+                        firstclick = incorrect;
                     });
                 });
                 // check free response field
