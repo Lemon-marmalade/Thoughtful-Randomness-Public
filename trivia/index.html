@@ -12,7 +12,6 @@
 
                 // create change in colour of buttons when hovered over
                 const buttons = document.querySelectorAll('button');
-                // when each button
                 buttons.forEach(button, function() {
                      //is hovered over, turn blue
                     buttons.addEventListener('mouseover', function() {
@@ -31,6 +30,12 @@
                     correct.style.color = 'white';
                     document.quearySelector('#feedback1').innerHTML = 'Correct :)';
                 });
+
+                let incorrect = document.querySelector('.incorrect');
+                incorrect.addEventListener('click', function() {
+                    incorrect.style.backgroundColor = '#93C572';
+                    incorrect.style.color = 'white';
+                    document.quearySelector('#feedback1').innerHTML = 'Correct :)';
             });
 
         </script>
@@ -46,10 +51,10 @@
                 <hr>
                 <!-- TODO: Add multiple choice question here -->
                  <h3>Which one of the following condiments do not traditionally contain raw eggs?</h3>
-                 <button class = "button incorrect">Mayonaise</button>
-                 <button class = "button incorrect">Aoili</button>
-                 <button class = "button correct">Worcestershire</button>
-                 <button class = "button correct">Hollandaise</button>
+                 <button class = "incorrect">Mayonaise</button>
+                 <button class = "incorrect">Aoili</button>
+                 <button class = "correct">Worcestershire</button>
+                 <button class = "correct">Hollandaise</button>
                  <p id="feedback1"></p>
             </div>
 
