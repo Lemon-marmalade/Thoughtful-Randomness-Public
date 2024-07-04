@@ -14,6 +14,15 @@
                 let correct = document.querySelector('.correct');
                 let incorrects = document.querySelectorAll('.incorrect');
 
+                let buttons = document.querySelector('button');
+                Array.from(incorrects).forEach(function(incorrect) {
+                    incorrect.addEventListener('click', function() {
+                        setTimeout(function() {
+                            document.querySelector('#feedback1').innerHTML = 'Correct :)';
+                        }, 5000);
+                    });
+                });
+
                 correct.addEventListener('click', function() {
                     correct.style.backgroundColor = '#93C572';
                     correct.style.color = 'white';
