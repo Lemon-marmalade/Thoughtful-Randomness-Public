@@ -10,7 +10,7 @@
             // start script when DOM loads
             document.addEventListener('DOMContentLoaded', function() {
                 // create change in colour of buttons when hovered over
-                let button = document.querySelector('button');
+                let button = document.querySelectorAll('.button');
                 // when button is hovered over, turn blue
                 button.addEventListener('mouseover', function() {
 
@@ -42,10 +42,10 @@
                 <hr>
                 <!-- TODO: Add multiple choice question here -->
                  <h3>Which one of the following condiments do not traditionally contain raw eggs?</h3>
-                 <button class = "incorrect">Mayonaise</button>
-                 <button class = "incorrect">Aoili</button>
-                 <button class = "correct">Worcestershire</button>
-                 <button class = "correct">Hollandaise</button>
+                 <button class = "button" class = "incorrect">Mayonaise</button>
+                 <button class = "button" class = "incorrect">Aoili</button>
+                 <button class = "button" class = "correct">Worcestershire</button>
+                 <button class = "button" class = "correct">Hollandaise</button>
                  <p id="feedback1"></p>
             </div>
 
