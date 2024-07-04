@@ -31,7 +31,14 @@
                 // when incorrect button clicked, change colour to red
                 Array.from(incorrects).forEach(function(incorrect) {
                     incorrect.addEventListener('click', function() {
-                        
+                        if (firstclicked == false) {
+                            firstclicked = true;
+                        }
+                        else if (firstclicked == true) {
+                            firstclick.style.backgroundColor = '';
+                            firstclick.style.color = '';
+                        }
+                        firstclick = incorrect;
                         incorrect.style.backgroundColor = '#E35335';
                         incorrect.style.color = 'white';
                         document.querySelector('#feedback1').innerHTML = 'Incorrect :(';
