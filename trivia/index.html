@@ -22,7 +22,10 @@
                     button.style.backgroundColor = '';
                 });
                 // when correct button clicked, change colour to green
-                let correct = document.querySelector('.correct')
+                const correct = document.querySelector('.correct');
+                correct.addEventListener('click', function() {
+                    correct.style.backgroundColor = 'green';
+                })
             });
 
         </script>
