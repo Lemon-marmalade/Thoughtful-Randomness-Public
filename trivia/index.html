@@ -10,11 +10,15 @@
             // start script when DOM loads
             document.addEventListener('DOMContentLoaded', function() {
                 let firstclicked = false;
+                let firstclick = null;
                 // when correct button clicked, change colour to green
                 let correct = document.querySelector('.correct');
                 let incorrects = document.querySelectorAll('.incorrect');
 
                 correct.addEventListener('click', function() {
+                    correct.style.backgroundColor = '#93C572';
+                    correct.style.color = 'white';
+                    document.querySelector('#feedback1').innerHTML = 'Correct :)';
                     if (firstclicked = false) {
                        firstclicked = true;
                     }
@@ -22,10 +26,7 @@
                         firstclick.style.backgroundColor = '';
                         firstclick.style.color = '';
                     }
-                    let firstclick = correct;
-                    correct.style.backgroundColor = '#93C572';
-                    correct.style.color = 'white';
-                    document.querySelector('#feedback1').innerHTML = 'Correct :)';
+                    firstclick = correct;
                 });
 
                 // when incorrect button clicked, change colour to red
