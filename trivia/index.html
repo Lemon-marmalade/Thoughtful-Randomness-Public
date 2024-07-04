@@ -16,14 +16,13 @@
 
                 correct.addEventListener('click', function() {
                     if (firstclicked == false) {
-                        firstclick = correct;
                         firstclicked = true;
                     }
                     else if (firstclicked == true) {
                         firstclick.style.backgroundColor = '';
                         firstclick.style.color = '';
-                        firstclick = 
                     }
+                    firstclick = correct;
                     correct.style.backgroundColor = '#93C572';
                     correct.style.color = 'white';
                     document.querySelector('#feedback1').innerHTML = 'Correct :)';
@@ -32,6 +31,7 @@
                 // when incorrect button clicked, change colour to red
                 Array.from(incorrects).forEach(function(incorrect) {
                     incorrect.addEventListener('click', function() {
+                        
                         incorrect.style.backgroundColor = '#E35335';
                         incorrect.style.color = 'white';
                         document.querySelector('#feedback1').innerHTML = 'Incorrect :(';
