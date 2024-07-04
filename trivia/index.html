@@ -9,20 +9,12 @@
             // TODO: Add code to check answers to questions
             // start script when DOM loads
             document.addEventListener('DOMContentLoaded', function() {
-                let firstclicked = false
+                let firstclicked = false;
                 // when correct button clicked, change colour to green
                 let correct = document.querySelector('.correct');
                 let incorrects = document.querySelectorAll('.incorrect');
 
                 correct.addEventListener('click', function() {
-                    if (firstclicked == false) {
-                        firstclicked = true;
-                    }
-                    else if (firstclicked == true) {
-                        firstclick.style.backgroundColor = '';
-                        firstclick.style.color = '';
-                    }
-                    firstclick = correct;
                     correct.style.backgroundColor = '#93C572';
                     correct.style.color = 'white';
                     document.querySelector('#feedback1').innerHTML = 'Correct :)';
@@ -31,14 +23,6 @@
                 // when incorrect button clicked, change colour to red
                 Array.from(incorrects).forEach(function(incorrect) {
                     incorrect.addEventListener('click', function() {
-                        if (firstclicked == false) {
-                            firstclicked = true;
-                        }
-                        else if (firstclicked == true) {
-                            firstclick.style.backgroundColor = '';
-                            firstclick.style.color = '';
-                        }
-                        firstclick = incorrect;
                         incorrect.style.backgroundColor = '#E35335';
                         incorrect.style.color = 'white';
                         document.querySelector('#feedback1').innerHTML = 'Incorrect :(';
