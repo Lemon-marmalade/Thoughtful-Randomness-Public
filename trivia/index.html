@@ -14,14 +14,14 @@
                 const buttons = document.querySelectorAll('button');
                 Array.from(buttons).forEach(function(button) {
                      //is hovered over, turn blue
-                     if (button.style.backgroundColor == '') {
+                     if (button.style.color != 'white') {
                         button.addEventListener('mouseover', function() {
                         button.style.backgroundColor = '#A7C7E7';
                     });
                      }
 
                 // when mouse leaves, return to normal only if button hasn't been clicked
-                    if (button.style.backgroundColor == '#A7C7E7') {
+                    if (button.style.backgroundColor != 'white') {
                         button.addEventListener('mouseout', function() {
                             button.style.backgroundColor = '';
                         });
