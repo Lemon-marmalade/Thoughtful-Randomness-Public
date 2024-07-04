@@ -18,9 +18,8 @@
                         button.style.backgroundColor = '#A7C7E7';
                     });
                 // when mouse leaves, return to normal only if button hasn't been clicked
-
                     button.addEventListener('mouseout', function() {
-                        if (button.style.backgroundColor = '#A7C7E7') {
+                        if (button.style.backgroundColor != '#93C572') {
                             button.style.backgroundColor = '';
                         }
                     });
@@ -31,14 +30,14 @@
                 correct.addEventListener('click', function() {
                     correct.style.backgroundColor = '#93C572';
                     correct.style.color = 'white';
-                    document.quearySelector('#feedback1').innerHTML = 'Correct :)';
+                    document.querySelector('#feedback1').innerHTML = 'Correct :)';
                 });
                 // when incorrect button clicked, change colour to red
                 let incorrect = document.querySelector('.incorrect');
                 incorrect.addEventListener('click', function() {
                     incorrect.style.backgroundColor = '#E35335';
                     incorrect.style.color = 'white';
-                    document.quearySelector('#feedback1').innerHTML = 'Incorrect :(';
+                    document.querySelector('#feedback1').innerHTML = 'Incorrect :(';
                 });
             });
 
