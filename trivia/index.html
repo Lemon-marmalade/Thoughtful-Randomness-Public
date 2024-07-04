@@ -9,8 +9,7 @@
             // TODO: Add code to check answers to questions
             // start script when DOM loads
             document.addEventListener('DOMContentLoaded', function() {
-                let firstclicked = false;
-                let firstclick = null;
+
                 // when correct button clicked, change colour to green
                 let correct = document.querySelector('.correct');
                 let incorrects = document.querySelectorAll('.incorrect');
@@ -19,14 +18,6 @@
                     correct.style.backgroundColor = '#93C572';
                     correct.style.color = 'white';
                     document.querySelector('#feedback1').innerHTML = 'Correct :)';
-                    if (firstclicked = false) {
-                       firstclicked = true;
-                    }
-                    else if (firstclicked = true) {
-                        firstclick.style.backgroundColor = '';
-                        firstclick.style.color = '';
-                    }
-                    firstclick = correct;
                 });
 
                 // when incorrect button clicked, change colour to red
@@ -35,14 +26,7 @@
                         incorrect.style.backgroundColor = '#E35335';
                         incorrect.style.color = 'white';
                         document.querySelector('#feedback1').innerHTML = 'Incorrect :(';
-                        if (firstclicked = false) {
-                            firstclicked = true;
-                        }
-                        else if (firstclicked = true) {
-                            firstclick.style.backgroundColor = '';
-                            firstclick.style.color = '';
-                        }
-                        firstclick = incorrect;
+
                     });
                 });
                 // check free response field
