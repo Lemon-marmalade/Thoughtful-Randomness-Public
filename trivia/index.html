@@ -12,6 +12,21 @@
 
                 // create change in colour of buttons when hovered over
                 let buttons = document.querySelectorAll('button');
+                // when correct button clicked, change colour to green
+                let correct = document.querySelector('.correct');
+                correct.addEventListener('click', function() {
+                    correct.style.backgroundColor = '#93C572';
+                    correct.style.color = 'white';
+                    document.querySelector('#feedback1').innerHTML = 'Correct :)';
+                });
+                // when incorrect button clicked, change colour to red
+                let incorrect = document.querySelector('.incorrect');
+                incorrect.addEventListener('click', function() {
+                    incorrect.style.backgroundColor = '#E35335';
+                    incorrect.style.color = 'white';
+                    document.querySelector('#feedback1').innerHTML = 'Incorrect :(';
+                });
+
                 Array.from(buttons).forEach(function(button) {
                      //is hovered over, turn blue
                      if (button.style.color != 'white') {
@@ -27,21 +42,7 @@
                         });
                     }
                 });
-                
-                // when correct button clicked, change colour to green
-                let correct = document.querySelector('.correct');
-                correct.addEventListener('click', function() {
-                    correct.style.backgroundColor = '#93C572';
-                    correct.style.color = 'white';
-                    document.querySelector('#feedback1').innerHTML = 'Correct :)';
-                });
-                // when incorrect button clicked, change colour to red
-                let incorrect = document.querySelector('.incorrect');
-                incorrect.addEventListener('click', function() {
-                    incorrect.style.backgroundColor = '#E35335';
-                    incorrect.style.color = 'white';
-                    document.querySelector('#feedback1').innerHTML = 'Incorrect :(';
-                });
+
             });
 
         </script>
