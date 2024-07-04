@@ -32,7 +32,7 @@
                 let buttons = document.querySelectorAll('button');
 
                 Array.from(buttons).forEach(function(button) {
-                    if (button.style.color != 'white') {
+                    if (button.style.color == 'black') {
                     //is hovered over, turn blue
                         button.addEventListener('mouseover', function() {
                             button.style.backgroundColor = '#A7C7E7';
