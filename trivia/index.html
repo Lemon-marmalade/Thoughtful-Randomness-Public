@@ -7,6 +7,14 @@
         <title>Trivia!</title>
         <script>
             // TODO: Add code to check answers to questions
+            // start script when DOM loads
+            document.addEventListener('DOMContentLoaded', function() {
+                // when button is hovered over, turn blue
+                document.addEventListener('mouseover', function() {
+                    button.style.backgroundColor = 'blue';
+                });
+            });
+
         </script>
     </head>
     <body>
@@ -19,12 +27,23 @@
                 <h2>Part 1: Multiple Choice </h2>
                 <hr>
                 <!-- TODO: Add multiple choice question here -->
+                 <h3>Which one of the following condiments do not traditionally contain raw eggs?</h3>
+                 <button class = "incorrect">Mayonaise</button>
+                 <button class = "incorrect">Aoili</button>
+                 <button class = "correct">Worcestershire</button>
+                 <button class = "correct">Hollandaise</button>
+                 <p id="feedback1"></p>
             </div>
 
             <div class="section">
                 <h2>Part 2: Free Response</h2>
                 <hr>
                 <!-- TODO: Add free response question here -->
+                 <h3>In which country is chewing gum illegal?</h3>
+                 <input type="text"></input>
+                 <button id="check"></button>
+
+                <p id="feedback2"></p>
             </div>
         </div>
     </body>
