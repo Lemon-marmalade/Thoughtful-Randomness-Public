@@ -15,10 +15,13 @@
                 let incorrects = document.querySelectorAll('.incorrect');
 
                 correct.addEventListener('click', function() {
-                    setTimeout(function() {
-                       correct.style.backgroundColor = '#93C572';
+                    correct.style.backgroundColor = '#93C572';
                     correct.style.color = 'white';
                     document.querySelector('#feedback1').innerHTML = 'Correct :)';
+                    setTimeout(function() {
+                        correct.style.backgroundColor = '';
+                        correct.style.color = '';
+                        document.querySelector('#feedback1').innerHTML = '';
                     },3000);
 
                 });
@@ -29,7 +32,11 @@
                         incorrect.style.backgroundColor = '#E35335';
                         incorrect.style.color = 'white';
                         document.querySelector('#feedback1').innerHTML = 'Incorrect :(';
-
+                        setTimeout(function() {
+                            incorrect.style.backgroundColor = '';
+                            incorrect.style.color = '';
+                            document.querySelector('#feedback1').innerHTML = '';
+                        },3000);
                     });
                 });
                 // check free response field
