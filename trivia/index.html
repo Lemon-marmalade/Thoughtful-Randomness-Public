@@ -9,12 +9,17 @@
             // TODO: Add code to check answers to questions
             // start script when DOM loads
             document.addEventListener('DOMContentLoaded', function() {
-                // when button is hovered over, turn blue
+                // create change in colour of buttons when hovered over
+                // get button element
                 const button = document.querySelector('button');
-
+                // when button is hovered over, turn blue
                 button.addEventListener('mouseover', function() {
 
                     button.style.backgroundColor = 'blue';
+                });
+                // when mouse leaves, return to normal
+                button.addEventListener('mouseout', function() {
+                    button.style.backgroundColor = '';
                 });
             });
 
