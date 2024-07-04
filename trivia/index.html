@@ -11,7 +11,7 @@
             document.addEventListener('DOMContentLoaded', function() {
 
                 // create change in colour of buttons when hovered over
-                const buttons = document.querySelectorAll('button');
+                let buttons = document.querySelectorAll('button');
                 Array.from(buttons).forEach(function(button) {
                      //is hovered over, turn blue
                      if (button.style.color != 'white') {
