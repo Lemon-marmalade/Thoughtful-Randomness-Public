@@ -21,15 +21,13 @@
                 });
 
                 // when incorrect button clicked, change colour to red
-                let incorrects = document.querySelector('.incorrect');
-                Array.from(incorrects).forEach(function(incorrect) {
-                    incorrect.addEventListener('click', function() {
-                        incorrect.style.backgroundColor = '#E35335';
-                        incorrect.style.color = 'white';
-                        document.querySelector('#feedback1').innerHTML = 'Incorrect :(';
-                    });
-                }
-
+                let incorrect = document.querySelector('.incorrect');
+                
+                incorrect.addEventListener('click', function() {
+                    incorrect.style.backgroundColor = '#E35335';
+                    incorrect.style.color = 'white';
+                    document.querySelector('#feedback1').innerHTML = 'Incorrect :(';
+                });
 
 
                     Array.from(buttons).forEach(function(button) {
