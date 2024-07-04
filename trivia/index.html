@@ -10,8 +10,6 @@
             // start script when DOM loads
             document.addEventListener('DOMContentLoaded', function() {
 
-                // create change in colour of buttons when hovered over
-                let buttons = document.querySelectorAll('button');
                 // when correct button clicked, change colour to green
                 let correct = document.querySelector('.correct');
                 correct.addEventListener('click', function() {
@@ -30,9 +28,11 @@
                     });
                 });
 
+                // create change in colour of buttons when hovered over
+                let buttons = document.querySelectorAll('button');
 
-                    Array.from(buttons).forEach(function(button) {
-                        if (button.style.color != 'white') {
+                Array.from(buttons).forEach(function(button) {
+                    if (button.style.color != 'white') {
                     //is hovered over, turn blue
                         button.addEventListener('mouseover', function() {
                             button.style.backgroundColor = '#A7C7E7';
@@ -42,8 +42,7 @@
                             button.style.backgroundColor = '';
                         });
                     }
-                    });
-
+                });
             });
 
         </script>
@@ -62,7 +61,7 @@
                  <button class = "incorrect">Mayonaise</button>
                  <button class = "incorrect">Aoili</button>
                  <button class = "correct">Worcestershire</button>
-                 <button class = "correct">Hollandaise</button>
+                 <button class = "incorrect">Hollandaise</button>
                  <p id="feedback1"></p>
             </div>
 
