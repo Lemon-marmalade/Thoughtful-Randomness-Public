@@ -17,9 +17,12 @@
                     button.addEventListener('mouseover', function() {
                         button.style.backgroundColor = '#A7C7E7';
                     });
-                // when mouse leaves, return to normal
+                // when mouse leaves, return to normal only if button hasn't been clicked
+
                     button.addEventListener('mouseout', function() {
-                        button.style.backgroundColor = '';
+                        if (button.style.backgroundColor = '#A7C7E7') {
+                            button.style.backgroundColor = '';
+                        }
                     });
                 });
 
