@@ -32,16 +32,17 @@
                 let buttons = document.querySelectorAll('button');
 
                 Array.from(buttons).forEach(function(button) {
-                    if (button.style.color != 'white') {
                     //is hovered over, turn blue
                         button.addEventListener('mouseover', function() {
-                            button.style.backgroundColor = '#A7C7E7';
-                        });
+                            if (button.style.color != 'white') {
+                                  button.style.backgroundColor = '#A7C7E7';
+                                });
                     // when mouse leaves, return to normal only if button hasn't been clicked
                         button.addEventListener('mouseout', function() {
                             button.style.backgroundColor = '';
                         });
-                    }
+                            }
+
                 });
             });
 
