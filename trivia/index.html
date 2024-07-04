@@ -28,8 +28,9 @@
                     document.querySelector('#feedback1').innerHTML = 'Incorrect :(';
                 });
 
-                if (button.style.color != 'white') {
+
                     Array.from(buttons).forEach(function(button) {
+                        if (button.style.color != 'white') {
                     //is hovered over, turn blue
                         button.addEventListener('mouseover', function() {
                             button.style.backgroundColor = '#A7C7E7';
@@ -38,8 +39,9 @@
                         button.addEventListener('mouseout', function() {
                             button.style.backgroundColor = '';
                         });
+                    }
                     });
-                }
+
             });
 
         </script>
