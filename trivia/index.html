@@ -37,7 +37,23 @@
                     });
                 });
                 // check free response field
-                document.querySelector('#check')
+                document.querySelector('#check').addEventListener('click', function() {
+                    let input = document.querySelector('input');
+                    if (input.value === 'Singapore') {
+                        input.style.backgroundColor = '#93C572';
+                        input.style.color = 'white';
+                        document.querySelector('#feedback2').innerHTML = 'Correct :)';
+                    }
+                    else {
+                        input.style.backgroundColor = '#E35335';
+                        input.style.color = 'white';
+                        document.querySelector('#feedback1').innerHTML = 'Incorrect :(';
+                    }
+                    setTimeout(function() {
+                        input.style.backgroundColor = '';
+                        input.style.color = '';
+                    },2500);
+                });
             });
         </script>
     </head>
