@@ -39,7 +39,7 @@
                 // check free response field
                 document.querySelector('#check').addEventListener('click', function() {
                     let input = document.querySelector('input');
-                    if (input.value === 'Singapore' || input.value === 'singapore') {
+                    if (input.value) === 'singapore') {
                         input.style.backgroundColor = '#93C572';
                         input.style.color = 'white';
                         document.querySelector('#feedback2').innerHTML = 'Correct :)';
