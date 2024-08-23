@@ -6,4 +6,7 @@ body {
         padding: 3rem 3rem;
         text-align: center;
     }
+    .description {
+        text-align: center;
+    }
 }
