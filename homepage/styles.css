@@ -14,8 +14,5 @@ body {
         margin-bottom: 1rem;
         text-align: center;
     }
-    .narrowcrop {
-        height: (.25*width)px;
-    }
 }
 
