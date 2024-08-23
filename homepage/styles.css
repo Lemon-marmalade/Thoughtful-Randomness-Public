@@ -15,8 +15,7 @@ body {
         text-align: center;
     }
     .narrowcrop {
-        width: 400px;
-        height: 100px;
+        height: 3rem;
         overflow: hidden;
     }
 }
