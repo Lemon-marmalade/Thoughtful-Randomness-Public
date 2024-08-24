@@ -1,15 +1,17 @@
 body {
     .header {
+
         background-image: url("cornchip background.jpg");
-    }
-    .overlay {
-        position: fixed;
-        background-color: rgba(0,0,0,0.5);
         color: #fff;
         margin-bottom: 2rem;
         padding: 3rem 3rem;
+    }
+    .overlay {
+        background-color: rgba(0,0,0,0.5);
+        color: #fff;
         text-align: center;
-        z-index: 2;
+        margin-bottom: 2rem;
+        padding: 3rem 3rem;
     }
     .description {
         text-align: center;
