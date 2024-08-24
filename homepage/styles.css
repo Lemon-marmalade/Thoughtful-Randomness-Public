@@ -1,16 +1,16 @@
 body {
-    .header {
-
+    .headerbg{
+        filter: brightness(50%);
         background-image: url("cornchip background.jpg");
         margin-bottom: 2rem;
         padding: 3rem 3rem;
     }
-    .overlay {
-        background-color: rgba(0,0,0,0.5);
+    .headertxt{
         color: #fff;
         text-align: center;
         margin-bottom: 2rem;
         padding: 3rem 3rem;
+        z-index: 200;
     }
     .description {
         text-align: center;
