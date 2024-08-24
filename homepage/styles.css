@@ -1,7 +1,7 @@
 body {
     .header{
         color: #fff;
-        background-color: ;
+        background-color: rgba(0,0,0,0.5);
         text-align: center;
         margin-bottom: 2rem;
         padding: 3rem 3rem;
