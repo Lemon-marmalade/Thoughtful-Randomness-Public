@@ -6,8 +6,11 @@ body {
         margin-bottom: 2rem;
         padding: 3rem 3rem;
     }
-    p {
-        
+    h3 {
+        color: #55503a;
+    }
+    h4 {
+        color: #67624c;
     }
 
     .page {
