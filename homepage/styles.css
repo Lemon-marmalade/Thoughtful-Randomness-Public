@@ -6,10 +6,10 @@ body {
         margin-bottom: 2rem;
         padding: 3rem 3rem;
     }
-    .nav{
+    #nav{
         color: #fff;
         background-color: rgba(0,0,0,0.5);
-        list-align: center;
+        text-align: center;
     }
     #title{
         font-family: Monaco, monospace;
