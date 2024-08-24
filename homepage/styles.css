@@ -12,9 +12,6 @@ body {
     }
 
     .content {
-        color: #fff;
-        text-align: center;
-        z-index: 200;
         overflow: auto;
         position: relative;
       }
