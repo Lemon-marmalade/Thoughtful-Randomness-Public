@@ -9,11 +9,6 @@ body {
     .description {
         text-align: center;
     }
-    .subheader {
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        text-align: center;
-    }
     .banner{
         position:absolute;
         clip:rect(0px,60px,200px,0px);
