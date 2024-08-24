@@ -1,11 +1,14 @@
 body {
-    .headerbg{
-        background-image-filter: brightness(50%);
+    .bgimage{
+        filter: brightness(50%);
         background-image: url("cornchip background.jpg");
         margin-bottom: 2rem;
         padding: 3rem 3rem;
     }
-
+    .header{
+        color: #fff;
+        text-align: center;
+        z-index: 200;
     }
     .description {
         text-align: center;
