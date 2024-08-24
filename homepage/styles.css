@@ -2,10 +2,12 @@ body {
     .header{
         color: #fff;
         background-color: rgba(0,0,0,0.5);
-        font-family: Arial, Helvetica, sans-serif;
         text-align: center;
         margin-bottom: 2rem;
         padding: 3rem 3rem;
+    }
+    #title{
+        font-family: Monaco, monospace;
     }
     h3 {
         color: #55503a;
