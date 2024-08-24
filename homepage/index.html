@@ -78,9 +78,11 @@
       alertPlaceholder.append(wrapper)
 }
 
-document.addEventListener('DOMContentLoaded', setTimeOut( () =>{
-  appendAlert("Hello! Welcome to Cornchips' Cornchips! the calico community welcomes you!")
-}),3);
+document.addEventListener('DOMContentLoaded',() => {
+  seTimout(() => {
+    appendAlert("Hello! Welcome to Cornchips' Cornchips! the calico community welcomes you!")
+  },3);
+});
 
     </script>
 </html>
