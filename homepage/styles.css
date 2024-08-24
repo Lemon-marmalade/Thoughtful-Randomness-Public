@@ -45,7 +45,7 @@ body {
         filter: brightness(70%);
     }
 
-    .description {
+    .text {
         color: #fff;
         text-align: center;
     }
@@ -54,6 +54,7 @@ body {
         clip:rect(0px,60px,200px,0px);
     }
     #button{
+        color: #fff;
         background-image: url('wood.jpeg');
     }
 
