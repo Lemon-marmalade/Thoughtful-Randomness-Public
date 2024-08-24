@@ -7,14 +7,14 @@ body {
         padding: 3rem 3rem;
     }
 
-    .content {
+    .page {
         color: #fff;
         text-align: center;
         overflow: auto;
         position: relative;
       }
 
-    .content::before {
+    .page::before {
         content: "";
         position: fixed;
         top: 0;
