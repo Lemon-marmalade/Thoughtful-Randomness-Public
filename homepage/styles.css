@@ -47,16 +47,17 @@ body {
         filter: brightness(70%);
     }
 
-    .text {
+    .text{
         color: #fff;
         text-align: center;
     }
+
 
     #button{
         color: #fff;
         background-image: url('wood.jpeg');
     }
-    .container {
+    .container{
         display:inline-block;
         height:180px;
         margin-right:10px;
