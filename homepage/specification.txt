@@ -18,3 +18,5 @@
 3. color
 4. font-family
 5. text-align
+
+Javascript and Bootstrap were used to create a timed alert. Bootstrap was also used for its layout features like cards, accordians, and tables.
