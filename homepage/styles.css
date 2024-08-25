@@ -20,7 +20,9 @@ body {
     h4 {
         color: #67624c;
     }
-
+    h5 {
+        color: #807a5f;
+    }
     .page {
         color: #fff;
         text-align: center;
