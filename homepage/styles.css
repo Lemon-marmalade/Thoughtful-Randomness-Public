@@ -51,10 +51,7 @@ body {
         color: #fff;
         text-align: center;
     }
-    .banner{
-        position:absolute;
-        clip:rect(0px,60px,200px,0px);
-    }
+
     #button{
         color: #fff;
         background-image: url('wood.jpeg');
