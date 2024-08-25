@@ -47,7 +47,7 @@ body {
         filter: brightness(70%);
     }
 
-    p.text{
+    div.text{
         color: #fff;
         text-align: center;
     }
