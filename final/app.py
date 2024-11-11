@@ -25,6 +25,7 @@ def index():
         people = request.form.get("people")
         if not people:
              flash("Please enter the number of people you wish to group!")
+             return redirect('/')
         return render_template("input.html", people=people)
     else:
         return render_template("index.html")
