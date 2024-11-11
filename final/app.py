@@ -24,7 +24,8 @@ def index():
     if request.method == "POST":
         people = request.form.get("people")
         return render_template("input.html", people=people)
-    return render_template("index.html")
+    else:
+        return render_template("index.html")
 
 @app.route("/input", methods=["GET", "POST"])
 def input():
