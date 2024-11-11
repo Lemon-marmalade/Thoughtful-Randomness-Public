@@ -41,7 +41,8 @@
                 <script>
                     function updatePreferences() {
                         let names = [];
-                        for (let i = 0; i < {{ people }}; i++) {
+                        let peopleCount = {{ people|tojson }};
+                        for (let i = 0; i < peopleCount; i++) {
                             let name = document.getElementById(`name${i}`).value;
                             if (name) {
                                 names.push(name);
