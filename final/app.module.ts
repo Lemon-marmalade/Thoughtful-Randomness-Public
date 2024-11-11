@@ -6,14 +6,12 @@ import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    // other components
+    AppComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    NgSelectModule,
-    // other modules
+    NgSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
