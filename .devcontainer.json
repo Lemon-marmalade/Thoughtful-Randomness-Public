@@ -39,6 +39,9 @@
         "[python]": {
           "editor.defaultFormatter": "ms-python.autopep8"
         },
+        "accessibility.signals.terminalBell": {
+          "sound": "on"
+        },
         "breadcrumbs.enabled": false,
         "C_Cpp.autocomplete": "disabled",
         "C_Cpp.clang_format_fallbackStyle": "{ AllowShortFunctionsOnASingleLine: Empty, BraceWrapping: { AfterCaseLabel: true, AfterControlStatement: true, AfterFunction: true, AfterStruct: true, BeforeElse: true, BeforeWhile: true }, BreakBeforeBraces: Custom, ColumnLimit: 100, IndentCaseLabels: true, IndentWidth: 4, SpaceAfterCStyleCast: true, TabWidth: 4 }",
@@ -90,6 +93,7 @@
             }
           }
         },
+        "editor.stickyScroll.enabled": false,
         "editor.suggestOnTriggerCharacters": false,
         "explorer.autoOpenDroppedFile": false,
         "explorer.compactFolders": false,
@@ -129,7 +133,7 @@
         "html.suggest.html5": false,
         "java.configuration.runtimes": [
           {
-            "name": "JavaSE-22",
+            "name": "JavaSE-23",
             "path": "/opt/jdk",
             "default": true
           }
@@ -142,6 +146,7 @@
         "javascript.validate.enable": false,
         "Prettier-SQL.keywordCase": "upper",
         "problems.decorations.enabled": false,
+        "problems.visibility": false,
         "python.terminal.executeInFileDir": true,
         "remote.autoForwardPorts": true,
         "remote.autoForwardPortsFallback": 0,
@@ -154,7 +159,7 @@
           "workbench.action.toggleSidebarVisibility"
         ],
         "terminal.integrated.defaultProfile.linux": "bash",
-        "terminal.integrated.enableBell": true,
+        "terminal.integrated.enableVisualBell": true,
         "terminal.integrated.gpuAcceleration": "off",
         "terminal.integrated.persistentSessionReviveProcess": "never",
         "terminal.integrated.profiles.linux": {
@@ -204,6 +209,7 @@
           "*.wav": "vscode.audioPreview"
         },
         "workbench.iconTheme": "vs-minimal",
+        "workbench.layoutControl.enabled": false,
         "workbench.preferredDarkColorTheme": "GitHub Dark Default",
         "workbench.preferredLightColorTheme": "GitHub Light Default",
         "workbench.startupEditor": "none",
@@ -221,7 +227,7 @@
     8082,
     8787
   ],
-  "image": "ghcr.io/cs50/codespace:f998f54b149bdb70f140db243ec8d021778361d9",
+  "image": "ghcr.io/cs50/codespace:c5be161759c41c4609941ea6cfdeddeda44ae0ac",
   "mounts": [
     {
       "source": "/var/run/docker.sock",

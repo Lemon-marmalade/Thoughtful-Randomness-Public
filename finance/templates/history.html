@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <h2>History of Transactions</h2>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr style="vertical-align: middle">
+                    <th>Transaction Type</th>
+                    <th>Stock</th>
+                    <th>Stock Price</th>
+                    <th>Number of Shares</th>
+                    <th>Date of Transaction</th>
+                    <th>Delete Transaction History</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for transaction in transactions %}
+                    <tr>
+                        <td>{{ transaction.type }}</td>
+                        <td>{{ transaction.symbol}}</td>
+                        <td>{{ transaction.price | usd }}</td>
+                        <td>{{ transaction.shares}}</td>
+                        <td>{{ transaction.time }}</td>
+                        <td>
+                            <form action="/delete" method="post">
+                                <input name="id" type="hidden" value="{{ transaction.id}}">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+{% endblock %}
