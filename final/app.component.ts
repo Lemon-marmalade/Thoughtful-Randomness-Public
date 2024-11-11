@@ -3,6 +3,7 @@ export class AppComponent {
 
     updatePreferences(): void {
         const names: string[] = [];
+        people=
         for (let i = 0; i < people; i++) {
             const name: string = (document.getElementById(`name${i}`) as HTMLInputElement).value;
             if (name) {
