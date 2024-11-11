@@ -26,6 +26,14 @@
                 </tr>
             </thead>
             <tbody>
+                {% for person in people %}
+                    <tr>
+                        <td>{{ stock.symbol }}</td>
+                        <td>{{ stock.total_shares}}</td>
+                        <td>{{ stock.price | usd }}</td>
+                        <td>{{ (stock.price * stock.total_shares) | usd }}</td>
+                    </tr>
+                {% endfor %}
             </tbody>
       </div>
     </form>
