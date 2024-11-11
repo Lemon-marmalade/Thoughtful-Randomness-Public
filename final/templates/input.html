@@ -28,10 +28,11 @@
             <tbody>
                 {% for person in people %}
                     <tr>
-                        <td>{{ stock.symbol }}</td>
-                        <td>{{ stock.total_shares}}</td>
-                        <td>{{ stock.price | usd }}</td>
-                        <td>{{ (stock.price * stock.total_shares) | usd }}</td>
+                        <td>
+                            <form name="name" action="/input" method="post" required>
+
+                            </form>
+                        </td>
                     </tr>
                 {% endfor %}
             </tbody>
