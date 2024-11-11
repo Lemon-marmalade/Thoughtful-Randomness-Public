@@ -5,7 +5,7 @@
 <h1>Thoughtful Randomness</h1>
 <br>
 <h3>How many groups would you like to form?</h3>
-<form name="group" action="/input" method="post" required>
+<form name="group" action="/input" method="post" (ngSubmit)="onSubmit()" required>
     <div>
         <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="groups" placeholder="Number of Groups"type="number" min="1">
     </div>
@@ -24,18 +24,16 @@
                 </tr>
             </thead>
             <tbody>
-                {% for person in range(people) %}
-                    <tr *ngFor="let person of people; let i = index">
-                        <td>
-                            <input autocomplete="off" class="form-control mx-auto w-auto" name="name" type="text" id="name{{ person }}" oninput="updatePreferences()">
-                        </td>
-                        <td>
-                            <ng-select [items]="getPreferences(i)" bindLabel="name" bindValue="name" [(ngModel)]="person.preferences" multiple>
-                                <ng-option value="no_preference">--</ng-option>
-                            </ng-select>
-                        </td>
-                    </tr>
-                {% endfor %}
+                <tr *ngFor="let person of people; let i = index">
+                    <td>
+                        <input autocomplete="off" class="form-control mx-auto w-auto" name="name" type="text" id="name{{ person }}" oninput="updatePreferences()">
+                    </td>
+                    <td>
+                        <ng-select [items]="getPreferences(i)" bindLabel="name" bindValue="name" [(ngModel)]="person.preferences" multiple>
+                            <ng-option value="no_preference">--</ng-option>
+                        </ng-select>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
