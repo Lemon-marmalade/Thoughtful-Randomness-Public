@@ -34,4 +34,7 @@ export class AppComponent {
         .filter((_, i) => i !== index)
         .map(person => ({ name: person.name }));
     }
+  onSubmit(): void {
+    // Handle form submission logic here
   }
+}
