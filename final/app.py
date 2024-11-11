@@ -25,7 +25,7 @@ def index():
         people = request.form.get("people")
     # Ensure number was submitted
         if not people:
-            "Please enter the number of people you wish to group!"
+            alert("Please enter the number of people you wish to group!")
         return render_template("input.html", people=people)
     return render_template("index.html")
 
