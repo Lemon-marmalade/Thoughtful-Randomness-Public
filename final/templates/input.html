@@ -13,29 +13,31 @@
     <div>
         In the first column, first input the names of all the people you wish to group. Afterwards, select their preferences for the other people in the second column.
     </div>
-  <br>
-  <h3>People and Preferences</h3>
-  <div>
-    <table class="table table-bordered table-striped">
-        <thead>
-            <tr>
-                <th>Names</th>
-                <th>Preferences</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for person in range(people) %}
+    <br>
+    <h3>People and Preferences</h3>
+    <div>
+        <table class="table table-bordered table-striped">
+            <thead>
                 <tr>
-                    <td>
-                    </td>
-                    <td>
-                    </td>
+                    <th>Names</th>
+                    <th>Preferences</th>
                 </tr>
-            {% endfor %}
-        </tbody>
+            </thead>
+            <tbody>
+                {% for person in range(people) %}
+                    <tr>
+                        <td>
+                            <input autocomplete="off" class="form-control mx-auto w-auto" name="name" placeholder="Insert Name"type="text">
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
     </div>
     <div>
-      <button id="submit">Enter</button>
+        <button id="submit">Create Groups!</button>
     </div>
 </form>
 {% endblock %}
