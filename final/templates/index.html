@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <script>
+    // check for user text input
+    function validateForm() {
+      var x = document.forms["myForm"]["fname"].value;
+      if (x == "") {
+        alert("Name must be filled out");
+      return false;
+    }
+  }
+  </script>
+
+  <h2>How many people would you like to group?</h2>
+  <div>
+    <form name="input" action="/input" onsubmit="return validateForm()" method="post" required>
+      <input type="number" min = "2"></input>
+      <button id="submit">Enter</button>
+    </form>
+  </div>
+{% endblock %}
