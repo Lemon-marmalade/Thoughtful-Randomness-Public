@@ -16,24 +16,22 @@
   <br>
   <h3>People and Preferences</h3>
   <div>
-    <form name="input" action="/input" method="post" required>
-      <div>
-        <table class="table table-bordered table-striped">
-            <thead>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Names</th>
+                <th>Preferences</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for person in range(people) %}
                 <tr>
-                    <th>Names</th>
-                    <th>Preferences</th>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
                 </tr>
-            </thead>
-            <tbody>
-                {% for person in people %}
-                    <tr>
-                        <td>
-                        </td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-      </div>
-    </form>
+            {% endfor %}
+        </tbody>
   </div>
 {% endblock %}
