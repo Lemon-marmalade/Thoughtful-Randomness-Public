@@ -17,13 +17,13 @@ def index():
     return render_template("index.html")
 
 @app.route("/input")
-def index():
+def input():
     # Have a 2 column table for user to fill names into and select preferences with
 
     return render_template("input.html")
 
 @app.route("/groupings")
-def index():
+def groupings():
     # Display groupings in table
 
     return render_template("groupings.html")
