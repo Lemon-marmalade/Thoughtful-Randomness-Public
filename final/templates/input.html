@@ -18,8 +18,23 @@
   <div>
     <form name="input" action="/input" method="post" required>
       <div>
-        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="people" placeholder="Number of People"type="number" min = "2">
-        <button id="submit">Enter</button>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Names</th>
+                    <th>Preferences</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stock in stocks %}
+                    <tr>
+                        <td>{{ stock.symbol }}</td>
+                        <td>{{ stock.total_shares}}</td>
+                        <td>{{ stock.price | usd }}</td>
+                        <td>{{ (stock.price * stock.total_shares) | usd }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
       </div>
     </form>
   </div>
