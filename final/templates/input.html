@@ -24,16 +24,46 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let person of people; let i = index">
-                    <td>
-                      <input type="text" [(ngModel)]="person.name" (input)="updatePreferences()">
-                    </td>
-                    <td>
-                      <ng-select [items]="getPreferences(i)" bindLabel="name" bindValue="name" [(ngModel)]="person.preferences" multiple>
-                        <ng-option value="no_preference">No Preference</ng-option>
-                      </ng-select>
-                    </td>
-                  </tr>
+                {% for person in range(people) %}
+                    <tr>
+                        <td>
+                            <input autocomplete="off" class="form-control mx-auto w-auto" name="name" type="text" id="name{{ person }}" oninput="updatePreferences()">
+                        </td>
+                        <td>
+                            <select class="form-control mx-auto w-auto" id="preferences{{ person }}">
+                                <option value="no_preference">--</option>
+                                <!-- Options will be populated by JavaScript -->
+                            </select>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+                <script>
+                    function updatePreferences() {
+                        let names = [];
+                        for (let i = 0; i < {{ people }}; i++) {
+                            let name = document.getElementById(`name${i}`).value;
+                            if (name) {
+                                names.push(name);
+                            }
+                        }
+
+                        for (let i = 0; i < {{ people }}; i++) {
+                            let select = document.getElementById(`preferences${i}`);
+                            select.innerHTML = '<option value="no_preference">--</option>';
+                            // Add default option
+                            names.forEach((name, index) => {
+                                if (index !== i) {
+                                    // Exclude the name in the same row
+                                    let option = document.createElement('option');
+                                        option.value = name;
+                                        option.text = name;
+                                select.appendChild(option);
+                            }
+                        });
+                    }
+                }
+                </script>
             </tbody>
         </table>
     </div>
