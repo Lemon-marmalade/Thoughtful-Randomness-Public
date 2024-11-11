@@ -39,14 +39,14 @@
                 <script>
                     function updatePreferences() {
                         let names = [];
-                        for (let i = 0; i < {{ people }}; i++) {
+                        for (let i = 0; i < this.people.length; i++) {
                             let name = document.getElementById(`name${i}`).value;
                             if (name) {
                                 names.push(name);
                             }
                         }
 
-                        for (let i = 0; i < {{ people }}; i++) {
+                        for (let i = 0; i < this.people.length; i++) {
                             let select = document.getElementById(`preferences${i}`);
                             select.innerHTML = '<option value="no_preference">No Preference</option>'; // Add default option
                             names.forEach((name, index) => {
