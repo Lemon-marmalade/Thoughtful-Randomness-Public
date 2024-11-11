@@ -24,9 +24,9 @@ def index():
     if request.method == "POST":
         people = request.form.get("people")
     # Ensure number was submitted
-    if not people:
-        return render_template("index.html")
-    return render_template("input.html", people=people)
+        if not people:
+            return render_template("index.html")
+        return render_template("input.html", people=people)
 
 @app.route("/input", methods=["GET", "POST"])
 def input():
