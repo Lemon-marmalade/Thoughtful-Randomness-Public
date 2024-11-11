@@ -1,5 +1,4 @@
 import os
-import pyautogui as pag
 
 from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
@@ -26,8 +25,8 @@ def index():
         people = request.form.get("people")
     # Ensure number was submitted
         if not people:
-            pag.alert(text="Please enter the number of people you wish to group!", title="The Hello World Box")
-            return render_template("input.html", people=people)
+            "Please enter the number of people you wish to group!"
+        return render_template("input.html", people=people)
     return render_template("index.html")
 
 @app.route("/input", methods=["GET", "POST"])
