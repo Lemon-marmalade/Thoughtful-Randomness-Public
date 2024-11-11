@@ -1,4 +1,4 @@
-export class MyComponent {
+export class AppComponent {
     people = [{ name: '', preferences: [] }];
 
     updatePreferences(): void {
