@@ -22,7 +22,7 @@ def after_request(response):
 def index():
     """ Obtain number of people user wishes to have grouped"""
     if request.method == "POST":
-        people = request.form.get("people")
+        people = int(request.form.get("people"))
         return render_template("input.html", people=people)
     else:
         return render_template("index.html")
