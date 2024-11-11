@@ -3,14 +3,14 @@ export class AppComponent {
 
     updatePreferences(): void {
         const names: string[] = [];
-        for (let i = 0; i < people; i++) {
+        for (let i = 0; i < this.people.length; i++) {
             const name: string = (document.getElementById(`name${i}`) as HTMLInputElement).value;
             if (name) {
                 names.push(name);
             }
         }
 
-        for (let i = 0; i < people; i++) {
+        for (let i = 0; i < this.people.length; i++) {
             const select: HTMLSelectElement = document.getElementById(`preferences${i}`) as HTMLSelectElement;
             select.innerHTML = '<option value="no_preference">--</option>';
             names.forEach((name, index) => {
