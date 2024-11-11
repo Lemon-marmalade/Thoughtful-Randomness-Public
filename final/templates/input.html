@@ -24,16 +24,18 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let person of people; let i = index">
-                    <td>
-                        <input autocomplete="off" class="form-control mx-auto w-auto" name="name" type="text" id="name{{ person }}" oninput="updatePreferences()">
-                    </td>
-                    <td>
-                      <ng-select [items]="getPreferences(i)" bindLabel="name" bindValue="name" [(ngModel)]="person.preferences" multiple>
-                        <ng-option value="no_preference">No Preference</ng-option>
-                      </ng-select>
-                    </td>
-                  </tr>
+                {% for person in range(people) %}
+                    <tr *ngFor="let person of people; let i = index">
+                        <td>
+                            <input autocomplete="off" class="form-control mx-auto w-auto" name="name" type="text" id="name{{ person }}" oninput="updatePreferences()">
+                        </td>
+                        <td>
+                            <ng-select [items]="getPreferences(i)" bindLabel="name" bindValue="name" [(ngModel)]="person.preferences" multiple>
+                                <ng-option value="no_preference">--</ng-option>
+                            </ng-select>
+                        </td>
+                    </tr>
+                  {% endfor %}
             </tbody>
         </table>
     </div>
