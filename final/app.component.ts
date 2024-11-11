@@ -1,5 +1,10 @@
 export class AppComponent {
+    peoples: number;
     people = [{ name: '', preferences: [] }];
+
+    updatePeople(): void {
+        this.people = Array.from({ length: this.peoples }, () => ({ name: '', preferences: [] }));
+      }
 
     updatePreferences(): void {
         const names: string[] = [];
