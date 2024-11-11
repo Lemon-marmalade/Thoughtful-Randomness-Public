@@ -23,9 +23,6 @@ def index():
     """ Obtain number of people user wishes to have grouped"""
     if request.method == "POST":
         people = request.form.get("people")
-    # Ensure number was submitted
-        if not people:
-            alert("Please enter the number of people you wish to group!")
         return render_template("input.html", people=people)
     return render_template("index.html")
 
