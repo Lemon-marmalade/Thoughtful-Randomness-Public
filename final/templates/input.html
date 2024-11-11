@@ -50,20 +50,20 @@
 
                         for (let i = 0; i < {{ people }}; i++) {
                             let select = document.getElementById(`preferences${i}`);
-                            select.innerHTML = '';
-                            // Clear existing options
+                            select.innerHTML = '<option value="no_preference">--</option>';
+                            // Add default option
                             names.forEach((name, index) => {
                                 if (index !== i) {
                                     // Exclude the name in the same row
                                     let option = document.createElement('option');
-                                    option.value = name;
-                                    option.text = name;
-                                    select.appendChild(option);
-                                }
-                            });
-                        }
+                                        option.value = name;
+                                        option.text = name;
+                                select.appendChild(option);
+                            }
+                        });
                     }
-                    </script>
+                }
+                </script>
             </tbody>
         </table>
     </div>
