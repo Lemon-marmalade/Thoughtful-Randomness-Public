@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+  <h1>Thoughtful Randomness</h1>
+  <br>
+  <h3>How many groups would you like to form?</h3>
+  <form name="group" action="/input" method="post" required>
+    <div>
+      <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="groups" placeholder="Number of Groups"type="number" min="1">
+    </div>
+  <br>
+  <div>
+    In the first column, first input the names of all the people you wish to group. Afterwards, select their preferences for the other people in the second column.
+  </div>
+  <br>
+  <h3>People and Preferences</h3>
+  <div>
+    <form name="input" action="/input" method="post" required>
+      <div>
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="people" placeholder="Number of People"type="number" min = "2">
+        <button id="submit">Enter</button>
+      </div>
+    </form>
+  </div>
+{% endblock %}
