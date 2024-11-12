@@ -9,3 +9,13 @@
 .accordion {
     position: relative;
 }
+
+table {
+    display: block;
+    overflow: auto;
+  }
+
+  table tbody {
+    display: table;
+    width: 100%;
+  }
