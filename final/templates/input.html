@@ -30,15 +30,15 @@
                             <input autocomplete="off" class="form-control mx-auto w-auto" name="name" type="text" id="name{{ person }}" oninput="updatePreferences()">
                         </td>
                         <td>
-                            <div class="accordion" id="accordionExample">
+                            <div class="accordion" id="accordionExample{{ person }}">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        Accordion Item {{person}}
-                                    </button>
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ person }}" aria-expanded="true" aria-controls="collapse{{ person }}">
+                                            Accordion Item {{ person }}
+                                        </button>
                                     </h2>
-                                    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body form-control mx-auto w-auto" id="preferences{{ person }}">
+                                    <div id="collapse{{ person }}" class="accordion-collapse collapse" data-bs-parent="#accordionExample{{ person }}">
+                                        <div class="accordion-body form-control mx-auto w-auto" id="preferences{{ person }}">
                                         <!-- Checkboxes to be populated by JavaScript here -->
                                     </div>
                                 </div>

@@ -1,4 +1,4 @@
-.cell {
-    vertical-align: top;
-    white-space: normal;
+.accordion-body {
+    max-height: none;
+    overflow: visible;
 }
