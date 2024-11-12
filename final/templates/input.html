@@ -53,15 +53,15 @@
                             let container = document.getElementById(`preferences${i}`);
                             // Clear previous checkboxes
                             container.innerHTML = '';
-                            names.forEach((name, index) => {
-                                if (name == i) {
+                            names.forEach((name) => {
+                                if (name !== document.getElementById(`name${i}`).value) {
                                     let checkbox = document.createElement('input');
                                     checkbox.type = 'checkbox';
                                     checkbox.value = name;
-                                    checkbox.id = `checkbox${i}_${index}`;
+                                    checkbox.id = `checkbox${i}_${i}`;
 
                                     let label = document.createElement('label');
-                                    label.htmlFor = `checkbox${i}_${index}`;
+                                    label.htmlFor = `checkbox${i}_${i}`;
                                     label.textContent = name;
 
                                     container.appendChild(checkbox);
