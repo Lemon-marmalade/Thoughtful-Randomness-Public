@@ -1,9 +1,0 @@
-.accordion-body {
-    z-index: 1000;
-    background-color: white;
-    width: auto;
-    max-height: none;
-    overflow: scroll;
-    display: block;
-}
-
