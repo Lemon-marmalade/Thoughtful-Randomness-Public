@@ -1,3 +1,4 @@
 td {
-    white-space: nowrap;
+    vertical-align: top;
+    white-space: normal;
 }
