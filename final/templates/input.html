@@ -51,8 +51,8 @@
 
                         for (let i = 0; i < peopleCount; i++) {
                             let container = document.getElementById(`preferences${i}`);
-                            container.innerHTML = '';
                             // Clear previous checkboxes
+                            container.innerHTML = '';
                             names.forEach((name, index) => {
                                 if (index !== i) {
                                     let checkbox = document.createElement('input');
