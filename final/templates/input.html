@@ -39,10 +39,12 @@
                 <script>
                     const peopleCount = "{{ people|tojson }}";
                     function updatePreferences() {
+                        // create empty dictionary
                         let names = [];
                         for (let i = 0; i < peopleCount; i++) {
                             let name = document.getElementById(`name${i}`).value;
                             if (name) {
+                                // put name in dictionary
                                 names.push(name);
                             }
                         }
