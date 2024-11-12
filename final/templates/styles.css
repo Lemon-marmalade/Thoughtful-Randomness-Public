@@ -1,4 +1,11 @@
 .accordion-body {
+    position: absolute;
+    z-index: 1000; /* Ensure it appears above other elements */
+    background-color: white; /* Ensure the background is visible */
+    width: auto; /* Adjust width as needed */
     max-height: none;
     overflow: visible;
+}
+.accordion {
+    position: relative;
 }
