@@ -1,7 +1,26 @@
-table.table {
-  width: 100%;
+.accordion-body {
+    z-index: 1000; /* Ensure it appears above other elements */
+    background-color: white; /* Ensure the background is visible */
+    width: auto; /* Adjust width as needed */
+    max-height: none;
+    overflow: visible;
+    display: block;
+}
+.accordion {
+    position: relative;
 }
 
-table.table td {
-  vertical-align: top;
+.accordion-collapse {
+  display: block;
+  overflow: visible;
 }
+
+table {
+    display: block;
+    overflow: auto;
+  }
+
+  table tbody {
+    display: table;
+    width: 100%;
+  }
