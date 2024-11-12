@@ -9,12 +9,10 @@
     position: relative;
 }
 
-table {
-    display: block;
-    overflow: auto;
-  }
-
-  table tbody {
-    display: table;
+table.table {
     width: 100%;
-  }
+}
+
+table.table td {
+    vertical-align: top;
+}
