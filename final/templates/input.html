@@ -39,7 +39,7 @@
                 {% endfor %}
 
                 <script>
-                    const peopleCount = {{ people|tojson }};
+                    const peopleCount = "{{ people|tojson }}";
                     function updatePreferences() {
                         let names = [];
                         for (let i = 0; i < peopleCount; i++) {
