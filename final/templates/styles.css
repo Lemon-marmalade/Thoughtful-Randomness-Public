@@ -1,7 +1,7 @@
 .accordion-body {
-    z-index: 1000; /* Ensure it appears above other elements */
-    background-color: white; /* Ensure the background is visible */
-    width: auto; /* Adjust width as needed */
+    z-index: 1000;
+    background-color: white;
+    width: auto;
     max-height: none;
     overflow: visible;
     display: block;
