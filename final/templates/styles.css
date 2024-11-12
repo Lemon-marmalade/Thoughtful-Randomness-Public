@@ -9,12 +9,12 @@
     position: relative;
 }
 
-table {
+tr {
     display: block;
     overflow: auto;
   }
 
-  table tbody {
+tr {
     display: table;
     width: 100%;
   }
