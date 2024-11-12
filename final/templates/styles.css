@@ -3,24 +3,7 @@
     background-color: white;
     width: auto;
     max-height: none;
-    overflow: visible;
+    overflow: scroll;
     display: block;
 }
-.accordion {
-    position: relative;
-}
 
-.accordion-collapse {
-  display: block;
-  overflow: visible;
-}
-
-table {
-    display: block;
-    overflow: auto;
-  }
-
-  table tbody {
-    display: table;
-    width: 100%;
-  }
