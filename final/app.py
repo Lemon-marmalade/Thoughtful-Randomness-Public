@@ -46,7 +46,9 @@ def input():
             if name:
                 names.append(name)
                 preferences[name] = request.form.getlist(f"preferences{i}")
-
+        # Save info to session
+        session['names'] = names
+        session['preferences'] = preferences
         # Do some group creating magic
         groups = create_groups(names, preferences, num_groups)
 
