@@ -44,10 +44,15 @@ def input():
                 names.append(name)
                 preferences[name] = request.form.getlist(f"preferences{i}")
 
-        return render_template("groupings.html")
+        # Do some group creating magic
+        groups = create_groups(names, preferences, num_groups)
+
+        return render_template("groupings.html", groups=groups)
 
     else:
         return redirect("/")
+
+
 
 @app.route("/groupings", methods=["GET", "POST"])
 def groupings():
