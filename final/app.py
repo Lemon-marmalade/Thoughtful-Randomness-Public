@@ -52,7 +52,13 @@ def input():
     else:
         return redirect("/")
 
-
+def create_groups(names, preferences, num_groups):
+    # Your grouping algorithm here
+    groups = [[] for _ in range(num_groups)]
+    # Example: simple round-robin assignment
+    for i, name in enumerate(names):
+        groups[i % num_groups].append(name)
+    return groups
 
 @app.route("/groupings", methods=["GET", "POST"])
 def groupings():
