@@ -33,10 +33,11 @@ def input():
     if request.method == "POST":
         # Extract number of groups
         num_groups = int(request.form.get("groups"))
-        #create empty array and 
+        # Create empty array and empty dictionary for names and preferences
         names = []
         preferences = {}
         people = int(request.form.get("people"))
+        # Get names and add to array
         for i in range(people):
             name = request.form.get(f"name{i}")
             if name:
