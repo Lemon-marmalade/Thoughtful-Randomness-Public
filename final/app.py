@@ -29,7 +29,7 @@ def index():
 
 @app.route("/input", methods=["GET", "POST"])
 def input():
-    """Use the ""
+    """Use the info from the table to generate random groups"""
     if request.method == "POST":
         return render_template("groupings.html", people=people)
     else:
@@ -37,5 +37,8 @@ def input():
 
 @app.route("/groupings", methods=["GET", "POST"])
 def groupings():
-    """Display groupings in table"""
-    return redirect("/")
+    """Display groupings in table, and give option to generate again"""
+    if request.method == "POST":
+        return render_template("groupings.html", people=people)
+    else:
+        return redirect("/")

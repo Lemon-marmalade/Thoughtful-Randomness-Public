@@ -3,19 +3,21 @@
 {% block content %}
   <h1>Thoughtful Randomness</h1>
   <br>
-  <h2>Your Generator for Preference Guided Randomized Groupings</h2>
+  <h2>Your Groupings</h2>
   <br>
   <div>
-    Thoughtful Randomness is just what it sounds like, a randomized group generator that takes thoughts and preferences into account!
+
   </div>
   <br>
-  <h3>How many people would you like to group?</h3>
   <div>
-    <form name="index" action="/" method="post" required>
+    <form name="groupings" action="/groupings" method="post">
       <div>
-        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="people" placeholder="Number of People"type="number" min = "2" required>
-        <button id="submit">Enter</button>
+        <button id="submit">Randomize Again</button>
       </div>
     </form>
+    <form name="index" action="/" method="get">
+      <div>
+        <button id="submit">Return to Homepage</button>
+      </div>
   </div>
 {% endblock %}
