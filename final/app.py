@@ -34,6 +34,7 @@ def input():
     """Use the info from the table to generate random groups"""
     if request.method == "POST":
         # Extract number of groups
+        print(request.form) 
         num_groups = int(request.form.get("groups"))
         # Create empty array and empty dictionary for names and preferences
         names = []
