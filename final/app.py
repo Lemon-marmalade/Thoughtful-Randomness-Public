@@ -31,7 +31,19 @@ def index():
 def input():
     """Use the info from the table to generate random groups"""
     if request.method == "POST":
+        # Extract number of groups
+        num_groups = int(request.form.get("groups"))
+
+        names = []
+        preferences = {}
+        for i in range(people):
+            name = request.form.get(f"name{i}")
+            if name:
+                names.append(name)
+                preferences[name] = request.form.getlist(f"preferences{i}")
+                
         return render_template("groupings.html")
+
     else:
         return redirect("/")
 
