@@ -29,12 +29,13 @@ def index():
 
 @app.route("/input", methods=["GET", "POST"])
 def input():
-    """Have a 2 column table for user to fill names into and select preferences with"""
-
-    return render_template("input.html")
+    """Use the ""
+    if request.method == "POST":
+        return render_template("groupings.html", people=people)
+    else:
+        return redirect("/")
 
 @app.route("/groupings", methods=["GET", "POST"])
 def groupings():
     """Display groupings in table"""
-
-    return render_template("groupings.html")
+    return redirect("/")
