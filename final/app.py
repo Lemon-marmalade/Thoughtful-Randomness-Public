@@ -23,6 +23,7 @@ def index():
     """ Obtain number of people user wishes to have grouped"""
     if request.method == "POST":
         people = int(request.form.get("people"))
+        session['people'] = people
         return render_template("input.html", people=people)
     else:
         return render_template("index.html")
@@ -36,6 +37,7 @@ def input():
         # Create empty array and empty dictionary for names and preferences
         names = []
         preferences = {}
+        people = session.get('people')
         # Get names and add to array
         for i in range(people):
             name = request.form.get(f"name{i}")
