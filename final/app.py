@@ -68,9 +68,13 @@ def create_groups(names, preferences, num_groups):
 @app.route("/groupings", methods=["GET", "POST"])
 def groupings():
     """Display groupings in table, and give option to generate again"""
+    # If user wants to generate again
     if request.method == "POST":
         num_groups = session.get('num_groups')
+        names = session.get('names')
+        preferences = session.get('preferences')
+        groups = create_groups(names, preferences, num_groups)
 
-        return render_template("groupings.html")
+        return render_template("groupings.html", groups=groups)
     else:
         return redirect("/")
