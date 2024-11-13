@@ -35,6 +35,7 @@ def input():
     if request.method == "POST":
         # Extract number of groups
         num_groups = int(request.form.get("groups"))
+        session['num_groups'] = num_groups
         # Create empty array and empty dictionary for names and preferences
         names = []
         preferences = {}
