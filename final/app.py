@@ -31,6 +31,7 @@ def index():
 def input():
     """Use the info from the table to generate random groups"""
     if request.method == "POST":
+        name = int(request.form.get("people"))
         return render_template("groupings.html")
     else:
         return redirect("/")
