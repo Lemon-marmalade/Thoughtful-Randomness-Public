@@ -33,15 +33,16 @@ def input():
     if request.method == "POST":
         # Extract number of groups
         num_groups = int(request.form.get("groups"))
-
+        #create empty array and 
         names = []
         preferences = {}
+        people = int(request.form.get("people"))
         for i in range(people):
             name = request.form.get(f"name{i}")
             if name:
                 names.append(name)
                 preferences[name] = request.form.getlist(f"preferences{i}")
-                
+
         return render_template("groupings.html")
 
     else:
