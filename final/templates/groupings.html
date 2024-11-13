@@ -11,9 +11,7 @@
     </div>
     <br>
     <div>
-    <form name="groupings" action="/groupings" method="post">
-        <div>
-            {% for group in groups %}
+        {% for group in groups %}
                 <h3>Group {{ loop.index }}</h3>
                 <table class="table table-bordered table-striped">
                     <tr>
@@ -26,16 +24,16 @@
                     {% endfor %}
                 </table>
             {% endfor %}
-        </div>
-    </form>
-    <form name="again" action="/groupings" method="post">
-        <div>
-            <button id="submit">Randomize Again</button>
-        </div>
-    </form>
-    <form name="index" action="/" method="get">
-        <div>
-        <button id="submit">Return to Homepage</button>
-        </div>
+    </div>
+    <div>
+        <form name="again" action="/groupings" method="post">
+            <div>
+                <button id="submit">Randomize Again</button>
+            </div>
+        </form>
+        <form name="index" action="/" method="get">
+            <div>
+            <button id="submit">Return to Homepage</button>
+            </div>
     </div>
 {% endblock %}
