@@ -53,7 +53,7 @@ def input():
         return redirect("/")
 
 def create_groups(names, preferences, num_groups):
-    # Your grouping algorithm here
+    # Create grouping algorithm
     groups = [[] for _ in range(num_groups)]
     # Example: simple round-robin assignment
     for i, name in enumerate(names):
