@@ -67,6 +67,8 @@ def create_groups(names, preferences, num_groups):
 def groupings():
     """Display groupings in table, and give option to generate again"""
     if request.method == "POST":
+        num_groups = session.get('num_groups')
+
         return render_template("groupings.html")
     else:
         return redirect("/")
