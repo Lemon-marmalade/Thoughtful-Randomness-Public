@@ -59,8 +59,8 @@ def input():
 
 def create_groups(names, preferences, num_groups):
     groups = [[] for _ in range(num_groups)]
+    print(preferences)
     sorted_names = sorted(names, key=lambda name: len(preferences[name]), reverse=True)
-    print(sorted_names)
     for name in sorted_names:
         best_group = find_best(groups, preferences[name])
         best_group.append(name)
