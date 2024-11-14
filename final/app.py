@@ -58,22 +58,25 @@ def input():
         return redirect("/")
 
 def create_groups(names, preferences, num_groups):
-    # Create grouping algorithm
     groups = [[] for _ in range(num_groups)]
-    # Example: simple round-robin assignment
-
-    # Sort names by the number of preferences
-    sorted_names = sort names by length of preferences in descending order
-
-    # Assign names to groups
+    sorted_names = sorted(names, key=lambda name: len(preferences[name]), reverse=True)
     for name in sorted_names:
-        # Find the group with the most preferred people already in it
-        best_group = find the group with the most preferred people for this name
-        add name to best_group
-
-    for i, name in enumerate(names):
-        groups[i % num_groups].append(name)
+        best_group = find_best(name, groups, preferences)
+        best_group.append(name)
     return groups
+
+def find_best(name, groups, preferences):
+    best_group = None
+    max_count = -1
+    for group in groups:
+        count = 0
+        for person in group:
+            if person in preferences:
+                count += 1
+        if count > max_count:
+            max_count = count
+            best_group = group
+    return best_group
 
 @app.route("/groupings", methods=["GET", "POST"])
 def groupings():
