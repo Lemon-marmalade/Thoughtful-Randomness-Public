@@ -76,9 +76,9 @@ def create_groups(names, preferences, num_groups):
                 free_names.append(name)
         # sort the names that are associated with preferences starting with those with most associations
         preferences_associated = sorted(preferences_associated, key=lambda name: len(preferences[name]), reverse=True)
-    for name in preferences_associated:
-        best_group = find_best(name, groups, preferences[name], preferences)
-        best_group.append(name)
+        for name in preferences_associated:
+            best_group = find_best(name, groups, preferences[name], preferences)
+            best_group.append(name)
     return groups
 
 def find_best(name, groups, preferences, other_preferences):
