@@ -72,7 +72,7 @@ def find_best(name, groups, preferences):
     max_count = -1
     for group in groups:
         count = 0
-        if len(group) <= (people/num_groups):
+        if len(group) < (people/num_groups):
             for person in group:
                 if person in preferences:
                     count += 1
