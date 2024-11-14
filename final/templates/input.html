@@ -31,19 +31,31 @@
                             <input autocomplete="off" class="form-control mx-auto w-auto" name="name{{ person }}" type="text" id="name{{ person }}" oninput="updatePreferences() updateDispreference()">
                         </td>
                         <td>
-                            <div class="accordion" id="accordionExample{{ person }}">
+                            <div class="accordion" id="accordion1{{ person }}">
                                 <div class="accordion-item">
                                     <h2 class="accordion-header">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ person }}" aria-expanded="true" aria-controls="collapse{{ person }}"></button>
-                                    </h2>
-                                    <div id="collapse{{ person }}" class="accordion-collapse collapse" data-bs-parent="#accordionExample{{ person }}">
+                                    </h2>1{{ person }}">
                                         <div class="accordion-body form-control mx-auto w-auto" id="preferences{{ person }}" style="overflow: scroll; height: 90px;">
                                             <!-- Checkboxes to be populated by JavaScript here -->
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
+                        </td>
+                        <td>
+                            <div class="accordion" id="accordion2{{ person }}">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ person }}" aria-expanded="true" aria-controls="collapse{{ person }}"></button>
+                                    </h2>
+                                    <div id="collapse{{ person }}" class="accordion-collapse collapse" data-bs-parent="#accordion2{{ person }}">
+                                        <div class="accordion-body form-control mx-auto w-auto" id="preferences{{ person }}" style="overflow: scroll; height: 90px;">
+                                            <!-- Checkboxes to be populated by JavaScript here -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </td>
                 {% endfor %}
 
