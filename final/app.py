@@ -73,9 +73,9 @@ def create_groups(names, preferences, dispreferences, num_groups):
     free_names = []
 
     for name in names:
+        dissociated = False
+        associated = False
         for other_name in names:
-            dissociated = False
-            associated = False
             # If the person has a dispreference, or if they are a dispreference of someone else, append name to dispreferences dictionary
             if len(dispreferences[name]) > 0 or name in dispreferences[other_name]:
                 if name not in dispreferences_associated:
