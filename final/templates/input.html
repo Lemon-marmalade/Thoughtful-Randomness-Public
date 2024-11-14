@@ -28,7 +28,7 @@
                 {% for person in range(people) %}
                     <tr>
                         <td>
-                            <input autocomplete="off" class="form-control mx-auto w-auto" name="name{{ person }}" type="text" id="name{{ person }}" oninput="updatePreferences()">
+                            <input autocomplete="off" class="form-control mx-auto w-auto" name="name{{ person }}" type="text" id="name{{ person }}" oninput="updatePreferences() updateDispreference()">
                         </td>
                         <td>
                             <div class="accordion" id="accordionExample{{ person }}">
@@ -43,7 +43,7 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </td>
                 {% endfor %}
 
