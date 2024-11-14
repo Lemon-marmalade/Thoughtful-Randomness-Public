@@ -62,7 +62,8 @@
 
                 <script>
                     const peopleCount = "{{ people|tojson }}";
-                    function getNames() {
+
+                    function updatePreferences() {
                         // create empty array
                         let names = [];
                         for (let i = 0; i < peopleCount; i++) {
@@ -74,9 +75,6 @@
                         }
                         //Sort names alphabetically
                         names.sort();
-                    }
-                    function updatePreferences() {
-                        getNames()
 
                         for (let i = 0; i < peopleCount; i++) {
                             let container = document.getElementById(`preferences${i}`);
@@ -103,28 +101,38 @@
                         }
                     }
                     function updateDispreference() {
-                            getNames()
+                        // create empty array
+                        let names = [];
+                        for (let i = 0; i < peopleCount; i++) {
+                            let name = document.getElementById(`name${i}`).value;
+                            if (name) {
+                                // put name in array
+                                names.push(name);
+                            }
+                        }
+                        //Sort names alphabetically
+                        names.sort();
 
-                            for (let i = 0; i < peopleCount; i++) {
-                            let container = document.getElementById(`dispreferences${i}`);
-                            // Clear previous checkboxes
-                            container.innerHTML = '';
-                            names.forEach((name) => {
-                                if (name !== document.getElementById(`name${i}`).value && !document.getElementById(`preferences${i}`).includes(name)) {
-                                    let checkbox = document.createElement('input');
-                                    checkbox.type = 'checkbox';
-                                    checkbox.name = `dispreferences${i}`;
-                                    checkbox.value = name;
-                                    checkbox.id = `checkbox${i}_${i}`;
+                        for (let i = 0; i < peopleCount; i++) {
+                        let container = document.getElementById(`dispreferences${i}`);
+                        // Clear previous checkboxes
+                        container.innerHTML = '';
+                        names.forEach((name) => {
+                            if (name !== document.getElementById(`name${i}`).value && !document.getElementById(`preferences${i}`).includes(name)) {
+                                let checkbox = document.createElement('input');
+                                checkbox.type = 'checkbox';
+                                checkbox.name = `dispreferences${i}`;
+                                checkbox.value = name;
+                                checkbox.id = `checkbox${i}_${i}`;
 
-                                    let label = document.createElement('label');
-                                    label.htmlFor = `checkbox${i}_${i}`;
-                                    label.textContent = name;
-                                    label.style.marginLeft = '5px';
+                                let label = document.createElement('label');
+                                label.htmlFor = `checkbox${i}_${i}`;
+                                label.textContent = name;
+                                label.style.marginLeft = '5px';
 
-                                    container.appendChild(checkbox);
-                                    container.appendChild(label);
-                                    container.appendChild(document.createElement('br'));
+                                container.appendChild(checkbox);
+                                container.appendChild(label);
+                                container.appendChild(document.createElement('br'));
                                 }
                             });
                         }
