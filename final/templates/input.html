@@ -95,6 +95,7 @@
                                     checkbox.name = `preferences${i}`;
                                     checkbox.value = name;
                                     checkbox.id = `checkbox${i}_${i}`;
+                                    checkbox.onchange = updateDispreferences;
                                     if (checkedNames.has(name)) {
                                         checkbox.checked = true;
                                     }
