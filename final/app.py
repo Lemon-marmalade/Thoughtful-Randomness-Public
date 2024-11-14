@@ -77,7 +77,7 @@ def create_groups(names, preferences, dispreferences, num_groups):
             dissociated = False
             associated = False
             # If the person has a dispreference, or if they are a dispreference of someone else, append name to dispreferences dictionary
-            if len(preferences[name]) > 0 or name in preferences[other_name]:
+            if len(dispreferences[name]) > 0 or name in dispreferences[other_name]:
                 if name not in dispreferences_associated:
                     dispreferences_associated.append(name)
                     dissociated = True
