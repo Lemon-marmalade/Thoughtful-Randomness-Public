@@ -87,6 +87,9 @@
                                     checkbox.name = `preferences${i}`;
                                     checkbox.value = name;
                                     checkbox.id = `checkbox${i}_${i}`;
+                                    if (checkedNames.has(name)) {
+                                        checkbox.checked = true;
+                                    }
 
                                     let label = document.createElement('label');
                                     label.htmlFor = `checkbox${i}_${i}`;
