@@ -63,7 +63,7 @@ def create_groups(names, preferences, num_groups):
     # Example: simple round-robin assignment
 
     # Sort names by the number of preferences
-    sorted_names = sort names by length of preferences in descending order
+    sorted_names = sorted(names, key=lambda name: len(preferences[name]), reverse=True)
 
     # Assign names to groups
     for name in sorted_names:
