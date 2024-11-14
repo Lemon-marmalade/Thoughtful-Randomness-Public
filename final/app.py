@@ -65,7 +65,7 @@ def create_groups(names, preferences, num_groups):
         best_group.append(name)
     return groups
 
-def find_best(name, groups, preferences):
+def find_best(groups, preferences):
     people = session.get('people')
     num_groups = session.get('num_groups')
     best_group = None
@@ -74,6 +74,7 @@ def find_best(name, groups, preferences):
         count = 0
         if len(group) < (people/num_groups):
             for person in group:
+                print(person)
                 if person in preferences:
                     count += 1
             if count > max_count:
