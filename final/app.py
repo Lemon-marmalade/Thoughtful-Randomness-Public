@@ -61,15 +61,19 @@ def input():
 def create_groups(names, preferences, num_groups):
     groups = [[] for _ in range(num_groups)]
     names = random.shuffle(names)
-    sorted_names = []
+    preferences_associated = []
     free_names = []
     for name in names:
-        # If the person is associated with a preference
+        # If the person has a preference
         if len(preferences[name]) > 0:
-            sorted_names.append(name)
+            preferences_associated.append(name)
         # If not, they're free to be randomized
         else:
             free_names.append(name)
+        for other_name in names:
+            # If they are a preference of someone else, append name too
+            if name in preferences[other_name]:
+                preferences_associated.append(name)
         # Deal with those that are associated with preferences
         sorted_names = sorted(sorted_names, key=lambda name: len(preferences[name]), reverse=True)
     for name in sorted_names:
