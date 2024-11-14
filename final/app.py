@@ -74,9 +74,7 @@ def find_best(name, groups, preferences, other_preferences):
         count = 0
         if len(group) < (people/num_groups):
             for person in group:
-                if person in preferences:
-                    count += 1
-                elif name in other_preferences[person]:
+                if person in preferences or name in other_preferences[person]:
                     count += 1
             if count > max_count:
                 max_count = count
