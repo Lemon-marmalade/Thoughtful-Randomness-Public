@@ -88,7 +88,7 @@ def create_groups(names, preferences, num_groups):
         best_group.append(name)
     for name in free_names:
         best_group = find_best(name, groups, preferences[name], preferences)
-        print (best_group)
+        print ('Best Group', best_group)
         best_group.append(name)
     return groups
 
