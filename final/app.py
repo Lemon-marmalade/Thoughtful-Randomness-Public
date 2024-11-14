@@ -61,7 +61,7 @@ def create_groups(names, preferences, num_groups):
     groups = [[] for _ in range(num_groups)]
     sorted_names = sorted(names, key=lambda name: len(preferences[name]), reverse=True)
     for name in sorted_names:
-        best_group = find_best(name, groups, preferences)
+        best_group = find_best(groups, preferences[name])
         best_group.append(name)
     return groups
 
@@ -74,7 +74,6 @@ def find_best(groups, preferences):
         count = 0
         if len(group) < (people/num_groups):
             for person in group:
-                print(person)
                 if person in preferences:
                     count += 1
             if count > max_count:
