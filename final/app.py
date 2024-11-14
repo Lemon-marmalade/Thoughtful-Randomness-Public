@@ -80,13 +80,13 @@ def create_groups(names, preferences, dispreferences, num_groups):
             if len(preferences[name]) > 0 or name in preferences[other_name]:
                 if name not in dispreferences_associated:
                     dispreferences_associated.append(name)
-                dissociated = True
+                    dissociated = True
                 break
             # If the person is not associated with a dispreference, and if the person has a preference, or if they are a preference of someone else, append name
             if len(preferences[name]) > 0 or name in preferences[other_name]:
                 if name not in preferences_associated:
                     preferences_associated.append(name)
-                associated = True
+                    associated = True
                 break
             # If not picky, they're free to be randomized
             else:
