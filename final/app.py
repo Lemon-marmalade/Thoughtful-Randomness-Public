@@ -66,7 +66,6 @@ def create_groups(names, preferences, num_groups):
     return groups
 
 def find_best(groups, preferences):
-    print(preferences)
     people = session.get('people')
     num_groups = session.get('num_groups')
     best_group = None
