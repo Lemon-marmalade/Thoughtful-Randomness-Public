@@ -40,6 +40,7 @@ def input():
         # Create empty array and empty dictionary for names and preferences
         names = []
         preferences = {}
+        dispreferences = {}
         people = session.get('people')
         # Get names and add to array
         for i in range(people):
@@ -47,41 +48,55 @@ def input():
             if name:
                 names.append(name)
                 preferences[name] = request.form.getlist(f"preferences{i}")
+                dispreferences[name] = request.form.getlist(f"dispreferences{i}")
         # Save info to session
         session['names'] = names
         session['preferences'] = preferences
+        session['dispreferences'] = dispreferences
         # Do some group creating magic in create_groups :)
-        groups = create_groups(names, preferences, num_groups)
+        groups = create_groups(names, preferences, dispreferences, num_groups)
 
         return render_template("groupings.html", groups=groups)
 
     else:
         return redirect("/")
 
-def create_groups(names, preferences, num_groups):
+def create_groups(names, preferences, dispreferences, num_groups):
     # Create empty groups for number of groups requests
     groups = [[] for _ in range(num_groups)]
     # Shuffle names for randomness
     random.shuffle(names)
+    people = session.get('people')
 
     preferences_associated = []
+    dispreferences_associated = []
     free_names = []
+
     for name in names:
         for other_name in names:
+            dissociated = False
             associated = False
-            # If the person has a preference, or if they are a preference of someone else, append name
+            # If the person has a dispreference, or if they are a dispreference of someone else, append name to dispreferences dictionary
+            if len(preferences[name]) > 0 or name in preferences[other_name]:
+                if name not in dispreferences_associated:
+                    dispreferences_associated.append(name)
+                dissociated = True
+                break
+            # If the person is not associated with a dispreference, and if the person has a preference, or if they are a preference of someone else, append name
             if len(preferences[name]) > 0 or name in preferences[other_name]:
                 if name not in preferences_associated:
                     preferences_associated.append(name)
                 associated = True
                 break
-            # If not, they're free to be randomized
+            # If not picky, they're free to be randomized
             else:
-                if not associated and name not in free_names:
+                if not dissociated and not associated and name not in free_names:
                     free_names.append(name)
     # Sort the names that are associated with preferences starting with those with most associations
     preferences_associated = sorted(preferences_associated, key=lambda name: len(preferences[name]), reverse=True)
+    dispreferences_associated = sorted(dispreferences_associated, key=lambda name: len(dispreferences[name]), reverse=True)
     print("Preferences Associated", preferences_associated)
+    print("Dispreferences Associated", preferences_associated)
     print("Free names", free_names)
     for name in preferences_associated:
         best_group = find_best(name, groups, preferences[name], preferences)
