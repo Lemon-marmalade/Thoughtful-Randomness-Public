@@ -87,7 +87,8 @@
                                     checkbox.name = `preferences${i}`;
                                     checkbox.value = name;
                                     checkbox.id = `checkbox${i}_${i}`;
-                                    checkbox.oninput = `updateDisreferences()`;
+                                    // change this somehow
+                                    checkbox.onchange = updateDispreferences();
 
                                     let label = document.createElement('label');
                                     label.htmlFor = `checkbox${i}_${i}`;
