@@ -66,16 +66,21 @@ def create_groups(names, preferences, num_groups):
     return groups
 
 def find_best(name, groups, preferences):
+    people = session.get('people')
+    num_groups = session.get('num_groups')
     best_group = None
     max_count = -1
     for group in groups:
         count = 0
-        for person in group:
-            if person in preferences:
-                count += 1
-        if count > max_count:
-            max_count = count
-            best_group = group
+        if len(group) <= (people/num_groups):
+            for person in group:
+                if person in preferences:
+                    count += 1
+            if count > max_count:
+                max_count = count
+                best_group = group
+        else:
+            continue
     return best_group
 
 @app.route("/groupings", methods=["GET", "POST"])
