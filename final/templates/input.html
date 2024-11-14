@@ -88,8 +88,32 @@
                                 }
                             });
                         }
-                        function updateDispreference() {
+                    }
+                    function updateDispreference() {
                             getNames()
+
+                            for (let i = 0; i < peopleCount; i++) {
+                            let container = document.getElementById(`dispreferences${i}`);
+                            // Clear previous checkboxes
+                            container.innerHTML = '';
+                            names.forEach((name) => {
+                                if (name !== document.getElementById(`name${i}`).value) {
+                                    let checkbox = document.createElement('input');
+                                    checkbox.type = 'checkbox';
+                                    checkbox.name = `preferences${i}`;
+                                    checkbox.value = name;
+                                    checkbox.id = `checkbox${i}_${i}`;
+
+                                    let label = document.createElement('label');
+                                    label.htmlFor = `checkbox${i}_${i}`;
+                                    label.textContent = name;
+                                    label.style.marginLeft = '5px';
+
+                                    container.appendChild(checkbox);
+                                    container.appendChild(label);
+                                    container.appendChild(document.createElement('br'));
+                                }
+                            });
                         }
                     }
                 </script>
