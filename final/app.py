@@ -88,15 +88,14 @@ def create_groups(names, preferences, dispreferences, num_groups):
                     preferences_associated.append(name)
                     associated = True
                 break
-            # If not picky, they're free to be randomized
-            else:
-                if not dissociated and not associated and name not in free_names:
-                    free_names.append(name)
+        # Only if no preferences for groups or separation, they're free to be randomized
+        if not dissociated and not associated and name not in free_names:
+            free_names.append(name)
     # Sort the names that are associated with preferences starting with those with most associations
     preferences_associated = sorted(preferences_associated, key=lambda name: len(preferences[name]), reverse=True)
     dispreferences_associated = sorted(dispreferences_associated, key=lambda name: len(dispreferences[name]), reverse=True)
     print("Preferences Associated", preferences_associated)
-    print("Dispreferences Associated", preferences_associated)
+    print("Dispreferences Associated", dispreferences_associated)
     print("Free names", free_names)
     # Separate those that need to be separated first
     for name in dispreferences_associated:
