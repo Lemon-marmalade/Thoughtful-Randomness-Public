@@ -74,9 +74,11 @@ def create_groups(names, preferences, num_groups):
                     preferences_associated.append(name)
             # If not, they're free to be randomized
             else:
-                free_names.append(name)
-        # sort the names that are associated with preferences starting with those with most associations
-        preferences_associated = sorted(preferences_associated, key=lambda name: len(preferences[name]), reverse=True)
+                if name not in free_names:
+                    free_names.append(name)
+    # sort the names that are associated with preferences starting with those with most associations
+    preferences_associated = sorted(preferences_associated, key=lambda name: len(preferences[name]), reverse=True)
+    print("Free names", free_names)
     for name in preferences_associated:
         best_group = find_best(name, groups, preferences[name], preferences)
         best_group.append(name)
