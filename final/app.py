@@ -78,7 +78,10 @@ def create_groups(names, preferences, num_groups):
         preferences_associated = sorted(preferences_associated, key=lambda name: len(preferences[name]), reverse=True)
     for name in preferences_associated:
         best_group = find_best(name, groups, preferences[name], preferences)
-        best_group.append(name)
+        if best_group is not None:
+            best_group.append(name)
+        else:
+            # Put in group anyways
     return groups
 
 def find_best(name, groups, preferences, other_preferences):
@@ -97,7 +100,6 @@ def find_best(name, groups, preferences, other_preferences):
                 best_group = group
         else:
             continue
-    print(best_group)
     return best_group
 
 @app.route("/groupings", methods=["GET", "POST"])
