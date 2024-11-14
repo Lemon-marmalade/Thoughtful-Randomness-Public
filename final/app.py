@@ -68,6 +68,7 @@ def create_groups(names, preferences, num_groups):
     free_names = []
     for name in names:
         for other_name in names:
+            associated = False
             # If the person has a preference, or if they are a preference of someone else, append name
             if len(preferences[name]) > 0 or name in preferences[other_name]:
                 if name not in preferences_associated:
