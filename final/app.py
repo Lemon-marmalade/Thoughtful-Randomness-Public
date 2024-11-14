@@ -102,6 +102,8 @@ def find_best(name, groups, preferences, other_preferences):
         for group in groups:
             if len(group) < (people/num_groups):
                 best_group = group
+                break
+        print("Assigned to first available group:", best_group)
     return best_group
 
 @app.route("/groupings", methods=["GET", "POST"])
