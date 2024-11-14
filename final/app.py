@@ -70,10 +70,20 @@ def create_groups(names, preferences, num_groups):
         # Find the group with the most preferred people already in it
         best_group = find the group with the most preferred people for this name
         add name to best_group
-
-    for i, name in enumerate(names):
-        groups[i % num_groups].append(name)
     return groups
+
+def find_best(name, groups, preferences):
+    best_group = None
+    max_count = -1
+    for group in groups:
+        count = 0
+        for person in group:
+            if person in preferences[name]:
+                count += 1
+        if count > max_count:
+            max_count = count
+            best_group = group
+    return best_group
 
 @app.route("/groupings", methods=["GET", "POST"])
 def groupings():
