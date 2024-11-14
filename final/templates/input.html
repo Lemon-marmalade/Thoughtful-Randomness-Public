@@ -110,7 +110,7 @@
                             // Clear previous checkboxes
                             container.innerHTML = '';
                             names.forEach((name) => {
-                                if (name !== document.getElementById(`name${i}`).value and name !== document.getElementById(`preferences${i}`)) {
+                                if (name !== document.getElementById(`name${i}`).value && !document.getElementById(`preferences${i}`).includes(name)) {
                                     let checkbox = document.createElement('input');
                                     checkbox.type = 'checkbox';
                                     checkbox.name = `dispreferences${i}`;
