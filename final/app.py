@@ -68,7 +68,7 @@ def create_groups(names, preferences, num_groups):
     # Assign names to groups
     for name in sorted_names:
         # Find the group with the most preferred people already in it
-        best_group = find the group with the most preferred people for this name
+        best_group = find_best(name, groups, preferences[name])
         add name to best_group
     return groups
 
