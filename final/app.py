@@ -62,7 +62,7 @@ def create_groups(names, preferences, num_groups):
     # Create empty groups for number of groups requests
     groups = [[] for _ in range(num_groups)]
     # Shuffle names for randomness
-    names = random.shuffle(names)
+    random.shuffle(names)
 
     preferences_associated = []
     free_names = []
