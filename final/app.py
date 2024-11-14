@@ -76,6 +76,7 @@ def create_groups(names, preferences, num_groups):
                 free_names.append(name)
         # sort the names that are associated with preferences starting with those with most associations
         preferences_associated = sorted(preferences_associated, key=lambda name: len(preferences[name]), reverse=True)
+        print(preferences_associated)
     for name in preferences_associated:
         best_group = find_best(name, groups, preferences[name], preferences)
         best_group.append(name)
@@ -103,7 +104,6 @@ def find_best(name, groups, preferences, other_preferences):
             if len(group) < (people/num_groups):
                 best_group = group
                 break
-        print("Assigned to first available group:", best_group)
     return best_group
 
 @app.route("/groupings", methods=["GET", "POST"])
