@@ -100,6 +100,8 @@ def find_best(name, groups, preferences, other_preferences):
                 best_group = group
         else:
             continue
+    if best_group is None:
+        best_group = group
     return best_group
 
 @app.route("/groupings", methods=["GET", "POST"])
