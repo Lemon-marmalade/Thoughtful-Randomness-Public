@@ -98,11 +98,12 @@ def create_groups(names, preferences, dispreferences, num_groups):
     print("Preferences Associated", preferences_associated)
     print("Dispreferences Associated", preferences_associated)
     print("Free names", free_names)
-    for name in preferences_associated:
-        best_group = find_best(name, groups, preferences[name], preferences)
-        best_group.append(name)
+    # Separate those that need to be separated first
     for name in dispreferences_associated:
-        best_group = find_best(name, groups, preferences[name], preferences)
+        best_group = best_separation(name, groups, dispreferences[name], dispreferences)
+        best_group.append(name)
+    for name in preferences_associated:
+        best_group = best_join(name, groups, preferences[name], preferences)
         best_group.append(name)
     for name in free_names:
         # Just place in any group
@@ -111,7 +112,31 @@ def create_groups(names, preferences, dispreferences, num_groups):
                 group.append(name)
     return groups
 
-def find_best(name, groups, preferences, other_preferences):
+def best_separation(name, groups, dispreferences, other_dispreferences):
+    people = session.get('people')
+    num_groups = session.get('num_groups')
+    best_group = None
+    max_count = -1
+    for group in groups:
+        count = 0
+        if len(group) < (people/num_groups):
+            for person in group:
+                if person not in dispreferences or name not in other_dispreferences[person]:
+                    count += 1
+            if count > max_count:
+                max_count = count
+                best_group = group
+        else:
+            continue
+    if best_group is None:
+        # If no best group, put them in the first group available
+        for group in groups:
+            if len(group) < (people/num_groups):
+                best_group = group
+                break
+    return best_group
+
+def best_join(name, groups, preferences, other_preferences):
     people = session.get('people')
     num_groups = session.get('num_groups')
     best_group = None
