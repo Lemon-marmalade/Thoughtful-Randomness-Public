@@ -83,6 +83,9 @@ def create_groups(names, preferences, num_groups):
     for name in preferences_associated:
         best_group = find_best(name, groups, preferences[name], preferences)
         best_group.append(name)
+    for name in free_names:
+        best_group = find_best(name, groups, preferences[name], preferences)
+        best_group.append(name)
     return groups
 
 def find_best(name, groups, preferences, other_preferences):
