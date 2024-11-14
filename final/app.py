@@ -71,13 +71,10 @@ def create_groups(names, preferences, num_groups):
             # If the person has a preference, or if they are a preference of someone else, append name
             if len(preferences[name]) > 0 or name in preferences[other_name]:
                 preferences_associated.append(name)
-        # If not, they're free to be randomized
-        else:
-            free_names.append(name)
-        for other_name in names:
-            # If they are a preference of someone else, append name too
-
-        # Deal with those that are associated with preferences
+            # If not, they're free to be randomized
+            else:
+                free_names.append(name)
+        # sort the names that are associated with preferences starting iwth those with most associations
         preferences_associated = sorted(preferences_associated, key=lambda name: len(preferences[name]), reverse=True)
     for name in preferences_associated:
         best_group = find_best(name, groups, preferences[name], preferences)
