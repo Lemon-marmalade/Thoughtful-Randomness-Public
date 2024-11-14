@@ -2,7 +2,7 @@ import secrets
 
 from flask import Flask, flash, redirect, render_template, request, session
 from flask_session import Session
-from random import shuffle
+import random
 # Configure application
 app = Flask(__name__)
 
@@ -60,7 +60,7 @@ def input():
 
 def create_groups(names, preferences, num_groups):
     groups = [[] for _ in range(num_groups)]
-    names = list
+    names = random.shuffle(names)
     sorted_names = sorted(names, key=lambda name: len(preferences[name]), reverse=True)
     for name in sorted_names:
         best_group = find_best(name, groups, preferences[name], preferences)
