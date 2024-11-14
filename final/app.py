@@ -30,33 +30,6 @@ def index():
         return render_template("index.html")
 
 @app.route("/input", methods=["GET", "POST"])
-def input():
-    """Use the info from the table to generate random groups"""
-    if request.method == "POST":
-        # Extract number of groups
-        num_groups = int(request.form.get("groups"))
-        session['num_groups'] = num_groups
-        # Create empty array and empty dictionary for names and preferences
-        names = []
-        preferences = {}
-        people = session.get('people')
-        # Get names and add to array
-        for i in range(people):
-            name = request.form.get(f"name{i}")
-            if name:
-                names.append(name)
-                preferences[name] = request.form.getlist(f"preferences{i}")
-        # Save info to session
-        session['names'] = names
-        session['preferences'] = preferences
-        # Do some group creating magic
-        groups = create_groups(names, preferences, num_groups)
-
-        return render_template("groupings.html", groups=groups)
-
-    else:
-        return redirect("/")
-
 def create_groups(names, preferences, num_groups):
     # Create grouping algorithm
     groups = [[] for _ in range(num_groups)]
@@ -69,7 +42,7 @@ def create_groups(names, preferences, num_groups):
     for name in sorted_names:
         # Find the group with the most preferred people already in it
         best_group = find_best(name, groups, preferences[name])
-        add name to best_group
+        groups[i % num_groups].append(name)
     return groups
 
 def find_best(name, groups, preferences):
