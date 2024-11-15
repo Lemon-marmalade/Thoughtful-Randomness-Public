@@ -84,7 +84,8 @@ def create_groups(names, preferences, dispreferences, num_groups):
                     dissasociates[name] = 0
                     dispreferences_associated.append(name)
                     dissociated = True
-                    dissasociates[name] =
+
+
                 break
         for other_name in names:
             # If the person is not associated with a dispreference, and if the person has a preference, or if they are a preference of someone else, append name
