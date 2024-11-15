@@ -110,6 +110,7 @@ def create_groups(names, preferences, dispreferences, num_groups):
         for group in groups:
             if len(group) < (people/num_groups):
                 group.append(name)
+                break
     return groups
 
 def best_separation(name, groups, dispreferences, other_dispreferences):
