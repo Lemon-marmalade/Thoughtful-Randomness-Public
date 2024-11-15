@@ -159,13 +159,9 @@ def best_join(name, groups, preferences, other_preferences):
                 for person in people:
                     if name in other_preferences[person] and person not in preferences[name]:
                         needed_spots += 1
-                min_spots = needed_spots
-                if available_spots == needed_spots:
+                if available_spots >= needed_spots:
                     best_group = group
                     break
-                # if available spots guarentee the least leftover space
-                if available_spots > needed_spots and available_spots < min_spots:
-                    best_group = group
             else:
                 continue
     return best_group
