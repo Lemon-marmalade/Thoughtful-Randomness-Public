@@ -137,20 +137,26 @@ def best_join(name, groups, preferences, other_preferences):
     people = session.get('people')
     num_groups = session.get('num_groups')
     best_group = None
-    max_count = 0
+    max_count = -1
     for group in groups:
         count = 0
         if len(group) < (people/num_groups):
             for person in group:
                 if person in preferences or name in other_preferences[person]:
                     count += 1
-            if count == max_count and len(group) + 1 <= (people/num_groups):
-                best_group = group
             if count > max_count:
                 max_count = count
                 best_group = group
         else:
             continue
+    if best_group is None:
+        # If no best group, put them in the group with most spots available for preferences
+        max_spots = 0
+        for group in groups:
+            available_spots = (people/num_groups)-len(group)
+            if len(group) < (people/num_groups):
+                best_group = group
+                break
     return best_group
 
 @app.route("/groupings", methods=["GET", "POST"])
