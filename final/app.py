@@ -121,9 +121,8 @@ def best_separation(name, groups, dispreferences, other_dispreferences):
         count = 0
         if len(group) < (people/num_groups):
             for person in group:
-                if person in dispreferences or name in other_dispreferences[person]:
-                    count -= 1
-            print(f"Group: {group}, Count: {count}, Max Count: {max_count}")
+                if person not in dispreferences or name not in other_dispreferences[person]:
+                    count += 1
             if count > max_count:
                 max_count = count
                 best_group = group
@@ -135,7 +134,6 @@ def best_separation(name, groups, dispreferences, other_dispreferences):
             if len(group) < (people/num_groups):
                 best_group = group
                 break
-    print('Best', best_group)
     return best_group
 
 def best_join(name, groups, preferences, other_preferences):
