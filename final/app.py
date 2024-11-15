@@ -164,6 +164,7 @@ def best_join(name, groups, preferences, other_preferences):
                 break
             elif available_spots > needed_spots and available_spots < min_spots:
                 min_spots = available_spots
+                best_group = group
     return best_group
 
 @app.route("/groupings", methods=["GET", "POST"])
