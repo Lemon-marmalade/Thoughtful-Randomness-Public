@@ -123,6 +123,7 @@ def best_separation(name, groups, dispreferences, other_dispreferences):
             for person in group:
                 if person not in dispreferences or name not in other_dispreferences[person]:
                     count += 1
+            print(f"Group: {group}, Count: {count}, Max Count: {max_count}")
             if count > max_count:
                 max_count = count
                 best_group = group
