@@ -154,6 +154,9 @@ def best_join(name, groups, preferences, other_preferences):
         max_spots = 0
         for group in groups:
             available_spots = (people/num_groups)-len(group)
+            # Find number of people associated with
+            
+            needed_spots = len(preferences[name]) + 1
             if len(group) < (people/num_groups):
                 best_group = group
                 break
