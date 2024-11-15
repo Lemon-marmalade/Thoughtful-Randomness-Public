@@ -80,13 +80,19 @@ def create_groups(names, preferences, dispreferences, num_groups):
         for other_name in names:
             # If the person has a dispreference, or if they are a dispreference of someone else, append name to dispreferences dictionary
             if len(dispreferences[name]) > 0 or name in dispreferences[other_name]:
+                # Record number of people this person needs to be separated from for sorting
+                dissociates[name] = len(dispreferences[name])
+                count = 0
+                for other_name_again in names:
+                    if name in dispreferences[other_name_again]:
+                        count += 1
+                dissociates[name] += count
+                # Add this person to the dispreferences_associated array
                 if name not in dispreferences_associated:
-                    dissasociates[name] = 0
                     dispreferences_associated.append(name)
                     dissociated = True
-
-
                 break
+            
         for other_name in names:
             # If the person is not associated with a dispreference, and if the person has a preference, or if they are a preference of someone else, append name
             if len(preferences[name]) > 0 or name in preferences[other_name]:
