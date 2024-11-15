@@ -116,7 +116,7 @@ def best_separation(name, groups, dispreferences, other_dispreferences):
     people = session.get('people')
     num_groups = session.get('num_groups')
     best_group = None
-    max_count = 1
+    max_count = 0
     for group in groups:
         count = 0
         if len(group) < (people/num_groups):
