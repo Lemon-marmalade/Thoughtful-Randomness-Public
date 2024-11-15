@@ -85,7 +85,7 @@ def create_groups(names, preferences, dispreferences, num_groups):
         for other_name in names:
             # If the person is not associated with a dispreference, and if the person has a preference, or if they are a preference of someone else, append name
             if len(preferences[name]) > 0 or name in preferences[other_name]:
-                if name not in preferences_associated:
+                if name not in preferences_associated and name not in dispreferences_associated:
                     preferences_associated.append(name)
                     associated = True
                 break
