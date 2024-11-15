@@ -157,13 +157,13 @@ def best_join(name, groups, preferences, other_preferences):
         for group in groups:
             available_spots = (people/num_groups)-len(group)
             if available_spots > 0:
+                min_spots = available_spots
                 for person in people:
                     if name in other_preferences[person] and person not in preferences[name]:
                         needed_spots += 1
                 if available_spots == needed_spots:
                     best_group = group
                     break
-                min_spots = available_spots
                 if available_spots > needed_spots and available_spots < min_spots:
                     best_group = group
             else:
