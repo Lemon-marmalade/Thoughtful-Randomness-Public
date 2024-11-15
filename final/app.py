@@ -144,7 +144,7 @@ def best_join(name, groups, preferences, other_preferences):
             for person in group:
                 if person in preferences or name in other_preferences[person]:
                     count += 1
-            if count == max_count:
+            if count == max_count and len(group) + 1 <= (people/num_groups):
                 best_group = group
             if count > max_count:
                 max_count = count
