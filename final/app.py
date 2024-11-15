@@ -112,8 +112,8 @@ def create_groups(names, preferences, dispreferences, num_groups):
         if not dissociated and not associated and name not in free_names:
             free_names.append(name)
     # Sort the names that are associated with preferences starting with those with most associations
-    preferences_associated = sorted(preferences_associated, key=lambda name: len(preferences[name]), reverse=True)
-    dispreferences_associated = sorted(dispreferences_associated, key=lambda name: len(dispreferences[name]), reverse=True)
+    preferences_associated = sorted(preferences_associated, key=lambda name: associates[name], reverse=True)
+    dispreferences_associated = sorted(dispreferences_associated, key=lambda name: dissociates[name], reverse=True)
     print("Preferences Associated", preferences_associated)
     print("Dispreferences Associated", dispreferences_associated)
     print("Free names", free_names)
