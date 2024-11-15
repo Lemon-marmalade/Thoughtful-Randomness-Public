@@ -167,7 +167,8 @@ def groupings():
         num_groups = session.get('num_groups')
         names = session.get('names')
         preferences = session.get('preferences')
-        groups = create_groups(names, preferences, num_groups)
+        dispreferences = session.get('dispreferences')
+        groups = create_groups(names, preferences, dispreferences, num_groups)
 
         return render_template("groupings.html", groups=groups)
     else:
