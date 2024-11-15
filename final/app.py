@@ -69,8 +69,10 @@ def create_groups(names, preferences, dispreferences, num_groups):
     people = session.get('people')
 
     preferences_associated = []
+    associates = {}
     dispreferences_associated = []
     free_names = []
+    dissociates = {}
 
     for name in names:
         dissociated = False
@@ -79,8 +81,10 @@ def create_groups(names, preferences, dispreferences, num_groups):
             # If the person has a dispreference, or if they are a dispreference of someone else, append name to dispreferences dictionary
             if len(dispreferences[name]) > 0 or name in dispreferences[other_name]:
                 if name not in dispreferences_associated:
+                    dissasociates[name] = 0
                     dispreferences_associated.append(name)
                     dissociated = True
+                    dissasociates[name] =
                 break
         for other_name in names:
             # If the person is not associated with a dispreference, and if the person has a preference, or if they are a preference of someone else, append name
