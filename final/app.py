@@ -124,41 +124,33 @@ def best_separation(name, groups, dispreferences, other_dispreferences):
                 if person in dispreferences or name in other_dispreferences[person]:
                     count += 1
             print(f"Group: {group}, Count: {count}, Max Count: {max_count}")
+            if count == max_count:
+                best_group = group
             if count < max_count:
                 max_count = count
                 best_group = group
         else:
             continue
-    if best_group is None:
-        # If no best group, put them in the first group available
-        for group in groups:
-            if len(group) < (people/num_groups):
-                best_group = group
-                break
     return best_group
 
 def best_join(name, groups, preferences, other_preferences):
     people = session.get('people')
     num_groups = session.get('num_groups')
     best_group = None
-    max_count = -1
+    max_count = 0
     for group in groups:
         count = 0
         if len(group) < (people/num_groups):
             for person in group:
                 if person in preferences or name in other_preferences[person]:
                     count += 1
+            if count == max_count:
+                best_group = group
             if count > max_count:
                 max_count = count
                 best_group = group
         else:
             continue
-    if best_group is None:
-        # If no best group, put them in the first group available
-        for group in groups:
-            if len(group) < (people/num_groups):
-                best_group = group
-                break
     return best_group
 
 @app.route("/groupings", methods=["GET", "POST"])
