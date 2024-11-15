@@ -134,6 +134,7 @@ def best_separation(name, groups, dispreferences, other_dispreferences):
             if len(group) < (people/num_groups):
                 best_group = group
                 break
+    print('Best', best_group)
     return best_group
 
 def best_join(name, groups, preferences, other_preferences):
