@@ -163,6 +163,7 @@ def best_join(name, groups, preferences, other_preferences):
                 if available_spots == needed_spots:
                     best_group = group
                     break
+                # if available spots guarentee the least leftover space
                 if available_spots > needed_spots and available_spots < min_spots:
                     best_group = group
             else:
