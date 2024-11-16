@@ -10,6 +10,30 @@
 }
 .small_break {
     display: block;
-    content: ""; /* clears default height */
+    content: "";
     margin: 10px 0;
+}
+
+.page {
+    color: #fff;
+    text-align: center;
+    overflow: auto;
+    position: relative;
+  }
+
+.page::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+
+    display: block;
+    background-image: url('');
+    background-size:cover;
+    width: 100%;
+    height: 100%;
+
+    filter: brightness(70%);
 }
