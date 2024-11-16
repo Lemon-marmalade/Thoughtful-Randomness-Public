@@ -29,7 +29,10 @@
     width: 1000px;
 }
 
-h2, h3 {
+h3, th {
+    color: #2d578b;
+}
+h2 {
     color: #2d578b;
     font-style: italic;
 }
