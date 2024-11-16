@@ -139,7 +139,7 @@ def best_separation(name, groups, dispreferences, other_dispreferences):
     for group in groups:
         count = 0
         # If the group still has space
-        if len(group) < (people/num_groups):
+        if len(group) < (roundup(people/num_groups)):
             # Find how many people the person is dissociated with are in the group
             for person in group:
                 if person in dispreferences or name in other_dispreferences[person]:
