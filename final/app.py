@@ -190,7 +190,7 @@ def best_join(name, groups, preferences, other_preferences):
                 continue
     return best_group
 
-@app.route("/groupings", methods=["GET", "POST"])
+@app.route("/groupings", methods=["POST"])
 def groupings():
     """Display groupings in table, and give option to generate again"""
     # If user wants to generate again, go through all the same process from input
