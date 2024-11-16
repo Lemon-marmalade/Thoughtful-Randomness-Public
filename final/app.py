@@ -68,15 +68,16 @@ def create_groups(names, preferences, dispreferences, num_groups):
     random.shuffle(names)
     people = session.get('people')
 
-    preferences_associated = []
-    associates = {}
-    dispreferences_associated = []
-    free_names = []
+    dispreferences_associated = [] # This include anyone involved in a dispreference
+    preferences_associated = [] # This include anyone involved in a dispreference
     dissociates = {}
+    associates = {}
+    free_names = [] # This is everyone else that's free to move
 
     for name in names:
         dissociated = False
         associated = False
+        # Check if they are dispreferences associated
         for other_name in names:
             # If the person has a dispreference, or if they are a dispreference of someone else, append name to dispreferences dictionary
             if len(dispreferences[name]) > 0 or name in dispreferences[other_name]:
@@ -92,7 +93,7 @@ def create_groups(names, preferences, dispreferences, num_groups):
                     dispreferences_associated.append(name)
                     dissociated = True
                 break
-
+        # Check if they are preferences associated
         for other_name in names:
             # If the person is not associated with a dispreference, and if the person has a preference, or if they are a preference of someone else, append name
             if len(preferences[name]) > 0 or name in preferences[other_name]:
@@ -114,18 +115,16 @@ def create_groups(names, preferences, dispreferences, num_groups):
     # Sort the names that are associated with preferences starting with those with most associations
     preferences_associated = sorted(preferences_associated, key=lambda name: associates[name], reverse=True)
     dispreferences_associated = sorted(dispreferences_associated, key=lambda name: dissociates[name], reverse=True)
-    print("Preferences Associated", preferences_associated)
-    print("Dispreferences Associated", dispreferences_associated)
-    print("Free names", free_names)
-    # Separate those that need to be separated first
+    # Separate those that need to be separated first, finding best group
     for name in dispreferences_associated:
         best_group = best_separation(name, groups, dispreferences[name], dispreferences)
         best_group.append(name)
+    # After those who must be separated are dealt with, find best groups for those with preferences
     for name in preferences_associated:
         best_group = best_join(name, groups, preferences[name], preferences)
         best_group.append(name)
+    # Place the remaining free_names into any group that still has space
     for name in free_names:
-        # Just place in any group
         for group in groups:
             if len(group) < (people/num_groups):
                 group.append(name)
@@ -136,18 +135,21 @@ def best_separation(name, groups, dispreferences, other_dispreferences):
     people = session.get('people')
     num_groups = session.get('num_groups')
     best_group = None
-    max_count = 1
+    least_count = 1
     for group in groups:
         count = 0
+        # If the group still has space
         if len(group) < (people/num_groups):
+            # Find how many people the person is dissociated with are in the group
             for person in group:
                 if person in dispreferences or name in other_dispreferences[person]:
                     count += 1
-            print(f"Group: {group}, Count: {count}, Max Count: {max_count}")
-            if count == max_count:
+            # If tied for least count
+            if count == least_count:
                 best_group = group
-            if count < max_count:
-                max_count = count
+            # Only if there are no dissociates in the group
+            if count < least_count:
+                least_count = count
                 best_group = group
         else:
             continue
@@ -160,6 +162,7 @@ def best_join(name, groups, preferences, other_preferences):
     max_count = -1
     for group in groups:
         count = 0
+        # If the group still has space
         if len(group) < (people/num_groups):
             for person in group:
                 if person in preferences or name in other_preferences[person]:
@@ -170,7 +173,7 @@ def best_join(name, groups, preferences, other_preferences):
         else:
             continue
     if best_group is None:
-        # If no best group, put them in the group with most spots available for preferences
+        # If no best group, put them in the group with most spots available for the person and their preferences
         for group in groups:
             available_spots = (people/num_groups)-len(group)
             if available_spots > 0:
