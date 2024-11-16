@@ -96,29 +96,43 @@
                             container.innerHTML = '';
                             // Add new checkboxes if conditions are met
                             names.forEach((name) => {
+
                                 // If the name isn't the same name of the person of the row
-                                if (name !== document.getElementById(`name${i}`).value) {
-                                    // Creat checkbox for that name in preferences
-                                    let checkbox = document.createElement('input');
-                                    checkbox.type = 'checkbox';
-                                    checkbox.name = `preferences${i}`;
-                                    checkbox.value = name;
-                                    checkbox.id = `checkbox${i}_${i}`;
-                                    // When someone checks a preference, make sure they can't also check that name as a dispreference
-                                    checkbox.onchange = updateDispreferences;
-                                    // Reinstate previous checks
-                                    if (checkedNames.has(name)) {
-                                        checkbox.checked = true;
+                                if (name !== document.getElementById(`name${i}`).value && !isCheckedInPreferences) {
+                                    // First check if name has been checked in dispreferences
+                                    let isCheckedInDispreferences = false;
+                                    let dispreferencesContainer = document.getElementById(`dispreferences${i}`);
+                                    let checkboxes = dispreferencesContainer.getElementsByTagName('input');
+                                    for (let checkbox of checkboxes) {
+                                        if (checkbox.value === name && checkbox.checked) {
+                                            isCheckedInDispreferences = true;
+                                            break;
+                                        }
                                     }
+                                    // Only add name in preferences if not in dispreferences
+                                    if (isCheckedInPreferences) {
+                                        // Creat checkbox for that name in preferences
+                                        let checkbox = document.createElement('input');
+                                        checkbox.type = 'checkbox';
+                                        checkbox.name = `preferences${i}`;
+                                        checkbox.value = name;
+                                        checkbox.id = `checkbox${i}_${i}`;
+                                        // When someone checks a preference, make sure they can't also check that name as a dispreference
+                                        checkbox.onchange = updateDispreferences;
+                                        // Reinstate previous checks
+                                        if (checkedNames.has(name)) {
+                                            checkbox.checked = true;
+                                        }
 
-                                    let label = document.createElement('label');
-                                    label.htmlFor = `checkbox${i}_${i}`;
-                                    label.textContent = name;
-                                    label.style.marginLeft = '5px';
+                                        let label = document.createElement('label');
+                                        label.htmlFor = `checkbox${i}_${i}`;
+                                        label.textContent = name;
+                                        label.style.marginLeft = '5px';
 
-                                    container.appendChild(checkbox);
-                                    container.appendChild(label);
-                                    container.appendChild(document.createElement('br'));
+                                        container.appendChild(checkbox);
+                                        container.appendChild(label);
+                                        container.appendChild(document.createElement('br'));
+                                    }
                                 }
                             });
                         }
