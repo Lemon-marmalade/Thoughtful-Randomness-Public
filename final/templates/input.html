@@ -97,7 +97,7 @@
                             // Add new checkboxes if conditions are met
                             names.forEach((name) => {
                                 // If the name isn't the same name of the person of the row
-                                if (name !== document.getElementById(`name${i}`).value && !isCheckedInPreferences) {
+                                if (name !== document.getElementById(`name${i}`).value) {
                                     // First check if name has been checked in dispreferences
                                     let isCheckedInDispreferences = false;
                                     let dispreferencesContainer = document.getElementById(`dispreferences${i}`);
