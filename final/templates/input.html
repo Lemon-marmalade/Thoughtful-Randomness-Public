@@ -150,55 +150,55 @@
                         names.sort();
 
                         for (let i = 0; i < peopleCount; i++) {
-                        let container = document.getElementById(`dispreferences${i}`);
-                        // Keep previously checked checkboxes
-                        let checkedNames = new Set();
-                        let checkboxes = container.getElementsByTagName('input');
-                        for (let checkbox of checkboxes) {
-                            if (checkbox.checked) {
-                                checkedNames.add(checkbox.value);
+                            let container = document.getElementById(`dispreferences${i}`);
+                            // Keep previously checked checkboxes
+                            let checkedNames = new Set();
+                            let checkboxes = container.getElementsByTagName('input');
+                            for (let checkbox of checkboxes) {
+                                if (checkbox.checked) {
+                                    checkedNames.add(checkbox.value);
+                                }
                             }
-                        }
-                        container.innerHTML = '';
-                        names.forEach((name) => {
-                            if (name !== document.getElementById(`name${i}`).value) {
-                                // First check if name has been checked in preferences
-                                let isCheckedInPreferences = false;
-                                let preferencesContainer = document.getElementById(`preferences${i}`);
-                                let checkboxes = preferencesContainer.getElementsByTagName('input');
-                                for (let checkbox of checkboxes) {
-                                    if (checkbox.value === name && checkbox.checked) {
-                                        isCheckedInPreferences = true;
-                                        break;
+                            container.innerHTML = '';
+                            names.forEach((name) => {
+                                if (name !== document.getElementById(`name${i}`).value) {
+                                    // First check if name has been checked in preferences
+                                    let isCheckedInPreferences = false;
+                                    let preferencesContainer = document.getElementById(`preferences${i}`);
+                                    let checkboxes = preferencesContainer.getElementsByTagName('input');
+                                    for (let checkbox of checkboxes) {
+                                        if (checkbox.value === name && checkbox.checked) {
+                                            isCheckedInPreferences = true;
+                                            break;
+                                        }
                                     }
-                                }
-                            // Only add name in dispreferences if not checked in preferences
-                            if (!isCheckedInPreferences) {
-                                let checkbox = document.createElement('input');
-                                checkbox.type = 'checkbox';
-                                checkbox.name = `dispreferences${i}`;
-                                checkbox.value = name;
-                                checkbox.id = `checkbox${i}_${i}`;
-                                // When someone checks a dispreference, make sure they can't also check that name as a preference
-                                checkbox.onchange = updatePreferences;
-                                // Reinstate previous checks
-                                if (checkedNames.has(name)) {
-                                    checkbox.checked = true;
-                                }
+                                // Only add name in dispreferences if not checked in preferences
+                                if (!isCheckedInPreferences) {
+                                    let checkbox = document.createElement('input');
+                                    checkbox.type = 'checkbox';
+                                    checkbox.name = `dispreferences${i}`;
+                                    checkbox.value = name;
+                                    checkbox.id = `checkbox${i}_${i}`;
+                                    // When someone checks a dispreference, make sure they can't also check that name as a preference
+                                    checkbox.onchange = updatePreferences;
+                                    // Reinstate previous checks
+                                    if (checkedNames.has(name)) {
+                                        checkbox.checked = true;
+                                    }
 
-                                let label = document.createElement('label');
-                                label.htmlFor = `checkbox${i}_${i}`;
-                                label.textContent = name;
-                                label.style.marginLeft = '5px';
+                                    let label = document.createElement('label');
+                                    label.htmlFor = `checkbox${i}_${i}`;
+                                    label.textContent = name;
+                                    label.style.marginLeft = '5px';
 
-                                container.appendChild(checkbox);
-                                container.appendChild(label);
-                                container.appendChild(document.createElement('br'));
+                                    container.appendChild(checkbox);
+                                    container.appendChild(label);
+                                    container.appendChild(document.createElement('br'));
+                                }
                             }
-                        }
-                    });
+                        });
+                    }
                 }
-            }
                 </script>
             </tbody>
         </table>
