@@ -8,3 +8,8 @@
     margin-bottom: 2rem;
     padding: 3rem 3rem;
 }
+.small_break {
+    display: block;
+    content: ""; /* clears default height */
+    margin: 10px 0;
+}
