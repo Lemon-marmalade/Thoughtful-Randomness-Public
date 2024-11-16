@@ -24,7 +24,7 @@
     position: relative;
   }
 .explanation {
-    display: block;
+    margin: auto;
     text-align: center;
     width: 1000px;
 }
