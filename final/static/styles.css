@@ -1,11 +1,10 @@
 .footer {
-    left: 0;
-    bottom: 0;
     width: 100%;
     background-color: #4787a2;
     color: white;
-    padding: 1rem 1rem;
+    padding: 2rem 2rem;
     text-align: center;
+    font-family: "Comic Sans";
   }
 
 #submit {
