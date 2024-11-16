@@ -29,6 +29,7 @@
     width: 1000px;
 }
 
-h2 {
-    font-family: "Times New Roman", Times, serif;
+h2, h3 {
+    color: #2d578b;
+    font-style: italic;
 }
