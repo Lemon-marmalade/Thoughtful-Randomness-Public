@@ -166,7 +166,8 @@
                                     checkbox.name = `dispreferences${i}`;
                                     checkbox.value = name;
                                     checkbox.id = `checkbox${i}_${i}`;
-
+                                    // When someone checks a preference, make sure they can't also check that name as a dispreference
+                                    checkbox.onchange = updatePreferences;
                                     // Reinstate previous checks
                                     if (checkedNames.has(name)) {
                                         checkbox.checked = true;
