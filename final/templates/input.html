@@ -136,7 +136,14 @@
 
                         for (let i = 0; i < peopleCount; i++) {
                         let container = document.getElementById(`dispreferences${i}`);
-                        // Clear previous checkboxes
+                        // Keep previously checked checkboxes
+                        let checkedNames = new Set();
+                            let checkboxes = container.getElementsByTagName('input');
+                            for (let checkbox of checkboxes) {
+                                if (checkbox.checked) {
+                                    checkedNames.add(checkbox.value);
+                                }
+                            }
                         container.innerHTML = '';
                         names.forEach((name) => {
                             if (name !== document.getElementById(`name${i}`).value) {
