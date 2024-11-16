@@ -192,7 +192,7 @@ def best_join(name, groups, preferences, other_preferences):
 @app.route("/groupings", methods=["GET", "POST"])
 def groupings():
     """Display groupings in table, and give option to generate again"""
-    # If user wants to generate again
+    # If user wants to generate again, go through all the same process from input
     if request.method == "POST":
         num_groups = session.get('num_groups')
         names = session.get('names')
