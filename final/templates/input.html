@@ -109,8 +109,8 @@
                                             break;
                                         }
                                     }
-                                    // Only add name in preferences if not in dispreferences
-                                    if (isCheckedInPreferences) {
+                                    // Only add name in preferences if not checked in dispreferences
+                                    if (!isCheckedInPreferences) {
                                         // Creat checkbox for that name in preferences
                                         let checkbox = document.createElement('input');
                                         checkbox.type = 'checkbox';
@@ -173,7 +173,7 @@
                                         break;
                                     }
                                 }
-                                // Only add name in dispreferences if not in preferences
+                                // Only add name in dispreferences if not checked in preferences
                                 if (!isCheckedInPreferences) {
                                     let checkbox = document.createElement('input');
                                     checkbox.type = 'checkbox';
