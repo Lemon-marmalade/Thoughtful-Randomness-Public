@@ -4,7 +4,8 @@
 .header{
     color: #fff;
     background-image: url('pattern.jpg');
-    background-color: #4787a2; 
+    background-size: 950px 950px;
+    background-color: #4787a2; /* For backup if the image doesn't load */
     text-align: center;
     margin-bottom: 2rem;
     padding: 3rem 3rem;
