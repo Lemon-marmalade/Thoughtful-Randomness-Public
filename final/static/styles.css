@@ -23,5 +23,9 @@
     overflow: auto;
     position: relative;
   }
-
+.explanation {
+    display: block;
+    text-align: center;
+    width: 1000px;
+}
 
