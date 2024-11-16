@@ -81,7 +81,7 @@
                         }
                         //Sort names alphabetically
                         names.sort();
-                        // For each person's pre
+                        // For each person's preferences
                         for (let i = 0; i < peopleCount; i++) {
                             let container = document.getElementById(`preferences${i}`);
                             // Keep previously checked checkboxes
@@ -92,8 +92,8 @@
                                     checkedNames.add(checkbox.value);
                                 }
                             }
-
                             container.innerHTML = '';
+                            // Add new checkboxes if conditions are met
                             names.forEach((name) => {
                                 // If the name isn't the same name of the person of the row
                                 if (name !== document.getElementById(`name${i}`).value) {
