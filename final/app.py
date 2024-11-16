@@ -1,4 +1,5 @@
 import secrets
+import math
 
 from flask import Flask, redirect, render_template, request, session
 from flask_session import Session
@@ -126,7 +127,7 @@ def create_groups(names, preferences, dispreferences, num_groups):
     # Place the remaining free_names into any group that still has space
     for name in free_names:
         for group in groups:
-            if len(group) < (people/num_groups):
+            if len(group) < (math.ceil(people/num_groups)):
                 group.append(name)
                 break
     return groups
@@ -139,7 +140,7 @@ def best_separation(name, groups, dispreferences, other_dispreferences):
     for group in groups:
         count = 0
         # If the group still has space
-        if len(group) < (roundup(people/num_groups)):
+        if len(group) < (math.ceil(people/num_groups)):
             # Find how many people the person is dissociated with are in the group
             for person in group:
                 if person in dispreferences or name in other_dispreferences[person]:
@@ -163,7 +164,7 @@ def best_join(name, groups, preferences, other_preferences):
     for group in groups:
         count = 0
         # If the group still has space
-        if len(group) < (people/num_groups):
+        if len(group) < (math.ceil(people/num_groups)):
             for person in group:
                 if person in preferences or name in other_preferences[person]:
                     count += 1
@@ -175,7 +176,7 @@ def best_join(name, groups, preferences, other_preferences):
     if best_group is None:
         # If no best group, put them in the group with most spots available for the person and their preferences
         for group in groups:
-            available_spots = (people/num_groups)-len(group)
+            available_spots = (math.ceil(people/num_groups))-len(group)
             if available_spots > 0:
                 # Find out exact needed spots
                 needed_spots = len(preferences[name]) + 1
