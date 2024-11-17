@@ -128,20 +128,20 @@ def create_groups(names, preferences, dispreferences, num_groups):
     for name in free_names:
         count = 0
         for group in groups:
-            # Check if full
-            if len(group) = math.floor(people/num_groups)
-            count += 1
+            # Check if full to make the most even groups possible
+            if len(group) == math.floor(people/num_groups):
+                count += 1
         # If not all groups are full
-        if count < len(groups)
+        if count < len(groups):
             for group in groups:
                 if len(group) < (math.floor(people/num_groups)):
-                group.append(name)
-                break
+                    group.append(name)
+                    break
         else:
             for group in groups:
                 if len(group) < (math.ceil(people/num_groups)):
-                group.append(name)
-                break
+                    group.append(name)
+                    break
     return groups
 
 def best_separation(name, groups, dispreferences, other_dispreferences):
