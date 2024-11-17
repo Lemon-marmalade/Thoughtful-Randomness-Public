@@ -197,17 +197,25 @@ def best_join(name, groups, preferences, other_preferences):
     max_count = -1
     counter = 0
     for group in groups:
-        count = 0
-        # If the group still has space
-        if len(group) < (math.ceil(people/num_groups)):
-            for person in group:
-                if person in preferences or name in other_preferences[person]:
-                    count += 1
-            if count > max_count:
-                max_count = count
-                best_group = group
-        else:
-            continue
+        counter = 0
+        # Check if full to make the most even groups possible
+        if len(group) == math.floor(people/num_groups):
+                count += 1
+    if counter < len(groups):
+        for group in groups:
+            count = 0
+            # If the group still has space
+            if len(group) < (math.floor(people/num_groups)):
+                for person in group:
+                    if person in preferences or name in other_preferences[person]:
+                        count += 1
+                if count > max_count:
+                    max_count = count
+                    best_group = group
+            else:
+                continue
+    else:
+        
     if best_group is None:
         # If no best group, put them in the group with most spots available for the person and their preferences
         for group in groups:
