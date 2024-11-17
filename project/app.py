@@ -149,9 +149,23 @@ def best_separation(name, groups, dispreferences, other_dispreferences):
     num_groups = session.get('num_groups')
     best_group = None
     least_count = 1
+    counter = 0
     for group in groups:
         count = 0
-
+        # Check if full to make the most even groups possible
+        if len(group) == math.floor(people/num_groups):
+                count += 1
+    # If not all groups are full
+    if counter < len(groups):
+        for group in groups:
+            if len(group) < (math.floor(people/num_groups)):
+                group.append(name)
+                break
+    else:
+        for group in groups:
+            if len(group) < (math.ceil(people/num_groups)):
+                group.append(name)
+                break
         # If the group still has space
         if len(group) < (math.ceil(people/num_groups)):
             # Find how many people the person is dissociated with are in the group
