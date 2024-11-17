@@ -151,11 +151,11 @@ def best_separation(name, groups, dispreferences, other_dispreferences):
     least_count = 1
     counter = 0
     for group in groups:
-        count = 0
         # Check if full to make the most even groups possible
         if len(group) == math.floor(people/num_groups):
                 count += 1
     # If not all groups are full
+    count = 0
     if counter < len(groups):
         for group in groups:
             if len(group) < (math.floor(people/num_groups)):
@@ -197,10 +197,9 @@ def best_join(name, groups, preferences, other_preferences):
     max_count = -1
     counter = 0
     for group in groups:
-        counter = 0
         # Check if full to make the most even groups possible
         if len(group) == math.floor(people/num_groups):
-                count += 1
+                counter += 1
     if counter < len(groups):
         for group in groups:
             count = 0
