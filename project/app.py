@@ -159,13 +159,31 @@ def best_separation(name, groups, dispreferences, other_dispreferences):
     if counter < len(groups):
         for group in groups:
             if len(group) < (math.floor(people/num_groups)):
-                group.append(name)
-                break
+                # Find how many people the person is dissociated with are in the group
+                for person in group:
+                    if person in dispreferences or name in other_dispreferences[person]:
+                        count += 1
+                # If tied for least count
+                if count == least_count:
+                    best_group = group
+                # Only if there are no dissociates in the group
+                if count < least_count:
+                    least_count = count
+                    best_group = group
     else:
         for group in groups:
             if len(group) < (math.ceil(people/num_groups)):
-                group.append(name)
-                break
+                # Find how many people the person is dissociated with are in the group
+                for person in group:
+                    if person in dispreferences or name in other_dispreferences[person]:
+                        count += 1
+                # If tied for least count
+                if count == least_count:
+                    best_group = group
+                # Only if there are no dissociates in the group
+                if count < least_count:
+                    least_count = count
+                    best_group = group
         # If the group still has space
         if len(group) < (math.ceil(people/num_groups)):
             # Find how many people the person is dissociated with are in the group
