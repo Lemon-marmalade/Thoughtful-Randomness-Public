@@ -170,6 +170,8 @@ def best_separation(name, groups, dispreferences, other_dispreferences):
                 if count < least_count:
                     least_count = count
                     best_group = group
+            else:
+                continue
     else:
         for group in groups:
             if len(group) < (math.ceil(people/num_groups)):
@@ -184,6 +186,8 @@ def best_separation(name, groups, dispreferences, other_dispreferences):
                 if count < least_count:
                     least_count = count
                     best_group = group
+            else:
+                continue
     return best_group
 
 def best_join(name, groups, preferences, other_preferences):
@@ -191,6 +195,7 @@ def best_join(name, groups, preferences, other_preferences):
     num_groups = session.get('num_groups')
     best_group = None
     max_count = -1
+    counter = 0
     for group in groups:
         count = 0
         # If the group still has space
