@@ -153,7 +153,7 @@ def best_separation(name, groups, dispreferences, other_dispreferences):
     for group in groups:
         # Check if full to make the most even groups possible
         if len(group) == math.floor(people/num_groups):
-                count += 1
+                counter += 1
     # If not all groups are full
     count = 0
     if counter < len(groups):
