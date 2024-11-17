@@ -227,22 +227,43 @@ def best_join(name, groups, preferences, other_preferences):
                     best_group = group
             else:
                 continue
-            
+
     if best_group is None:
         # If no best group, put them in the group with most spots available for the person and their preferences
+        count = 0
         for group in groups:
-            available_spots = (math.ceil(people/num_groups))-len(group)
-            if available_spots > 0:
-                # Find out exact needed spots
-                needed_spots = len(preferences[name]) + 1
-                for person in people:
-                    if name in other_preferences[person] and person not in preferences[name]:
-                        needed_spots += 1
-                if available_spots >= needed_spots:
-                    best_group = group
-                    break
-            else:
-                continue
+            # Check if full to make the most even groups possible
+            if len(group) == math.floor(people/num_groups):
+                count += 1
+        # If not all groups are full
+        if count < len(groups):
+            for group in groups:
+                available_spots = (math.floor(people/num_groups))-len(group)
+                if available_spots > 0:
+                    # Find out exact needed spots
+                    needed_spots = len(preferences[name]) + 1
+                    for person in people:
+                        if name in other_preferences[person] and person not in preferences[name]:
+                            needed_spots += 1
+                    if available_spots >= needed_spots:
+                        best_group = group
+                        break
+                else:
+                    continue
+        else:
+            for group in groups:
+                available_spots = (math.ceil(people/num_groups))-len(group)
+                if available_spots > 0:
+                    # Find out exact needed spots
+                    needed_spots = len(preferences[name]) + 1
+                    for person in people:
+                        if name in other_preferences[person] and person not in preferences[name]:
+                            needed_spots += 1
+                    if available_spots >= needed_spots:
+                        best_group = group
+                        break
+                else:
+                    continue
     return best_group
 
 @app.route("/groupings", methods=["POST"])
