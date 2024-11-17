@@ -126,8 +126,20 @@ def create_groups(names, preferences, dispreferences, num_groups):
         best_group.append(name)
     # Place the remaining free_names into any group that still has space
     for name in free_names:
+        count = 0
         for group in groups:
-            if len(group) < (math.ceil(people/num_groups)):
+            # Check if full
+            if len(group) = math.floor(people/num_groups)
+            count += 1
+        # If not all groups are full
+        if count < len(groups)
+            for group in groups:
+                if len(group) < (math.floor(people/num_groups)):
+                group.append(name)
+                break
+        else:
+            for group in groups:
+                if len(group) < (math.ceil(people/num_groups)):
                 group.append(name)
                 break
     return groups
