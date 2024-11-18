@@ -1,7 +1,5 @@
 # Thoughtful Randomness
-#### Video Demo:  <https://youtu.be/fibxj-z9qvI>
-#### Note:
-PS. My edx username, i-ye, is my email. I don't want random people viewing it, so it isn't included in the video.
+#### Video Demo:  <https://youtu.be/r0XF2ITnXcc>
 #### Description:
 Thoughtful Randomness is a randomized group generator that takes certain preferences into account. After a user first fill in a field of how many people they wish to group, they will be brought to a page where they can indicate how many groups they wish to have out of these people. Below that input field on this new page, users are given a table with 3 columns and the number of rows needed for people they originally inputted. The user will insert the names of the people they want to group and use the accordions in the following two columns to indicate any preferences. Once ready, the user can hit the “Create Groups” button and are redirected to a page showing each of the generated groups in table form. From there, the user may choose to regenerate groups using the same preferences as before or return to homepage to start a new grouping process. This web app is made to accommodate all screen sizes.
 
